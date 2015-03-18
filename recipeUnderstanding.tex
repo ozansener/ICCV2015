@@ -7,6 +7,9 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
+
+\graphicspath{ {./images/} }
+
 % Include other packages here, before hyperref.
 
 % If you comment hyperref and then uncomment it, you should delete
@@ -24,7 +27,7 @@
 \begin{document}
 
 %%%%%%%%% TITLE
-\title{Something Related to Recipes and Activities}
+\title{Large-Scale Unsupervised Understanding of Multi-Modal Recipes}
 
 \author{First Author\\
 Institution1\\
@@ -52,8 +55,14 @@ First line of institution2 address\\
 \end{abstract}
 
 %%%%%%%%% BODY TEXT
-\section{Introduction}
-
+\input{intro}
+\input{related}
+\input{overview}
+\input{method-features}
+\input{method-learning}
+\input{experiments}
+\input{conclusion}
+\input{notation}
 
 {\small
 \bibliographystyle{ieee}

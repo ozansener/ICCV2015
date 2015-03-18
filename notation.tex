@@ -1,0 +1,15 @@
+\setlength{\tabcolsep}{1mm}
+\begin{table*}
+\footnotesize
+\centering
+\caption{Notation of the Paper}
+\begin{tabular}{|cp{4cm}|cp{3cm}|cp{5cm}|}
+  \hline
+$y_t$ = $\left[y_t^v,y_t^l\right]$ & feature representation of $t^{th}$ frame & $I_t$ & $t^{th}$ frame of the video & $x^p_{i,r}$ & $1$ if $p^{th}$ cluster has $r^{th}$ proposal of $i^{th}$ video  \\
+$x^p$ & binary vector for $p^{th}$ cluster & $L_t$ & subtitle for $t^{th}$ frame & $O^{k,k^\prime}$ & $1$ if $\#(z_t=k,z_{t^\prime})=k^\prime) = 0 \forall\quad t \leq t^\prime$ \\
+$\Theta_k$ = $\left[\Theta_k^v,\Theta_k^l\right]$ & emmition prob. of $k^{th}$ activity & $z_t$ & activity ID of frame  $t$ & $f_i^k$ & $1$ if $i^{th}$ video has $k^{th}$ activity $0 o.w.$ \\
+$\eta_i^{k,k^\prime}$ & $P(z_{t+1}=k^\prime|z_{t}=k)$ for $i^{th}$ vid & $\pi_i^{k,k^\prime}$ & $\eta_i^{k,k^\prime} \times f_i^k \times f_i^{k^\prime}$
+& & \\ \hline
+\end{tabular}
+\end{table*}
+\normalsize
