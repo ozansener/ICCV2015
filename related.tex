@@ -1,8 +1,19 @@
 \section{Related Work}
-Para1: Activity
+\paragraph{Video Summarization}
+Summarizing an input video as a sequence of keyframes (static) or as a sequence of video clips (dynamic) is useful for both multi-media search interfaces and retrieval purposes. Early works in the area are summarized in \cite{vidAbstraction} and mostly focus on choosing key-frames for visualization. Idea of choosing key-frames is also extended by using the video tags by Hong et al\cite{beyondSearch} and using the spatio-temporal information by Gygli et al.\cite{createSum}.
 
-Para2: Recipe understanding
+Summarizing videos is crucial for ego-centric videos since the ego-centric videos are generally long in duration. There are many works which succesfully segment such videos in to a sequence of important shots \cite{lee2012discovering, lu2013story}; however, they mostly rely on specific features of ege-centric videos. Rui et al. \cite{rui2000automatically} proposed another dynamic summarization method based on the excitement in the speech of the reporter. Due to their domain specific designs, these algorithms are not applicable to the general instructional videos.
 
-Para3: Robotics
+%http://www.sangminoh.org/Publications_files/Oh2012bmvc_videography.pdf --> learn atomic representations and do not do a segmentation
+Same idea is also applied to the large image collecitons by recovering the temporal ordering and visual similarity of images \cite{storyGraph}. This image colelctions are further used to choose important view points for video key-frame selection by Khosla et al.\cite{khosla2013large}. And further extended to video clip selection by Kim et al\cite{kim2014joint} and Potapov et al.\cite{potapov2014category}. Although they are different from our approach since they do not use any high-level semantic information or the language information, we experimentally compare our method with them.
 
-Para4: Video Summarization
+
+\paragraph{Understanding Multi-Modal Information:} Captioning Work, What are you talking about? Text-to-Image Coreference(urtasun), Bringing Semantics Into Focus Using Visual Abstraction, Learning the Visual Interpretation of Sentences Zitnick (parikh) clip art to understand spatial relations of objects and language, Improving Video Activity Recognition using Object Recognition and Text Mining Motwani uses captions and object detectors to learn activities automatically. Grounded Language Learning from Video Described with Sentences (yu) improve semantic parsing using object/activity detectors. Matching Words and Pictures, A Sentence is Worth a Thousand Pixels, Connecting Modalities: Semi-supervised Segmentation and Annotation of
+Images Using Unaligned Text Corpora, Grounded Compositional Semantics
+for Finding and Describing Images with Sentences, Multimodal Neural Language Models, Every Picture Tells a Story: Generating Sentences from Images, m2Text: Describing Images Using 1 Million
+Captioned Photographs
+
+\paragraph{Activity Detection/Recognition:}
+
+\paragraph{Recipe Understanding}
+Following the interest in community generated recipes in the web, there have been many attempts to automatically process recipes. Recent methods on natural language processing \cite{cookingSemantics,logicRecipe} focus on semantic parsing of language recipes in order to extract actions and the objects in the form of predicates. Tenorth et al.\cite{logicRecipe} further process the predicates in order to form a complete logic plan. Mori et al.\cite{flowGraph} also learns the relations of the actions in terms of a flow graph with the help of a supervision. The aforementioned approaches focus only on the language modality and they are not applicable to the videos. We have also seen recent advances \cite{beetz,cookie} in robotics which uses the parsed recipe in order to perform cooking tasks. They use supervised object detectors and report a succesfull autonomous cooking experiment. In addition to the language based approaches, Malmaud et al.\cite{alignment} consider both language and vision modalities and propose a method to align an input video to a recipe. However, it can not extract the steps/actions automatically and requires a ground truth recipe to align. On the contrary, our method uses both visual and language modalities and extracts the actions while autonomously constructing the recipe. There is also an approach which generates multi-modal recipes from expert demonstrations \cite{photoshop}. However, it is developed only for the domain of \emph{teaching user interfaces} and are not applicable to the videos.
