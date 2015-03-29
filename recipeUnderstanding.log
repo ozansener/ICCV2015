@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.14)  24 MAR 2015 19:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.14)  29 MAR 2015 15:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -156,6 +156,38 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 57.
+\captionmargin=\dimen119
+\captionmargin@=\dimen120
+\captionwidth=\dimen121
+\caption@tempdima=\dimen122
+\caption@indent=\dimen123
+\caption@parindent=\dimen124
+\caption@hangindent=\dimen125
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2-> \setbox \@tempboxa \hb
+ox {\small \noindent #1.~#2} \setlength {\@ctmp }{\hsize } \addtolength {\@ctmp
+ }{-\@figindent }\addtolength {\@ctmp }{-\@figindent } \ifdim \wd \@tempboxa >\
+@ctmp {\small #1.~#2\par } \else \hbox to\hsize {\hfil \box \@tempboxa \hfil } 
+\fi .
+\c@ContinuedFloat=\count105
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+\c@subfigure=\count106
+\c@subtable=\count107
+)
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
@@ -213,14 +245,14 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen119
-\Hy@linkcounter=\count105
-\Hy@pagecounter=\count106
+\@linkdim=\dimen126
+\Hy@linkcounter=\count108
+\Hy@pagecounter=\count109
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count107
+\Hy@SavedSpaceFactor=\count110
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -247,17 +279,17 @@ Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 ))
-\c@Hy@tempcnt=\count108
+\c@Hy@tempcnt=\count111
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen120
-\Fld@menulength=\count109
-\Field@Width=\dimen121
-\Fld@charsize=\dimen122
+\XeTeXLinkMargin=\dimen127
+\Fld@menulength=\count112
+\Field@Width=\dimen128
+\Fld@charsize=\dimen129
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -267,37 +299,37 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count110
-\c@Item=\count111
-\c@Hfootnote=\count112
+\Hy@abspage=\count113
+\c@Item=\count114
+\c@Hfootnote=\count115
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count113
-\c@bookmark@seq@number=\count114
+\Fld@listcount=\count116
+\c@bookmark@seq@number=\count117
 \Hy@SectionHShift=\skip48
 )
 (./recipeUnderstanding.aux)
 \openout1 = `recipeUnderstanding.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 27.
-LaTeX Font Info:    ... okay on input line 27.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 27.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 28.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -313,16 +345,16 @@ Package color Info: Driver file: pdftex.def on input line 130.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count115
-\scratchdimen=\dimen123
+\scratchcounter=\count118
+\scratchdimen=\dimen130
 \scratchbox=\box30
-\nofMPsegments=\count116
-\nofMParguments=\count117
+\nofMPsegments=\count119
+\nofMParguments=\count120
 \everyMPshowfont=\toks20
-\MPscratchCnt=\count118
-\MPscratchDim=\dimen124
-\MPnumerator=\count119
-\makeMPintoPDFobject=\count120
+\MPscratchCnt=\count121
+\MPscratchDim=\dimen131
+\MPnumerator=\count122
+\makeMPintoPDFobject=\count123
 \everyMPtoPDFconversion=\toks21
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -339,9 +371,12 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box31
 Package atbegshi Info: Package `everyshi' patched.
-Package hyperref Info: Link coloring ON on input line 27.
+Package hyperref Info: Link coloring ON on input line 28.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -349,25 +384,25 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count121
+\c@section@level=\count124
 )
-LaTeX Info: Redefining \ref on input line 27.
-LaTeX Info: Redefining \pageref on input line 27.
-LaTeX Info: Redefining \nameref on input line 27.
+LaTeX Info: Redefining \ref on input line 28.
+LaTeX Info: Redefining \pageref on input line 28.
+LaTeX Info: Redefining \nameref on input line 28.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
-LaTeX Font Info:    Try loading font information for U+msa on input line 50.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
+LaTeX Font Info:    Try loading font information for U+msa on input line 51.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 50.
+LaTeX Font Info:    Try loading font information for U+msb on input line 51.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
  (./intro.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
@@ -404,7 +439,7 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 
 
 ]
-Underfull \hbox (badness 6125) in paragraph at lines 12--13
+Underfull \hbox (badness 6125) in paragraph at lines 11--12
  []\OT1/ptm/b/n/10 Understanding Multi-Modal In-for-ma-tion:[] \OT1/ptm/m/n/10 
 Learn-ing
  []
@@ -415,34 +450,105 @@ File: ./images/algor.pdf Graphic file (type pdf)
 <use ./images/algor.pdf>
 Package pdftex.def Info: ./images/algor.pdf used on input line 3.
 (pdftex.def)             Requested size: 496.85625pt x 365.98341pt.
+
+
+Package caption Warning: \label without proper \caption on input line 4.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:overview' on page 2 undefined on input line 8.
+
 ) (./method-features.tex
-Underfull \hbox (badness 2080) in paragraph at lines 7--7
+Underfull \vbox (badness 5105) has occurred while \output is active []
+
+ [2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<./images/im0.png, id=96, 3000.20876pt x 963.6pt>
+File: ./images/im0.png Graphic file (type png)
+ <use ./images/im0.png>
+Package pdftex.def Info: ./images/im0.png used on input line 12.
+(pdftex.def)             Requested size: 114.27481pt x 36.69951pt.
+
+<./images/im4.png, id=97, 3000.20876pt x 963.6pt>
+File: ./images/im4.png Graphic file (type png)
+ <use ./images/im4.png>
+Package pdftex.def Info: ./images/im4.png used on input line 17.
+(pdftex.def)             Requested size: 114.27481pt x 36.69951pt.
+
+<./images/im5.png, id=98, 3000.20876pt x 963.6pt>
+File: ./images/im5.png Graphic file (type png)
+ <use ./images/im5.png>
+Package pdftex.def Info: ./images/im5.png used on input line 21.
+(pdftex.def)             Requested size: 114.27481pt x 36.69951pt.
+
+<./images/im7.png, id=99, 3000.20876pt x 963.6pt>
+File: ./images/im7.png Graphic file (type png)
+ <use ./images/im7.png>
+Package pdftex.def Info: ./images/im7.png used on input line 25.
+(pdftex.def)             Requested size: 114.27481pt x 36.69951pt.
+
+<./images/im8.png, id=100, 3000.20876pt x 963.6pt>
+File: ./images/im8.png Graphic file (type png)
+ <use ./images/im8.png>
+Package pdftex.def Info: ./images/im8.png used on input line 29.
+(pdftex.def)             Requested size: 114.27481pt x 36.69951pt.
+
+<./images/im10.png, id=101, 3000.20876pt x 963.6pt>
+File: ./images/im10.png Graphic file (type png)
+ <use ./images/im10.png>
+Package pdftex.def Info: ./images/im10.png used on input line 33.
+(pdftex.def)             Requested size: 114.27481pt x 36.69951pt.
+
+Underfull \hbox (badness 2080) in paragraph at lines 37--37
 [] \elvbf . Multi-Modal Rep-re-sen-ta-tion via Learned
  []
 
-) (./method-learning.tex <./images/plate.pdf, id=61, 415.41025pt x 244.6937pt>
+) (./method-learning.tex [3 <./images/algor.pdf>]
+
+LaTeX Warning: Citation `foxBPHMM' on page 4 undefined on input line 5.
+
+
+LaTeX Warning: Citation `ibp' on page 4 undefined on input line 5.
+
+
+LaTeX Warning: Citation `npActivity' on page 4 undefined on input line 5.
+
+
+LaTeX Warning: Citation `hbp' on page 4 undefined on input line 11.
+
+
+LaTeX Warning: Citation `bpibp' on page 4 undefined on input line 11.
+
+<./images/plate.pdf, id=162, 415.41025pt x 244.6937pt>
 File: ./images/plate.pdf Graphic file (type pdf)
 
 <use ./images/plate.pdf>
-Package pdftex.def Info: ./images/plate.pdf used on input line 4.
+Package pdftex.def Info: ./images/plate.pdf used on input line 14.
 (pdftex.def)             Requested size: 248.42812pt x 146.33195pt.
 
-Overfull \hbox (11.29218pt too wide) in paragraph at lines 4--5
+Overfull \hbox (11.29218pt too wide) in paragraph at lines 14--15
 [][] 
  []
 
-) (./experiments.tex [2 <./images/plate.pdf>]) (./conclusion.tex)
-(./notation.tex)
-Underfull \vbox (badness 3396) has occurred while \output is active []
+
+LaTeX Warning: Citation `foxBPHMM' on page 4 undefined on input line 21.
 
 
-(./recipeUnderstanding.bbl (./recipeUnderstanding.brf)
+Underfull \hbox (badness 2334) in paragraph at lines 21--22
+[]\OT1/ptm/m/n/10 We em-ploy Markov Chain Monte Carlo (MCMC)
+ []
+
+) (./experiments.tex) (./conclusion.tex) (./notation.tex) [4 <./images/im0.png 
+(PNG copy)> <./images/im4.png (PNG copy)> <./images/im5.png (PNG copy)> <./imag
+es/im7.png (PNG copy)> <./images/im8.png (PNG copy)> <./images/im10.png (PNG co
+py)> <./images/plate.pdf>] (./recipeUnderstanding.bbl
+(./recipeUnderstanding.brf)
 \tf@brf=\write3
 \openout3 = `recipeUnderstanding.brf'.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 21.
- [3 <./images/algor.pdf>]
+
 Underfull \hbox (badness 4229) in paragraph at lines 27--27
 []\OT1/ptm/m/n/9 A. Farhadi, M. Hejrati, M. A. Sadeghi, P. Young,
  []
@@ -458,51 +564,61 @@ Underfull \hbox (badness 2521) in paragraph at lines 133--133
 m-puter
  []
 
-[4])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 72.
- [5
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 139.
+[5])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 73.
+ [6
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 72.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 73.
  (./recipeUnderstanding.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 72.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 72.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 73.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 73.
 Package rerunfilecheck Info: File `recipeUnderstanding.brf' has not changed.
-(rerunfilecheck)             Checksum: D89AD2BF4A061FD7786250484F701E2A;1479.
+(rerunfilecheck)             Checksum: 249F745B26C51CDDBF000740BDA16AE5;1746.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 72.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 73.
  ) 
 Here is how much of TeX's memory you used:
- 6700 strings out of 494985
- 96745 string characters out of 6180356
- 190708 words of memory out of 5000000
- 9719 multiletter control sequences out of 15000+600000
- 38917 words of font info for 80 fonts, out of 8000000 for 9000
+ 7816 strings out of 494985
+ 116868 string characters out of 6180356
+ 211180 words of memory out of 5000000
+ 10810 multiletter control sequences out of 15000+600000
+ 41280 words of font info for 87 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,13n,30p,1598b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,13n,38p,1598b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-msy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/font
-s/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/tim
-es/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-
-Output written on recipeUnderstanding.pdf (5 pages, 5718503 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
+i7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
+y8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
+times/utmri8a.pfb>
+Output written on recipeUnderstanding.pdf (6 pages, 13242066 bytes).
 PDF statistics:
- 300 PDF objects out of 1000 (max. 8388607)
- 257 compressed objects within 3 object streams
- 64 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 354 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
+ 70 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
