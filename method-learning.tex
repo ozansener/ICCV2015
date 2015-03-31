@@ -5,7 +5,9 @@ Here we explain the generative model which we use in order to jointly learn the 
 \paragraph{Frame:} Representation of each frame is computed as the occurence vector over the detected language and visual atoms. Formally, frame $y^i_t$ is represented as $y^i_t=[y^{i,l}_t,y^{i,v}_t]$ such that $k^th$ entry of the $y^{i,l}_t$ is $1$ if the frame as language atom $k$ and $0$ otherwise. $y^{i,l}_t$ is also a binary vector similarly defined over visual atoms. We consider $y^i_t$ as the observed variable and consider the underlying activity label as the hidden state $z^i_t$. A sample state is visualized in the Figure \ref{visFrame}.
 
 \begin{figure}
+  \includegraphics[width=0.48\textwidth]{frame}
   \caption{Visualziation of the representation of the Frame.}
+  \label{visFrame}
 \end{figure}
 
 \paragraph{Activity:} We represent each activity as a Bernoulli distribution over the visual and language atoms. In other words, each frame's representation $y^i_t$ is sampled from its activity distribution as $y^i_t|z^i_t=k \sim Ber(\Theta_k)$. For the sake of clarity, we sample the $\Theta$ from its conjugate distribution \emph{Beta distribution}.
