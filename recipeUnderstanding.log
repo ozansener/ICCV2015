@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.14)  31 MAR 2015 05:01
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.14)  31 MAR 2015 13:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -602,8 +602,115 @@ Underfull \hbox (badness 2334) in paragraph at lines 42--43
 []\OT1/ptm/m/n/10 We em-ploy Markov Chain Monte Carlo (MCMC)
  []
 
-) (./experiments.tex) (./conclusion.tex) (./notation.tex)
-(./recipeUnderstanding.bbl (./recipeUnderstanding.brf)
+) (./experiments.tex <./images/act_gt.pdf, id=262, 722.7pt x 72.27pt>
+File: ./images/act_gt.pdf Graphic file (type pdf)
+
+<use ./images/act_gt.pdf>
+Package pdftex.def Info: ./images/act_gt.pdf used on input line 9.
+(pdftex.def)             Requested size: 248.42812pt x 24.84274pt.
+ <./images/act_our.pdf, id=263, 722.7pt x 72.27pt>
+File: ./images/act_our.pdf Graphic file (type pdf)
+
+<use ./images/act_our.pdf>
+Package pdftex.def Info: ./images/act_our.pdf used on input line 13.
+(pdftex.def)             Requested size: 248.42812pt x 24.84274pt.
+
+Overfull \hbox (11.29218pt too wide) in paragraph at lines 8--16
+[][]
+ []
+
+
+Overfull \hbox (11.29218pt too wide) in paragraph at lines 8--16
+[] 
+ []
+
+Package epstopdf Info: Source file: <./images/cred.eps>
+(epstopdf)                    date: 2015-03-31 12:54:35
+(epstopdf)                    size: 1765102 bytes
+(epstopdf)             Output file: <./images/cred-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-03-31 13:16:10
+(epstopdf)                    size: 175561 bytes
+(epstopdf)             Command: <repstopdf --outfile=./images/cred-eps-converte
+d-to.pdf ./images/cred.eps>
+(epstopdf)             \includegraphics on input line 19.
+Package epstopdf Info: Output file is already uptodate.
+<./images/cred-eps-converted-to.pdf, id=264, 1040.88875pt x 595.22375pt>
+File: ./images/cred-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./images/cred-eps-converted-to.pdf>
+Package pdftex.def Info: ./images/cred-eps-converted-to.pdf used on input line 
+19.
+(pdftex.def)             Requested size: 124.21405pt x 71.02414pt.
+Package epstopdf Info: Source file: <./images/cyan.eps>
+(epstopdf)                    date: 2015-03-31 13:00:40
+(epstopdf)                    size: 1594936 bytes
+(epstopdf)             Output file: <./images/cyan-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-03-31 13:11:54
+(epstopdf)                    size: 138656 bytes
+(epstopdf)             Command: <repstopdf --outfile=./images/cyan-eps-converte
+d-to.pdf ./images/cyan.eps>
+(epstopdf)             \includegraphics on input line 23.
+Package epstopdf Info: Output file is already uptodate.
+
+<./images/cyan-eps-converted-to.pdf, id=265, 1040.88875pt x 595.22375pt>
+File: ./images/cyan-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./images/cyan-eps-converted-to.pdf>
+Package pdftex.def Info: ./images/cyan-eps-converted-to.pdf used on input line 
+23.
+(pdftex.def)             Requested size: 124.21405pt x 71.02414pt.
+
+Overfull \hbox (3.80003pt too wide) in paragraph at lines 18--26
+[][]  [] 
+ []
+
+Package epstopdf Info: Source file: <./images/corange.eps>
+(epstopdf)                    date: 2015-03-31 13:10:12
+(epstopdf)                    size: 3207961 bytes
+(epstopdf)             Output file: <./images/corange-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-03-31 13:17:57
+(epstopdf)                    size: 258280 bytes
+(epstopdf)             Command: <repstopdf --outfile=./images/corange-eps-conve
+rted-to.pdf ./images/corange.eps>
+(epstopdf)             \includegraphics on input line 29.
+Package epstopdf Info: Output file is already uptodate.
+<./images/corange-eps-converted-to.pdf, id=266, 1040.88875pt x 596.2275pt>
+File: ./images/corange-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./images/corange-eps-converted-to.pdf>
+Package pdftex.def Info: ./images/corange-eps-converted-to.pdf used on input li
+ne 29.
+(pdftex.def)             Requested size: 124.21405pt x 71.1439pt.
+Package epstopdf Info: Source file: <./images/cgreen.eps>
+(epstopdf)                    date: 2015-03-31 13:27:06
+(epstopdf)                    size: 3093908 bytes
+(epstopdf)             Output file: <./images/cgreen-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-03-31 13:27:54
+(epstopdf)                    size: 261394 bytes
+(epstopdf)             Command: <repstopdf --outfile=./images/cgreen-eps-conver
+ted-to.pdf ./images/cgreen.eps>
+(epstopdf)             \includegraphics on input line 33.
+Package epstopdf Info: Output file is already uptodate.
+
+<./images/cgreen-eps-converted-to.pdf, id=267, 1040.88875pt x 596.2275pt>
+File: ./images/cgreen-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./images/cgreen-eps-converted-to.pdf>
+Package pdftex.def Info: ./images/cgreen-eps-converted-to.pdf used on input lin
+e 33.
+(pdftex.def)             Requested size: 124.21405pt x 71.1439pt.
+
+Overfull \hbox (3.80003pt too wide) in paragraph at lines 28--36
+[][]  [] 
+ []
+
+
+Overfull \hbox (11.29218pt too wide) in paragraph at lines 17--41
+[][] 
+ []
+
+) (./conclusion.tex) (./notation.tex) (./recipeUnderstanding.bbl
+(./recipeUnderstanding.brf)
 \tf@brf=\write3
 \openout3 = `recipeUnderstanding.brf'.
 
@@ -625,9 +732,15 @@ Underfull \hbox (badness 2521) in paragraph at lines 133--133
 m-puter
  []
 
-[6])
+[6 <./images/act_gt.pdf> <./images/act_our.pdf
+
+pdfTeX warning: pdflatex (file ./images/act_our.pdf): PDF inclusion: multiple p
+dfs with page group included in a single page
+> <./images/cred-eps-converted-to.pdf> <./images/cyan-eps-converted-to.pdf> <./
+images/corange-eps-converted-to.pdf> <./images/cgreen-eps-converted-to.pdf>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 75.
- [7
+
+[7
 
 ]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 75.
@@ -643,13 +756,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 75.
  ) 
 Here is how much of TeX's memory you used:
- 8268 strings out of 494985
- 122180 string characters out of 6180356
- 220086 words of memory out of 5000000
- 11231 multiletter control sequences out of 15000+600000
+ 8300 strings out of 494985
+ 123103 string characters out of 6180356
+ 219086 words of memory out of 5000000
+ 11256 multiletter control sequences out of 15000+600000
  41856 words of font info for 93 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,13n,38p,1598b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,13n,38p,1598b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/
@@ -676,10 +789,10 @@ e/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on recipeUnderstanding.pdf (7 pages, 15329162 bytes).
+Output written on recipeUnderstanding.pdf (7 pages, 16188508 bytes).
 PDF statistics:
- 456 PDF objects out of 1000 (max. 8388607)
- 359 compressed objects within 4 object streams
- 76 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 609 PDF objects out of 1000 (max. 8388607)
+ 379 compressed objects within 4 object streams
+ 77 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
