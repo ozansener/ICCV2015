@@ -67,6 +67,7 @@
 \citation{cookie}
 \citation{alignment}
 \citation{photoshop}
+\citation{scgp}
 \@writefile{brf}{\backcite{storyGraph}{{2}{2}{section*.1}}}
 \@writefile{brf}{\backcite{khosla2013large}{{2}{2}{section*.1}}}
 \@writefile{brf}{\backcite{kim2014joint}{{2}{2}{section*.1}}}
@@ -92,64 +93,65 @@
 \@writefile{brf}{\backcite{alignment}{{2}{2}{section*.4}}}
 \@writefile{brf}{\backcite{photoshop}{{2}{2}{section*.4}}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}\hskip -1em.\nobreakspace  {}Method}{2}{section.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}\hskip -1em.\nobreakspace  {}Semantic Multi-Modal Frame Representation}{2}{subsection.3.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.1}Learning Language Atoms}{2}{subsubsection.3.1.1}}
+\newlabel{sec:overview}{{3}{2}{\hskip -1em.~Method}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}\hskip -1em.\nobreakspace  {}Video Collection and Outlier Detection}{2}{subsection.3.1}}
+\newlabel{filter}{{3.1}{2}{\hskip -1em.~Video Collection and Outlier Detection}{subsection.3.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Components of our recipe understanding method. \textbf  {Query:} We query the YouTube for top 100 \emph  {How To} videos and filter the outliers; \textbf  {Framewise Representation:} We automatically extract object clusters and salient word in order to find multi-modal representation of each frame. \textbf  {Unsupervised Activity Detection:} We jointly cluster videos in order to learn activities/steps related to the recipe.\relax }}{3}{figure.caption.5}}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{fig:overview}{{1}{3}{Components of our recipe understanding method. \textbf {Query:} We query the YouTube for top 100 \emph {How To} videos and filter the outliers; \textbf {Framewise Representation:} We automatically extract object clusters and salient word in order to find multi-modal representation of each frame. \textbf {Unsupervised Activity Detection:} We jointly cluster videos in order to learn activities/steps related to the recipe.\relax }{figure.caption.5}{}}
+\@writefile{brf}{\backcite{scgp}{{3}{3.1}{subsection.3.1}}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}\hskip -1em.\nobreakspace  {}Semantic Multi-Modal Frame Representation}{3}{subsection.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces \textbf  {Sample videos which our algorithm discards as an outlier for the query \emph  {How to make a milkshake?}.} These videos are about a toy milkshake, a milkshake charm and a funny video about How to NOT make milkshakes.\relax }}{3}{figure.caption.6}}
+\newlabel{outliers}{{2}{3}{\textbf {Sample videos which our algorithm discards as an outlier for the query \emph {How to make a milkshake?}.} These videos are about a toy milkshake, a milkshake charm and a funny video about How to NOT make milkshakes.\relax }{figure.caption.6}{}}
 \citation{cpmc}
 \citation{keysegments}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{fig:overview}{{\caption@xref {fig:overview}{ on input line 4}}{3}{\hskip -1em.~Method}{figure.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Components of our recipe understanding method. \textbf  {Query:} We query the YouTube for top 100 \emph  {How To} videos and filter the outliers; \textbf  {Framewise Representation:} We automatically extract object clusters and salient word in order to find multi-modal representation of each frame. \textbf  {Unsupervised Activity Detection:} We jointly cluster videos in order to learn activities/steps related to the recipe.\relax }}{3}{figure.caption.5}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.1.2}Learning Visual Atoms}{3}{subsubsection.3.1.2}}
-\@writefile{brf}{\backcite{cpmc}{{3}{3.1.2}{subsubsection.3.1.2}}}
-\@writefile{brf}{\backcite{keysegments}{{3}{3.1.2}{subsubsection.3.1.2}}}
 \citation{scgp}
 \citation{scgp}
 \citation{scgp_eigen}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.1}Learning Language Atoms}{4}{subsubsection.3.2.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {3.2.2}Learning Visual Atoms}{4}{subsubsection.3.2.2}}
+\@writefile{brf}{\backcite{cpmc}{{4}{3.2.2}{subsubsection.3.2.2}}}
+\@writefile{brf}{\backcite{keysegments}{{4}{3.2.2}{subsubsection.3.2.2}}}
+\@writefile{toc}{\contentsline {paragraph}{Joint Proposal Clustering to Detect Visual Objects}{4}{section*.7}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Visualization of the joint proposal clustering.} Here, we show the 1NN video graph and 2NN region graph. Each region proposal is linked to its 2 nearest neihbours from the video it belongs and 2 nearest neighbours from the videos it is neighbour of.\relax }}{4}{figure.caption.8}}
+\newlabel{hierProposal}{{3}{4}{\textbf {Visualization of the joint proposal clustering.} Here, we show the 1NN video graph and 2NN region graph. Each region proposal is linked to its 2 nearest neihbours from the video it belongs and 2 nearest neighbours from the videos it is neighbour of.\relax }{figure.caption.8}{}}
+\@writefile{brf}{\backcite{scgp}{{4}{3.2.2}{figure.caption.8}}}
+\@writefile{brf}{\backcite{scgp,scgp_eigen}{{4}{3.2.2}{equation.3.1}}}
 \citation{scgp}
 \citation{scgp_eigen}
-\@writefile{toc}{\contentsline {paragraph}{Joint Proposal Clustering to Detect Visual Objects}{4}{section*.6}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Visualization of the joint proposal clustering.\relax }}{4}{figure.caption.7}}
-\newlabel{hierProposal}{{2}{4}{Visualization of the joint proposal clustering.\relax }{figure.caption.7}{}}
-\@writefile{brf}{\backcite{scgp}{{4}{3.1.2}{figure.caption.7}}}
-\@writefile{brf}{\backcite{scgp,scgp_eigen}{{4}{3.1.2}{equation.3.1}}}
-\@writefile{brf}{\backcite{scgp,scgp_eigen}{{4}{3.1.2}{equation.3.2}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Randomly selected images of randomly selected clusters learned for \emph  {How to boil an egg?}\relax }}{4}{figure.caption.8}}
-\newlabel{cvis}{{3}{4}{Randomly selected images of randomly selected clusters learned for \emph {How to boil an egg?}\relax }{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}\hskip -1em.\nobreakspace  {}Multi-Modal Representation via Learned Atoms}{4}{subsection.3.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}\hskip -1em.\nobreakspace  {}Unsupervised Activity Representation}{4}{section.4}}
-\newlabel{basics}{{4}{4}{\hskip -1em.~Unsupervised Activity Representation}{section.4}{}}
 \citation{foxBPHMM}
 \citation{ibp}
 \citation{npActivity}
-\citation{hbp}
-\citation{bpibp}
-\citation{foxBPHMM}
-\citation{foxBPHMM}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Visualziation of the representation of the Frame.\relax }}{5}{figure.caption.10}}
-\newlabel{visFrame}{{4}{5}{Visualziation of the representation of the Frame.\relax }{figure.caption.10}{}}
-\@writefile{toc}{\contentsline {paragraph}{Frame:}{5}{section*.9}}
-\@writefile{toc}{\contentsline {paragraph}{Activity:}{5}{section*.11}}
+\@writefile{brf}{\backcite{scgp,scgp_eigen}{{5}{3.2.2}{equation.3.2}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Randomly selected images of randomly selected clusters learned for \emph  {How to boil an egg?}\relax }}{5}{figure.caption.9}}
+\newlabel{cvis}{{4}{5}{Randomly selected images of randomly selected clusters learned for \emph {How to boil an egg?}\relax }{figure.caption.9}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}\hskip -1em.\nobreakspace  {}Multi-Modal Representation via Learned Atoms}{5}{subsection.3.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}\hskip -1em.\nobreakspace  {}Unsupervised Activity Representation}{5}{section.4}}
+\newlabel{basics}{{4}{5}{\hskip -1em.~Unsupervised Activity Representation}{section.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Visualziation of the representation of the Frame.\relax }}{5}{figure.caption.11}}
+\newlabel{visFrame}{{5}{5}{Visualziation of the representation of the Frame.\relax }{figure.caption.11}{}}
+\@writefile{toc}{\contentsline {paragraph}{Frame:}{5}{section*.10}}
+\@writefile{toc}{\contentsline {paragraph}{Activity:}{5}{section*.12}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1}\hskip -1em.\nobreakspace  {}Beta Process Hidden Markov Model}{5}{subsection.4.1}}
 \@writefile{brf}{\backcite{foxBPHMM}{{5}{4.1}{subsection.4.1}}}
 \@writefile{brf}{\backcite{ibp}{{5}{4.1}{subsection.4.1}}}
 \@writefile{brf}{\backcite{npActivity}{{5}{4.1}{subsection.4.1}}}
-\@writefile{brf}{\backcite{hbp}{{5}{4.1}{equation.4.4}}}
-\@writefile{brf}{\backcite{bpibp}{{5}{4.1}{equation.4.4}}}
-\@writefile{brf}{\backcite{foxBPHMM}{{5}{4.1}{equation.4.4}}}
+\citation{ibp}
+\citation{ibp}
+\citation{foxBPHMM}
+\citation{foxBPHMM}
 \bibstyle{ieee}
 \bibdata{recipeUnderstanding}
 \bibcite{matching}{1}
-\bibcite{beetz}{2}
-\bibcite{cookie}{3}
-\bibcite{farhadi2010every}{4}
-\bibcite{fidler2013sentence}{5}
-\bibcite{photoshop}{6}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces \textbf  {Graphical model for BP-HMM:}Some explanation.\relax }}{6}{figure.caption.12}}
-\newlabel{bphmmo}{{5}{6}{\textbf {Graphical model for BP-HMM:}Some explanation.\relax }{figure.caption.12}{}}
+\@writefile{brf}{\backcite{ibp}{{6}{4.1}{equation.4.4}}}
+\@writefile{brf}{\backcite{ibp}{{6}{4.1}{equation.4.4}}}
+\@writefile{brf}{\backcite{foxBPHMM}{{6}{4.1}{equation.4.4}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Graphical model for BP-HMM:}Some explanation.\relax }}{6}{figure.caption.13}}
+\newlabel{bphmmo}{{6}{6}{\textbf {Graphical model for BP-HMM:}Some explanation.\relax }{figure.caption.13}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}\hskip -1em.\nobreakspace  {}Gibbs sampling for BP-HMM}{6}{subsection.4.2}}
 \@writefile{brf}{\backcite{foxBPHMM}{{6}{4.2}{subsection.4.2}}}
-\@writefile{toc}{\contentsline {paragraph}{Data-Driven Sampler1}{6}{section*.13}}
-\@writefile{toc}{\contentsline {paragraph}{Data-Driven Sampler2}{6}{section*.14}}
+\@writefile{toc}{\contentsline {paragraph}{Data-Driven Sampler1}{6}{section*.14}}
+\@writefile{toc}{\contentsline {paragraph}{Data-Driven Sampler2}{6}{section*.15}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}\hskip -1em.\nobreakspace  {}Experiments}{6}{section.5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1}\hskip -1em.\nobreakspace  {}Dataset}{6}{subsection.5.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}\hskip -1em.\nobreakspace  {}Baselines}{6}{subsection.5.2}}
@@ -157,28 +159,40 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.4}\hskip -1em.\nobreakspace  {}Accuracy over Activity Detection}{6}{subsection.5.4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.5}\hskip -1em.\nobreakspace  {}Accuracy over Activity Learning}{6}{subsection.5.5}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}\hskip -1em.\nobreakspace  {}Discussions and Conclusions}{6}{section.6}}
-\bibcite{createSum}{7}
-\bibcite{beyondSearch}{8}
-\bibcite{deepAlignment}{9}
-\bibcite{khosla2013large}{10}
-\bibcite{kim2014joint}{11}
-\bibcite{storyGraph}{12}
-\bibcite{kiros2014multimodal}{13}
-\bibcite{kong2014you}{14}
-\bibcite{lee2012discovering}{15}
-\bibcite{lu2013story}{16}
-\bibcite{alignment}{17}
-\bibcite{cookingSemantics}{18}
-\bibcite{flowGraph}{19}
-\bibcite{motwani2012improving}{20}
-\bibcite{ordonez2011im2text}{21}
-\bibcite{potapov2014category}{22}
-\bibcite{rui2000automatically}{23}
-\bibcite{connecting}{24}
-\bibcite{socher2014grounded}{25}
-\bibcite{logicRecipe}{26}
-\bibcite{vidAbstraction}{27}
-\bibcite{yu2013grounded}{28}
-\bibcite{zitnick2013bringing}{29}
-\bibcite{zitnick2013learning}{30}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Notation of the Paper\relax }}{7}{table.caption.16}}
+\bibcite{beetz}{2}
+\bibcite{cookie}{3}
+\bibcite{cpmc}{4}
+\bibcite{farhadi2010every}{5}
+\bibcite{fidler2013sentence}{6}
+\bibcite{foxBPHMM}{7}
+\bibcite{photoshop}{8}
+\bibcite{ibp}{9}
+\bibcite{createSum}{10}
+\bibcite{beyondSearch}{11}
+\bibcite{npActivity}{12}
+\bibcite{deepAlignment}{13}
+\bibcite{khosla2013large}{14}
+\bibcite{kim2014joint}{15}
+\bibcite{storyGraph}{16}
+\bibcite{kiros2014multimodal}{17}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Notation of the Paper\relax }}{7}{table.caption.17}}
+\bibcite{kong2014you}{18}
+\bibcite{lee2012discovering}{19}
+\bibcite{keysegments}{20}
+\bibcite{lu2013story}{21}
+\bibcite{alignment}{22}
+\bibcite{cookingSemantics}{23}
+\bibcite{flowGraph}{24}
+\bibcite{motwani2012improving}{25}
+\bibcite{scgp}{26}
+\bibcite{ordonez2011im2text}{27}
+\bibcite{scgp_eigen}{28}
+\bibcite{potapov2014category}{29}
+\bibcite{rui2000automatically}{30}
+\bibcite{connecting}{31}
+\bibcite{socher2014grounded}{32}
+\bibcite{logicRecipe}{33}
+\bibcite{vidAbstraction}{34}
+\bibcite{yu2013grounded}{35}
+\bibcite{zitnick2013bringing}{36}
+\bibcite{zitnick2013learning}{37}
