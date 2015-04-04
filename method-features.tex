@@ -70,7 +70,7 @@ After changing the optimization function, we can not use the efficient eigen-dec
 
 where $r^{(i)}=\frac{\mathbf{x^{(i)^T}}\mathbf{A^{(i)}}\mathbf{x^{(i)}}}{\mathbf{x^{(i)^T}}\mathbf{x^{(i)}}}$ and $r^{(i,j)}=\frac{\mathbf{x^{(i)^T}}\mathbf{A^{(i,j)}}\mathbf{x^{(j)}}} {\mathbf{x^{(i)^T}}\mathds{1}\mathds{1}^T\mathbf{x^{(j)}}}$
 
-In Figure~\ref{cvis}, we visualize some of the clusters which our algorithm generated after applied on the videos returned by the query \emph{How to Hard Boil an Egg}. As shown the figure, the resulting clusters are highly correlated and correspond to semantic objects\&concepts.
+After finding the dominant cluster by optimizing the cost function, we remove the selected cluster and re-aply the same algorithm to find the next dominant cluster. After finding $K=20$ clusters, we discard the remaining region proposals. In Figure~\ref{cvis}, we visualize some of the clusters which our algorithm generated after applied on the videos returned by the query \emph{How to Hard Boil an Egg}. As shown the figure, the resulting clusters are highly correlated and correspond to semantic objects\&concepts.
 \begin{figure}[ht]
   \begin{subfigure}[b]{0.23\textwidth}
 \includegraphics[width=\textwidth]{im0.png}
@@ -96,7 +96,16 @@ In Figure~\ref{cvis}, we visualize some of the clusters which our algorithm gene
 \begin{subfigure}[b]{0.23\textwidth}
 \includegraphics[width=\textwidth]{im10.png}
 \end{subfigure}
-\caption{Randomly selected images of randomly selected clusters learned for \emph{How to boil an egg?}}
+\caption{Randomly selected images of randomly selected clusters learned for \emph{How to hard boil an egg?}}
 \label{cvis}
 \end{figure}
-\subsection{Multi-Modal Representation via Learned Atoms}
+
+
+\subsubsection{Multi-Modal Representation of Frames}
+After learning the objects and salient words, we represent each frame via the occurence of salient words and objects. Formally, representation of the $t^{th}$ frame of the $i^{th}$ video is denoted as $\mathbf{y^{(i)}_t}$ and computed as $\mathbf{y^{(i)}_t}=[\mathbf{y^{(i),l}_t},\mathbf{y^{(i),v}_t}]$ such that $k^th$ entry of the $\mathbf{y^{(i),l}_t}$ is $1$ if the subtitle of the frame has the $k^{th}$ word and $0$ otherwise. $\mathbf{y^{(i),v}_t}$ is also a binary vector similarly defined over objects. We visualize the representation of a sample state in the Figure~\ref{visFrame}.
+
+\begin{figure}
+  \includegraphics[width=0.48\textwidth]{frame}
+  \caption{\textbf{Visualization of the representation of a sample frame.} 3 of the region proposals of the frame is included in the object clusters and 3 of the words in the subtitle of the frame is included in the salient word list.}
+  \label{visFrame}
+\end{figure}
