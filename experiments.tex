@@ -1,8 +1,18 @@
 \section{Experiments}
+In order to experiment the proposed method, we first collected a dataset guided by the human preferences captured via the statistics of a popular online recipe collection --WikiHow \cite{wikiHow}--. After collecting the dataset, we labelled small part of the dataset with frame-wise activity labels and used the resulting set as an evaluation corpus. Neither the set of labels, nor the temporal boundaries are exposed to the competing algorithm since the set-up is completely unsupervised. We experiment our algorithm against the set of unsupervised clustering baselines and state-of-the-art algorithms from video summarization literature which are applicable. In the rest of this section, we first explain the dataset we collected and labelled in detail. Then, we explain the method which we compare our method against. After explaining the metrics we use, we give both qualitative and quantative results. Due to the space limitation, we defer some of the results to the supplementary metarial.
+
 \subsection{Dataset}
-We collected blah blah videos from YouTube and did blah blah... All numbers etc. These are recipes, 5 of them are evaluation set and labelled temporally and labels are matched.
-\subsection{Baselines}
-We compare against BP-HMM-O with local feauters and HMM with Semantic Features, HMM with local features, HMM with CNN feautes...
+We guide our datacollection effort with human preferences based on WikiHow \cite{wikiHow} statistics. After obtaining the top100 queries people interested in WikiHow, we chose top25 ones which are directly related to the physical world and objects. We ignore the queries like \emph{How to get over a break up‏?‎} and \emph{How to write a resignation Letter?}. Resulting 25 queries are;
+
+
+\emph{\textbf{How to}}\footnotesize
+\emph{Bake Boneless Skinless Chicken, Cook Steak in a Frying Pan, Make Jello Shots, Tell if Gold Is Real, Bake Chicken Breast, Hard Boil an Egg, Make Pancakes, Tie a Bow Tie
+Broil Steak, Make a Grilled Cheese Sandwich, Make Scrambled Eggs, Tie a Tie, Clean a Coffee Maker, Make a Milkshake, Make Yogurt, Unclog a Bathtub Drain, Cook an Omelette,
+Make a Smoothie, Poach an Egg, Cook Lobster Tails, Make Beef Jerky, Remove Gum from Clothes, Cook Ribs in the Oven, Make Ice Cream, Tell if an Egg is Bad}
+\normalsize
+
+For each of the recipe, we queried YouTube and crawled the top 100 videos. We also downloaded the english subtitles if they exist. For evaluation set, we choose 5 videos out of 100 per query. Hence, we have total of 125 evaluation videos and 2375 unlaballed videos. We also realease the collect dataset at \url{http://anonymous.edu/MMRecipe}.
+
 \subsection{Qualitative Results}
 \begin{figure}
   \begin{subfigure}[b]{0.5\textwidth}
@@ -41,7 +51,24 @@ We compare against BP-HMM-O with local feauters and HMM with Semantic Features, 
 
 \end{figure}
 
-\subsection{Metrics}
-\subsection{Accuracy over Activity Detection}
-\subsection{Accuracy over Activity Learning}
-\subsection{Accuracy over Semantic Representation}
+\subsection{Quantitative Results}
+\subsubsection{Baselines}
+\paragraph{K-Means with low-level features:}
+\paragraph{K-Means with semantic features:}
+\paragraph{HMM with low-level features:}
+\paragraph{HMM with semantic features:}
+\paragraph{BP-HMM with low-level features:}
+\paragraph{Category specific summary\cite{potapov2014category}:}
+
+
+\subsubsection{Metrics}
+\paragraph{Maximum Intersection over Union (M-IOU):}
+\paragraph{Maximum Average Precision (M-AP):}
+\paragraph{Semantic Correctness:}
+
+\subsubsection{Results}
+\paragraph{Are the activities detected accurately?}
+\paragraph{Are the same activities in different videos linked to each other?}
+\paragraph{Semantics vs Syntax:}
+\paragraph{How important is each modality?}
+\paragraph{Is joint clustering helpful?}
