@@ -11,46 +11,56 @@ Broil Steak, Make a Grilled Cheese Sandwich, Make Scrambled Eggs, Tie a Tie, Cle
 Make a Smoothie, Poach an Egg, Cook Lobster Tails, Make Beef Jerky, Remove Gum from Clothes, Cook Ribs in the Oven, Make Ice Cream, Tell if an Egg is Bad}
 \normalsize
 
-For each of the recipe, we queried YouTube and crawled the top 100 videos. We also downloaded the english subtitles if they exist. For evaluation set, we choose 5 videos out of 100 per query. Hence, we have total of 125 evaluation videos and 2375 unlaballed videos. We also realease the collect dataset at \url{http://anonymous.edu/MMRecipe}.
+For each of the recipe, we queried YouTube and crawled the top 100 videos. We also downloaded the english subtitles if they exist. For evaluation set, we choose 5 videos out of 100 per query. Hence, we have total of 125 evaluation videos and 2375 unlaballed videos. We label the start and end frames of fine-grained activities (\ie steps of the recipe) as well as their labels. We also release the collect dataset at \url{http://anonymous.edu/MMRecipe}.
+
+
+\subsection{Implementation Details}
+\label{imp_det}
+\paragraph{Parameters:}
+
+
+\paragraph{Aligning Clusters:} While comparing the results of our algorithm with the ground truth, we have an alignment problem. Our algorithm generates arbitrary IDs for clusters and the cluster IDs are not necessarily matching the ground truth IDs since the method is unsupervised. For example, we can name the activity 1 of ground truth as activity 3 although their content is same. So, we apply an alignment procedure and choose the alignment of cluster IDs which maximizes the intersection over union with the ground truth. We apply this method to all competing algorithms for fairness.
 
 \subsection{Qualitative Results}
+In this section, we visualize some of  the results of our recipe understanding method. After running our algorithm independently on all 25 recipes according to the details we explain in Section~\ref{imp_det}, we obtain set of clusters which correspond to the activities. These clusters have set of objects and words; moreover, we also have video clips from multiple videos corresponding to activities. We visualize some of the recipes qualitatively in Figure~\ref{recipe:ommelette} and \ref{recipe:milkshake}. We show the temporal segmentation of 5 evaluation videos as well as the segmentation we compute. Moreover, we also color code the clusters to visualize how well the semantic activities are learned.
+
+To visualize the content of each cluster, we display informative frames from different videos. We also train a 3rd order Markov language model\cite{languageModel} by using the subtitles covered by the cluster. Moreover, we generate a caption for each cluster by sampling this model conditioned on the $\theta^l_k$. We explain the details of this process in suplementary metarial since it is orthogonal to the algorithm and only included for qualitative analysis of language information.
+
 \begin{figure}
-  \begin{subfigure}[b]{0.5\textwidth}
-  \includegraphics[width=\textwidth]{act_gt}
-  \caption{Ground Truth Activity Labels}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.5\textwidth}
-  \includegraphics[width=\textwidth]{act_our}
-  \caption{Activity Labels extracted by Our Method}
-  \end{subfigure}
 
 \begin{subfigure}[b]{0.5\textwidth}
+\includegraphics[width=\textwidth]{act_gt_2}
+\caption{Ground Truth Activity Labels}
+\end{subfigure}
+
 \begin{subfigure}[b]{0.5\textwidth}
+\includegraphics[width=\textwidth]{act_our_2}
+\caption{Activity Labels extracted by Our Method}
+\end{subfigure}
+
+\begin{subfigure}[b]{0.25\textwidth}
 \includegraphics[width=\textwidth]{cred}
 \color[HTML]{FF3800}{Crack the eggs one at a time into a bowl.}
 \end{subfigure}~
-\begin{subfigure}[b]{0.5\textwidth}
+\begin{subfigure}[b]{0.25\textwidth}
 \includegraphics[width=\textwidth]{cyan}
 \color[HTML]{00FFED}{Remove the omelette onto a plate.}
 \end{subfigure}
 
 
-\begin{subfigure}[b]{0.5\textwidth}
+\begin{subfigure}[b]{0.25\textwidth}
 \includegraphics[width=\textwidth]{corange}
 \color[HTML]{FF9900}{You can either use a fork or wire whisk to beat the eggs into a bowl.}
 \end{subfigure}~
-\begin{subfigure}[b]{0.5\textwidth}
+\begin{subfigure}[b]{0.25\textwidth}
 \includegraphics[width=\textwidth]{cgreen}
 \color[HTML]{9DFF00}{Eggs cook quickly, so make sure the pan gets very hot first; the butter melt completely.}
 \end{subfigure}
-
-
-
-\caption{Sample images and the automatically generated captions for some of the clusters.}
-\end{subfigure}
-
+\caption{Temporal segmentation of the videos by our method and ground truth segmentation. We also color code the learned activity labels and visualize sample frames and the automatically generated captions for some of them. \emph{Best viewed in color.}}
+\label{recipe:ommelette}
 \end{figure}
 
+As shown in the Figures~\ref{recipe:ommelette}\&\ref{recipe:milkshake}, resulting clusters are semantically meaningful and correspond to the real activities. Moreover, sthe language captions are also quite informative hence we can conclude that there is enough language context within the subtitles in order to detect activities. On the other hand, some of the activities in the ground truth are not detected by our algorithm and they got merged into other clusters because they generally occur only in a very few videos.
 \subsection{Quantitative Results}
 \subsubsection{Baselines}
 \paragraph{K-Means with low-level features:}
