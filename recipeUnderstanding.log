@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.14)  5 APR 2015 11:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.14)  5 APR 2015 15:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -734,8 +734,26 @@ Underfull \vbox (badness 1603) has occurred while \output is active []
 pdfTeX warning: pdflatex (file ./images/act_our_2.pdf): PDF inclusion: multiple
  pdfs with page group included in a single page
 > <./images/cred-eps-converted-to.pdf> <./images/cyan-eps-converted-to.pdf> <./
-images/corange-eps-converted-to.pdf> <./images/cgreen-eps-converted-to.pdf>])
-(./conclusion.tex) (./notation.tex) (./recipeUnderstanding.bbl
+images/corange-eps-converted-to.pdf> <./images/cgreen-eps-converted-to.pdf>]
+
+LaTeX Warning: Citation `rabiner' on page 8 undefined on input line 68.
+
+
+LaTeX Warning: Citation `acticityFeature' on page 8 undefined on input line 70.
+
+
+
+Underfull \hbox (badness 6526) in paragraph at lines 79--80
+ []\OT1/ptm/b/n/10 Maximum Av-er-age Pre-ci-sion ($\OML/cmm/m/it/10 AP[]$\OT1/p
+tm/b/n/10 ):[] \OT1/ptm/m/n/10 Since the
+ []
+
+
+Underfull \hbox (badness 1484) in paragraph at lines 79--80
+\OT1/ptm/m/n/10 Hence, we also eval-u-ate max-i-mum av-er-age pre-ci-sion.
+ []
+
+) (./conclusion.tex) (./notation.tex) (./recipeUnderstanding.bbl
 (./recipeUnderstanding.brf)
 \tf@brf=\write3
 \openout3 = `recipeUnderstanding.brf'.
@@ -745,14 +763,13 @@ Underfull \hbox (badness 4229) in paragraph at lines 33--33
 []\OT1/ptm/m/n/9 A. Farhadi, M. Hejrati, M. A. Sadeghi, P. Young,
  []
 
-
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
+[8]
 Underfull \hbox (badness 1783) in paragraph at lines 50--50
 []\OT1/ptm/m/n/9 F. Grabler, M. Agrawala, W. Li, M. Dontcheva, and
  []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 90.
-[8]
 Missing character: There is no â in font ptmri7t!
 Missing character: There is no € in font ptmri7t!
 Missing character: There is no ” in font ptmri7t!
@@ -762,15 +779,17 @@ Underfull \hbox (badness 2521) in paragraph at lines 172--172
 m-puter
  []
 
-)
+[9])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
- [9]
+ [10
+
+]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
  (./recipeUnderstanding.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
 Package rerunfilecheck Info: File `recipeUnderstanding.brf' has not changed.
-(rerunfilecheck)             Checksum: ED1F3155FB25777DC6DE32E4594C41C9;2217.
+(rerunfilecheck)             Checksum: BF5CAD6B1B7EA510DE515E4956468C22;2372.
 
 
 LaTeX Warning: There were undefined references.
@@ -778,13 +797,13 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 77.
  ) 
 Here is how much of TeX's memory you used:
- 8416 strings out of 494985
- 124745 string characters out of 6180356
- 221268 words of memory out of 5000000
- 11334 multiletter control sequences out of 15000+600000
+ 8418 strings out of 494985
+ 124773 string characters out of 6180356
+ 222268 words of memory out of 5000000
+ 11338 multiletter control sequences out of 15000+600000
  44000 words of font info for 97 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,13n,38p,1670b,466s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,13n,38p,1670b,470s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/share/texlive/texmf-dist/
@@ -814,10 +833,10 @@ ve/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist
 tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on recipeUnderstanding.pdf (9 pages, 16698306 bytes).
+Output written on recipeUnderstanding.pdf (10 pages, 16705185 bytes).
 PDF statistics:
- 580 PDF objects out of 1000 (max. 8388607)
- 459 compressed objects within 5 object streams
- 105 named destinations out of 1000 (max. 500000)
+ 582 PDF objects out of 1000 (max. 8388607)
+ 460 compressed objects within 5 object streams
+ 103 named destinations out of 1000 (max. 500000)
  96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

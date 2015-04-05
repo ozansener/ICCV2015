@@ -158,6 +158,9 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces Temporal segmentation of the videos by our method and ground truth segmentation. We also color code the learned activity labels and visualize sample frames and the automatically generated captions for some of them. \emph  {Best viewed in color.}\relax }}{7}{figure.caption.16}}
 \newlabel{recipe:ommelette}{{7}{7}{Temporal segmentation of the videos by our method and ground truth segmentation. We also color code the learned activity labels and visualize sample frames and the automatically generated captions for some of them. \emph {Best viewed in color.}\relax }{figure.caption.16}{}}
 \@writefile{brf}{\backcite{languageModel}{{7}{4.3}{subsection.4.3}}}
+\citation{rabiner}
+\citation{acticityFeature}
+\citation{potapov2014category}
 \citation{potapov2014category}
 \bibstyle{ieee}
 \bibdata{recipeUnderstanding}
@@ -166,6 +169,26 @@
 \bibcite{cookie}{3}
 \bibcite{cpmc}{4}
 \bibcite{farhadi2010every}{5}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}\hskip -1em.\nobreakspace  {}Quantitative Results}{8}{subsection.4.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}Baselines}{8}{subsubsection.4.4.1}}
+\@writefile{toc}{\contentsline {paragraph}{HMM with semantic features:}{8}{section*.17}}
+\@writefile{brf}{\backcite{rabiner}{{8}{4.4.1}{section*.17}}}
+\@writefile{toc}{\contentsline {paragraph}{BP-HMM with low-level features:}{8}{section*.18}}
+\@writefile{brf}{\backcite{acticityFeature}{{8}{4.4.1}{section*.18}}}
+\@writefile{brf}{\backcite{potapov2014category}{{8}{4.4.1}{section*.19}}}
+\@writefile{toc}{\contentsline {paragraph}{Category specific summary\cite  {potapov2014category}:}{8}{section*.19}}
+\@writefile{brf}{\backcite{potapov2014category}{{8}{4.4.1}{section*.19}}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}Metrics}{8}{subsubsection.4.4.2}}
+\@writefile{toc}{\contentsline {paragraph}{Maximum Intersection over Union ($IOU_{max}$):}{8}{section*.20}}
+\@writefile{toc}{\contentsline {paragraph}{Maximum Average Precision ($AP_{max}$):}{8}{section*.21}}
+\@writefile{toc}{\contentsline {paragraph}{Semantic Correctness:}{8}{section*.22}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.3}Results}{8}{subsubsection.4.4.3}}
+\@writefile{toc}{\contentsline {paragraph}{Are the activities detected accurately?}{8}{section*.23}}
+\@writefile{toc}{\contentsline {paragraph}{Are the same activities in different videos linked to each other?}{8}{section*.24}}
+\@writefile{toc}{\contentsline {paragraph}{Semantics vs Syntax:}{8}{section*.25}}
+\@writefile{toc}{\contentsline {paragraph}{How important is each modality?}{8}{section*.26}}
+\@writefile{toc}{\contentsline {paragraph}{Is joint clustering helpful?}{8}{section*.27}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}\hskip -1em.\nobreakspace  {}Discussions and Conclusions}{8}{section.5}}
 \bibcite{fidler2013sentence}{6}
 \bibcite{foxBPHMM}{7}
 \bibcite{photoshop}{8}
@@ -176,26 +199,6 @@
 \bibcite{deepAlignment}{13}
 \bibcite{khosla2013large}{14}
 \bibcite{kim2014joint}{15}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}\hskip -1em.\nobreakspace  {}Quantitative Results}{8}{subsection.4.4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}Baselines}{8}{subsubsection.4.4.1}}
-\@writefile{toc}{\contentsline {paragraph}{K-Means with low-level features:}{8}{section*.17}}
-\@writefile{toc}{\contentsline {paragraph}{K-Means with semantic features:}{8}{section*.18}}
-\@writefile{toc}{\contentsline {paragraph}{HMM with low-level features:}{8}{section*.19}}
-\@writefile{toc}{\contentsline {paragraph}{HMM with semantic features:}{8}{section*.20}}
-\@writefile{toc}{\contentsline {paragraph}{BP-HMM with low-level features:}{8}{section*.21}}
-\@writefile{brf}{\backcite{potapov2014category}{{8}{4.4.1}{section*.22}}}
-\@writefile{toc}{\contentsline {paragraph}{Category specific summary\cite  {potapov2014category}:}{8}{section*.22}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}Metrics}{8}{subsubsection.4.4.2}}
-\@writefile{toc}{\contentsline {paragraph}{Maximum Intersection over Union (M-IOU):}{8}{section*.23}}
-\@writefile{toc}{\contentsline {paragraph}{Maximum Average Precision (M-AP):}{8}{section*.24}}
-\@writefile{toc}{\contentsline {paragraph}{Semantic Correctness:}{8}{section*.25}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.3}Results}{8}{subsubsection.4.4.3}}
-\@writefile{toc}{\contentsline {paragraph}{Are the activities detected accurately?}{8}{section*.26}}
-\@writefile{toc}{\contentsline {paragraph}{Are the same activities in different videos linked to each other?}{8}{section*.27}}
-\@writefile{toc}{\contentsline {paragraph}{Semantics vs Syntax:}{8}{section*.28}}
-\@writefile{toc}{\contentsline {paragraph}{How important is each modality?}{8}{section*.29}}
-\@writefile{toc}{\contentsline {paragraph}{Is joint clustering helpful?}{8}{section*.30}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}\hskip -1em.\nobreakspace  {}Discussions and Conclusions}{8}{section.5}}
 \bibcite{storyGraph}{16}
 \bibcite{kiros2014multimodal}{17}
 \bibcite{kong2014you}{18}
@@ -212,10 +215,10 @@
 \bibcite{potapov2014category}{29}
 \bibcite{rui2000automatically}{30}
 \bibcite{connecting}{31}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Notation of the Paper\relax }}{9}{table.caption.28}}
 \bibcite{socher2014grounded}{32}
 \bibcite{logicRecipe}{33}
 \bibcite{vidAbstraction}{34}
 \bibcite{yu2013grounded}{35}
 \bibcite{zitnick2013bringing}{36}
 \bibcite{zitnick2013learning}{37}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Notation of the Paper\relax }}{9}{table.caption.31}}

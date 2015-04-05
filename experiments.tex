@@ -63,17 +63,20 @@ To visualize the content of each cluster, we display informative frames from dif
 As shown in the Figures~\ref{recipe:ommelette}\&\ref{recipe:milkshake}, resulting clusters are semantically meaningful and correspond to the real activities. Moreover, sthe language captions are also quite informative hence we can conclude that there is enough language context within the subtitles in order to detect activities. On the other hand, some of the activities in the ground truth are not detected by our algorithm and they got merged into other clusters because they generally occur only in a very few videos.
 \subsection{Quantitative Results}
 \subsubsection{Baselines}
-\paragraph{K-Means with low-level features:}
-\paragraph{K-Means with semantic features:}
-\paragraph{HMM with low-level features:}
+We compare our algorithm with the following baselines in the following sections.
 \paragraph{HMM with semantic features:}
+In order to experiment the importance of joint processing of the videos, we compare our algorithm with independent temporally coherent clustering of each video. We are using Hidden Markov Models with Baum-Welch algorithm\cite{rabiner} as a clustering method and choose the number of clusters with cross-validation.
 \paragraph{BP-HMM with low-level features:}
+In order to experiment the importance of defining objects, we also train our algorithm without using extracted object. We simply temporally oversegment the video and represent each segment by using state of the art low-level features from the activity detection literature \cite{acticityFeature}. We are using dense trajectory features for this purpose.
 \paragraph{Category specific summary\cite{potapov2014category}:}
-
+An algorithm porposed by Potapov et al.\cite{potapov2014category} can detect the temporal boundaries of the events/activities in the video from a time series data without any supervision. It enforces a local similarity of each resultant segment.
 
 \subsubsection{Metrics}
-\paragraph{Maximum Intersection over Union (M-IOU):}
-\paragraph{Maximum Average Precision (M-AP):}
+\paragraph{Maximum Intersection over Union ($IOU_{max}$):}
+In order to evaluate the accuracy of the temporal segmentation of the activities, we use intersection-over-union(IOU). For $N$ ground truth temporal activity segments ($\tau^\star_{i},\quad i\in N$), $N^\prime$ computed segments ($\tau^\prime_{i},\quad i\in N^\prime$) and matching function $m(\cdot)$ such that $i^{th}$ ground truth segment is matched to $m(i)^{th}$ computed segment, we define IOU as \mbox{$IOU=\frac{1}{N}\sum_{i=1}^N \frac{\tau^\star_i \cap \tau^\prime_{m(i)}}{\tau^\star_i \cup \tau^\prime_{m(i)}}$}. Since the matching function is unknown in thte supervised setting, we use the maximum intersection-over-union while doing exhaustive search over all matchings as;
+\mbox{$IOU_{max} = \max_{m(\cdot)} \frac{1}{N}\sum_{i=1}^N \frac{\tau^\star_i \cap \tau^\prime_{m(i)}}{\tau^\star_i \cup \tau^\prime_{m(i)}}$}
+\paragraph{Maximum Average Precision ($AP_{max}$):}
+Since the $IOU_{max}$ is computed per video, it does not capture the accuracy of the detected activities over multiple videos. Hence, we also evaluate maximum average precision. Given matching function $m(\cdot)$, the average precision is defined as $\frac{1}{N}\sum_{i =1}^N\frac{tp_i}{tp_i+fp_i}$ where $tp_i$ is the number of frames correctly labeled with activity $i$ and $fp$ is the number of frames falsely labelled as activity $i$. Note that this metric is defined over all the videos in the recipe and can only be high if the the same activities from multiple videos clustered into a single activity. Similarly, the maximum is over matching functions as \mbox{$AP_{max}=\max_{m(\cdot)} \frac{1}{N}\sum_{i =1}^N\frac{tp_i}{tp_i+fp_i}$}
 \paragraph{Semantic Correctness:}
 
 \subsubsection{Results}
