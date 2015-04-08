@@ -118,8 +118,10 @@ As shown in the Figures~\ref{recipe:ommelette}\&\ref{recipe:milkshake}, resultin
 \begin{figure*}[t]
   \includegraphics[width=\textwidth]{miou}
   \caption{$IOU_{max}$ stuff, not real numbers just a place holder}
+  \label{mIOU}
 \includegraphics[width=\textwidth]{miou}
 \caption{$AP_{max}$ stuff, not real numbers just a place holder}
+\label{mmAP}
 \end{figure*}
 
 \subsubsection{Baselines}
@@ -140,13 +142,17 @@ In order to evaluate the accuracy of the temporal segmentation of the activities
 \mbox{$IOU_{max} = \max_{m(\cdot)} \frac{1}{N}\sum_{i=1}^N \frac{\tau^\star_i \cap \tau^\prime_{m(i)}}{\tau^\star_i \cup \tau^\prime_{m(i)}}$}
 
 \noindent\textbf{Maximum Average Precision ($AP_{max}$):}
-Since the $IOU_{max}$ is computed per video, it does not capture the accuracy of the detected activities over multiple videos. Hence, we also evaluate maximum average precision. Given matching function $m(\cdot)$, the average precision is defined as $\frac{1}{N}\sum_{i =1}^N\frac{tp_i}{tp_i+fp_i}$ where $tp_i$ is the number of frames correctly labeled with activity $i$ and $fp$ is the number of frames falsely labelled as activity $i$. Note that this metric is defined over all the videos in the recipe and can only be high if the the same activities from multiple videos clustered into a single activity. Similarly, the maximum is over matching functions as \mbox{$AP_{max}=\max_{m(\cdot)} \frac{1}{N}\sum_{i =1}^N\frac{tp_i}{tp_i+fp_i}$}
+Since the $IOU_{max}$ is computed per video, it does not capture the accuracy of the detected activities over multiple videos. Hence, we also evaluate maximum average precision. Given matching function $m(\cdot)$, the average precision is defined as $\frac{1}{N}\sum_{i =1}^N\frac{tp_i}{tp_i+fp_i}$ where $tp_i$ is the number of frames correctly labeled with activity $i$ and $fp$ is the number of frames falsely labelled as activity $i$. Note that this metric is defined over all the videos in the recipe and can only be high if the the same activities from multiple videos clustered into a single activity. Similarly, the maximum is over matching functions as \mbox{$AP_{max}=\max_{m(\cdot)} \frac{1}{N}\sum_{i =1}^N\frac{tp_i}{tp_i+fp_i}$} 
 
-\noindent\paragraph{Semantic Correctness:}
+%\noindent\paragraph{Semantic Correctness:}
 
 \subsubsection{Results}
+We discuss the quantitative and qualitative results in the light of the following questions.
 \paragraph{Are the activities detected accurately?}
+In this section, we discuss the results presented in Figure~\ref{mIOU}. Maximum-IOU captures the accuracy of the temporal segmentation of the videos. Since the ground-truth segmentation is the semantic one, high $IOU_{max}$ requires both finding temporal activity boundaries and extracting correct activity definition. As shown in the Figure~\ref{mIOU}, proposed method consistently outperforms the competing algorithms. One interesting observation is the dramatic difference between the accuracy of HMM and our method. We believe this is the result of joint processing of multiple videos. HMM assumes all videos are generated from same set of activities with fixed transition probabilities and can not captures the inter-class variance. On the other hand, our algorithm is roboust to inter-class variations since we are also modelling inclusion of activities for each video. Moreover, the segmentation problem is ill-posed since the granularity of the activities are subjective. Imposing the activity inclusion model brings an additional constraint to the problem and makes the problem well-posed as finding the set of small number of activities which can construct the any video within the context of the recipe. In other words, the segmentation problem becomes learning the small dictionary of activities which is complete for the space of the recipe.
+
 \paragraph{Are the same activities in different videos linked to each other?}
-\paragraph{Semantics vs Syntax:}
+Although $IOU_{max}$ successfully measures the accuracy of the detected activities, it can not measure the matching activities over different videos. Therefore, we are using $AP_{max}$ for measuring the accuracy of matching different activities over multiple videos. $AP_{max}$ is defined for each activity class and requires the algorithms to produce activity labels consistent with the ground truth. 
+%\paragraph{Semantics vs Syntax:} Should we do the extra experiments, dow we have time?
 \paragraph{How important is each modality?}
-\paragraph{Is joint clustering helpful?}
+In order to experiment the importance of using both language and vision modalities, we compare our method with a self-baseline of using a single modality. As shown in Figure~\ref{mIOU} and \ref{mmAP}, our method significantly outperforms both of the baselines consistently in all recipes. Hence, we need to use both modalities. This result is expected because visual cues are good at separating different activities within the same video since the visual appearance is not changing much. However, language does not help much since there is too much background information other than the actual activity. On the other hand, language is good at relating activities from different videos since there is not much inter-class variation and it is easy to detect these variations caused by synonyms etc. thanks to the strong structure of the language modality.
