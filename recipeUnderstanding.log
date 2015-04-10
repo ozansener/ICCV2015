@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.14)  5 APR 2015 16:57
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.14)  9 APR 2015 18:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -402,88 +402,76 @@ LaTeX Info: Redefining \ref on input line 32.
 LaTeX Info: Redefining \pageref on input line 32.
 LaTeX Info: Redefining \nameref on input line 32.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
-LaTeX Font Info:    Try loading font information for U+msa on input line 55.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 59.
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 55.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 58.
- (./intro.tex
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 62.
 
-
-LaTeX Warning: Citation `wikiHow' on page 1 undefined on input line 2.
-
-
-LaTeX Warning: Citation `eHow' on page 1 undefined on input line 2.
-
-
-LaTeX Warning: Citation `recipeBook1' on page 1 undefined on input line 2.
-
-
-LaTeX Warning: Citation `recipeBook2' on page 1 undefined on input line 2.
-
-
-LaTeX Warning: Citation `act1' on page 1 undefined on input line 2.
-
-
-LaTeX Warning: Citation `act2' on page 1 undefined on input line 2.
-
-
-Underfull \hbox (badness 2293) in paragraph at lines 4--5
-[]\OT1/ptm/m/n/10 Understanding of the in-struc-tional videos, re-quires
+Underfull \hbox (badness 1859) in paragraph at lines 63--65
+[]\OT1/ptm/m/it/10 Human com-mu-ni-ca-tion typ-i-cally has an un-der-ly-ing
  []
 
-) (./related.tex
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 6.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
+(./intro.tex
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 10.
+
+
+LaTeX Warning: Reference `fig:teaser' on page 1 undefined on input line 10.
+
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 15.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
-)
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-Underfull \hbox (badness 6125) in paragraph at lines 11--12
+]) (./related.tex
+Underfull \hbox (badness 6125) in paragraph at lines 13--14
  []\OT1/ptm/b/n/10 Understanding Multi-Modal In-for-ma-tion:[] \OT1/ptm/m/n/10 
 Learn-ing
  []
 
-) (./overview.tex <./images/algor.pdf, id=59, 880.28876pt x 648.4225pt>
+) (./overview.tex <./images/algor.pdf, id=51, 880.28876pt x 648.4225pt>
 File: ./images/algor.pdf Graphic file (type pdf)
 
 <use ./images/algor.pdf>
 Package pdftex.def Info: ./images/algor.pdf used on input line 4.
 (pdftex.def)             Requested size: 496.85625pt x 365.98341pt.
-) (./method-features.tex
+ [2]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Warning: Reference `sec:exp' on page 2 undefined on input line 3.
+)
+(./method-features.tex [3 <./images/algor.pdf>]
+<./images/troll_1.pdf, id=149, 634.37pt x 357.335pt>
+File: ./images/troll_1.pdf Graphic file (type pdf)
 
-[2] <./images/troll_1.png, id=98, 634.37pt x 357.335pt>
-File: ./images/troll_1.png Graphic file (type png)
-
-<use ./images/troll_1.png>
-Package pdftex.def Info: ./images/troll_1.png used on input line 8.
-(pdftex.def)             Requested size: 79.49881pt x 44.7758pt.
- <./images/troll_2.png, id=99, 634.37pt x 357.335pt>
-File: ./images/troll_2.png Graphic file (type png)
-
-<use ./images/troll_2.png>
-Package pdftex.def Info: ./images/troll_2.png used on input line 11.
+<use ./images/troll_1.pdf>
+Package pdftex.def Info: ./images/troll_1.pdf used on input line 8.
 (pdftex.def)             Requested size: 79.49881pt x 44.7758pt.
 
-<./images/troll_3.png, id=100, 634.37pt x 357.335pt>
-File: ./images/troll_3.png Graphic file (type png)
+<./images/troll_2.pdf, id=150, 634.37pt x 357.335pt>
+File: ./images/troll_2.pdf Graphic file (type pdf)
 
-<use ./images/troll_3.png>
-Package pdftex.def Info: ./images/troll_3.png used on input line 14.
+<use ./images/troll_2.pdf>
+Package pdftex.def Info: ./images/troll_2.pdf used on input line 11.
+(pdftex.def)             Requested size: 79.49881pt x 44.7758pt.
+
+<./images/troll_3.pdf, id=151, 634.37pt x 357.335pt>
+File: ./images/troll_3.pdf Graphic file (type pdf)
+
+<use ./images/troll_3.pdf>
+Package pdftex.def Info: ./images/troll_3.pdf used on input line 14.
 (pdftex.def)             Requested size: 79.49881pt x 44.7758pt.
 
 Overfull \hbox (8.96059pt too wide) in paragraph at lines 7--16
@@ -493,15 +481,11 @@ Overfull \hbox (8.96059pt too wide) in paragraph at lines 7--16
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 16.
 
-Underfull \vbox (badness 1242) has occurred while \output is active []
-
- [3 <./images/algor.pdf> <./images/troll_1.png (PNG copy)> <./images/troll_2.pn
-g (PNG copy)> <./images/troll_3.png (PNG copy)>]
 Underfull \hbox (badness 1635) in paragraph at lines 39--40
  []\OT1/ptm/b/n/10 Joint Pro-posal Clus-ter-ing to De-tect Vi-sual Ob-jects[]
  []
 
-<./images/joint_clustering.pdf, id=158, 685.56125pt x 373.395pt>
+<./images/joint_clustering.pdf, id=154, 685.56125pt x 373.395pt>
 File: ./images/joint_clustering.pdf Graphic file (type pdf)
 
 <use ./images/joint_clustering.pdf>
@@ -516,41 +500,38 @@ Overfull \hbox (1.35292pt too wide) in paragraph at lines 42--44
 [][]
  []
 
-
-LaTeX Warning: Reference `outlier' on page 4 undefined on input line 56.
-
-[4 <./images/joint_clustering.pdf>]
-<./images/im0.png, id=263, 3000.20876pt x 963.6pt>
+[4 <./images/troll_1.pdf> <./images/troll_2.pdf> <./images/troll_3.pdf>]
+<./images/im0.png, id=200, 3000.20876pt x 963.6pt>
 File: ./images/im0.png Graphic file (type png)
  <use ./images/im0.png>
 Package pdftex.def Info: ./images/im0.png used on input line 76.
 (pdftex.def)             Requested size: 114.27481pt x 36.69951pt.
 
-<./images/im4.png, id=264, 3000.20876pt x 963.6pt>
+<./images/im4.png, id=201, 3000.20876pt x 963.6pt>
 File: ./images/im4.png Graphic file (type png)
  <use ./images/im4.png>
 Package pdftex.def Info: ./images/im4.png used on input line 81.
 (pdftex.def)             Requested size: 114.27481pt x 36.69951pt.
 
-<./images/im5.png, id=265, 3000.20876pt x 963.6pt>
+<./images/im5.png, id=202, 3000.20876pt x 963.6pt>
 File: ./images/im5.png Graphic file (type png)
  <use ./images/im5.png>
 Package pdftex.def Info: ./images/im5.png used on input line 85.
 (pdftex.def)             Requested size: 114.27481pt x 36.69951pt.
 
-<./images/im7.png, id=266, 3000.20876pt x 963.6pt>
+<./images/im7.png, id=203, 3000.20876pt x 963.6pt>
 File: ./images/im7.png Graphic file (type png)
  <use ./images/im7.png>
 Package pdftex.def Info: ./images/im7.png used on input line 89.
 (pdftex.def)             Requested size: 114.27481pt x 36.69951pt.
 
-<./images/im8.png, id=267, 3000.20876pt x 963.6pt>
+<./images/im8.png, id=204, 3000.20876pt x 963.6pt>
 File: ./images/im8.png Graphic file (type png)
  <use ./images/im8.png>
 Package pdftex.def Info: ./images/im8.png used on input line 93.
 (pdftex.def)             Requested size: 114.27481pt x 36.69951pt.
 
-<./images/im10.png, id=268, 3000.20876pt x 963.6pt>
+<./images/im10.png, id=205, 3000.20876pt x 963.6pt>
 File: ./images/im10.png Graphic file (type png)
  <use ./images/im10.png>
 Package pdftex.def Info: ./images/im10.png used on input line 97.
@@ -566,7 +547,7 @@ ed-to.pdf ./images/frame.eps>
 (epstopdf)             \includegraphics on input line 108.
 Package epstopdf Info: Output file is already uptodate.
 
-<./images/frame-eps-converted-to.pdf, id=270, 1595.9625pt x 1083.04625pt>
+<./images/frame-eps-converted-to.pdf, id=207, 1595.9625pt x 1083.04625pt>
 File: ./images/frame-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./images/frame-eps-converted-to.pdf>
@@ -578,13 +559,10 @@ Overfull \hbox (1.35292pt too wide) in paragraph at lines 108--109
 [][] 
  []
 
-) (./method-learning.tex
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./images/im0.png (PNG copy)> <./images/im4.png (PNG copy)> <./images/im5.p
-ng (PNG copy)> <./images/im7.png (PNG copy)> <./images/im8.png (PNG copy)> <./i
-mages/im10.png (PNG copy)> <./images/frame-eps-converted-to.pdf>]
-<./images/plate.pdf, id=291, 415.41025pt x 244.6937pt>
+) (./method-learning.tex [5 <./images/joint_clustering.pdf> <./images/im0.png (
+PNG copy)> <./images/im4.png (PNG copy)> <./images/im5.png (PNG copy)> <./image
+s/im7.png (PNG copy)> <./images/im8.png (PNG copy)> <./images/im10.png (PNG cop
+y)>] <./images/plate.pdf, id=300, 415.41025pt x 244.6937pt>
 File: ./images/plate.pdf Graphic file (type pdf)
 
 <use ./images/plate.pdf>
@@ -595,353 +573,246 @@ Overfull \hbox (11.29218pt too wide) in paragraph at lines 24--25
 [][] 
  []
 
-) (./experiments.tex
 
-LaTeX Warning: Citation `wikiHow' on page 6 undefined on input line 2.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[6 <./images/plate.pdf>]
-
-LaTeX Warning: Citation `wikiHow' on page 7 undefined on input line 5.
-
+) (./experiments.tex [6 <./images/frame-eps-converted-to.pdf>]
 Missing character: There is no ‚ in font ptmri7t!
 Missing character: There is no Ä in font ptmri7t!
 Missing character: There is no è in font ptmri7t!
 Missing character: There is no ‚ in font ptmri7t!
 Missing character: There is no Ä in font ptmri7t!
 Missing character: There is no é in font ptmri7t!
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 14.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 15.
+
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 
-LaTeX Warning: Reference `recipe:milkshake' on page 7 undefined on input line 2
-5.
+LaTeX Warning: Citation `languageModel' on page 7 undefined on input line 28.
 
-
-LaTeX Warning: Citation `languageModel' on page 7 undefined on input line 27.
-
-<./images/act_gt_2.pdf, id=343, 586.83241pt x 70.1019pt>
-File: ./images/act_gt_2.pdf Graphic file (type pdf)
-
-<use ./images/act_gt_2.pdf>
-Package pdftex.def Info: ./images/act_gt_2.pdf used on input line 32.
+<act_gt_2.pdf, id=322, 586.83241pt x 70.1019pt>
+File: act_gt_2.pdf Graphic file (type pdf)
+ <use act_gt_2.pdf>
+Package pdftex.def Info: act_gt_2.pdf used on input line 33.
 (pdftex.def)             Requested size: 233.52304pt x 27.89584pt.
 
-<./images/act_our_2.pdf, id=344, 583.9416pt x 70.8246pt>
-File: ./images/act_our_2.pdf Graphic file (type pdf)
-
-<use ./images/act_our_2.pdf>
-Package pdftex.def Info: ./images/act_our_2.pdf used on input line 36.
+<act_our_2.pdf, id=323, 583.9416pt x 70.8246pt>
+File: act_our_2.pdf Graphic file (type pdf)
+ <use act_our_2.pdf>
+Package pdftex.def Info: act_our_2.pdf used on input line 37.
 (pdftex.def)             Requested size: 233.52304pt x 28.32283pt.
-Package epstopdf Info: Source file: <./images/cred.eps>
-(epstopdf)                    date: 2015-03-31 12:54:35
-(epstopdf)                    size: 1765102 bytes
-(epstopdf)             Output file: <./images/cred-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-03-31 13:16:10
-(epstopdf)                    size: 175561 bytes
-(epstopdf)             Command: <repstopdf --outfile=./images/cred-eps-converte
-d-to.pdf ./images/cred.eps>
-(epstopdf)             \includegraphics on input line 40.
-Package epstopdf Info: Output file is already uptodate.
 
-<./images/cred-eps-converted-to.pdf, id=345, 1040.88875pt x 595.22375pt>
-File: ./images/cred-eps-converted-to.pdf Graphic file (type pdf)
+<./images/cred.pdf, id=324, 1040.88875pt x 595.22375pt>
+File: ./images/cred.pdf Graphic file (type pdf)
 
-<use ./images/cred-eps-converted-to.pdf>
-Package pdftex.def Info: ./images/cred-eps-converted-to.pdf used on input line 
-40.
+<use ./images/cred.pdf>
+Package pdftex.def Info: ./images/cred.pdf used on input line 41.
 (pdftex.def)             Requested size: 116.76152pt x 66.76451pt.
-Package epstopdf Info: Source file: <./images/cyan.eps>
-(epstopdf)                    date: 2015-03-31 13:00:40
-(epstopdf)                    size: 1594936 bytes
-(epstopdf)             Output file: <./images/cyan-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-03-31 13:11:54
-(epstopdf)                    size: 138656 bytes
-(epstopdf)             Command: <repstopdf --outfile=./images/cyan-eps-converte
-d-to.pdf ./images/cyan.eps>
-(epstopdf)             \includegraphics on input line 44.
-Package epstopdf Info: Output file is already uptodate.
 
-<./images/cyan-eps-converted-to.pdf, id=346, 1040.88875pt x 595.22375pt>
-File: ./images/cyan-eps-converted-to.pdf Graphic file (type pdf)
+<./images/cyan.pdf, id=325, 1040.88875pt x 595.22375pt>
+File: ./images/cyan.pdf Graphic file (type pdf)
 
-<use ./images/cyan-eps-converted-to.pdf>
-Package pdftex.def Info: ./images/cyan-eps-converted-to.pdf used on input line 
-44.
+<use ./images/cyan.pdf>
+Package pdftex.def Info: ./images/cyan.pdf used on input line 45.
 (pdftex.def)             Requested size: 116.76152pt x 66.76451pt.
-Package epstopdf Info: Source file: <./images/corange.eps>
-(epstopdf)                    date: 2015-03-31 13:10:12
-(epstopdf)                    size: 3207961 bytes
-(epstopdf)             Output file: <./images/corange-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-03-31 13:17:57
-(epstopdf)                    size: 258280 bytes
-(epstopdf)             Command: <repstopdf --outfile=./images/corange-eps-conve
-rted-to.pdf ./images/corange.eps>
-(epstopdf)             \includegraphics on input line 48.
-Package epstopdf Info: Output file is already uptodate.
 
-<./images/corange-eps-converted-to.pdf, id=347, 1040.88875pt x 596.2275pt>
-File: ./images/corange-eps-converted-to.pdf Graphic file (type pdf)
+<./images/corange.pdf, id=326, 1040.88875pt x 596.2275pt>
+File: ./images/corange.pdf Graphic file (type pdf)
 
-<use ./images/corange-eps-converted-to.pdf>
-Package pdftex.def Info: ./images/corange-eps-converted-to.pdf used on input li
-ne 48.
-(pdftex.def)             Requested size: 116.76152pt x 66.87709pt.
-Package epstopdf Info: Source file: <./images/cgreen.eps>
-(epstopdf)                    date: 2015-03-31 13:27:06
-(epstopdf)                    size: 3093908 bytes
-(epstopdf)             Output file: <./images/cgreen-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-03-31 13:27:54
-(epstopdf)                    size: 261394 bytes
-(epstopdf)             Command: <repstopdf --outfile=./images/cgreen-eps-conver
-ted-to.pdf ./images/cgreen.eps>
-(epstopdf)             \includegraphics on input line 52.
-Package epstopdf Info: Output file is already uptodate.
-
-<./images/cgreen-eps-converted-to.pdf, id=348, 1040.88875pt x 596.2275pt>
-File: ./images/cgreen-eps-converted-to.pdf Graphic file (type pdf)
-
-<use ./images/cgreen-eps-converted-to.pdf>
-Package pdftex.def Info: ./images/cgreen-eps-converted-to.pdf used on input lin
-e 52.
+<use ./images/corange.pdf>
+Package pdftex.def Info: ./images/corange.pdf used on input line 49.
 (pdftex.def)             Requested size: 116.76152pt x 66.87709pt.
 
-Underfull \hbox (badness 1038) in paragraph at lines 52--54
+<./images/cgreen.pdf, id=327, 1040.88875pt x 596.2275pt>
+File: ./images/cgreen.pdf Graphic file (type pdf)
+
+<use ./images/cgreen.pdf>
+Package pdftex.def Info: ./images/cgreen.pdf used on input line 53.
+(pdftex.def)             Requested size: 116.76152pt x 66.87709pt.
+
+Underfull \hbox (badness 1038) in paragraph at lines 53--55
 \OT1/ptm/m/n/10 first; the but-ter melt com-
  []
 
 
-Overfull \hbox (3.80005pt too wide) in paragraph at lines 31--55
+Overfull \hbox (3.80005pt too wide) in paragraph at lines 32--56
 []  []
  []
 
 
-Overfull \hbox (3.80005pt too wide) in paragraph at lines 31--55
+Overfull \hbox (3.80005pt too wide) in paragraph at lines 32--56
 []  [] 
  []
 
-File: ./images/act_gt_2.pdf Graphic file (type pdf)
-<use ./images/act_gt_2.pdf>
-Package pdftex.def Info: ./images/act_gt_2.pdf used on input line 58.
-(pdftex.def)             Requested size: 233.52304pt x 27.89584pt.
-File: ./images/act_our_2.pdf Graphic file (type pdf)
- <use ./images/act_our_2.pdf>
-Package pdftex.def Info: ./images/act_our_2.pdf used on input line 62.
-(pdftex.def)             Requested size: 233.52304pt x 28.32283pt.
-Package epstopdf Info: Source file: <./images/cred.eps>
-(epstopdf)                    date: 2015-03-31 12:54:35
-(epstopdf)                    size: 1765102 bytes
-(epstopdf)             Output file: <./images/cred-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-03-31 13:16:10
-(epstopdf)                    size: 175561 bytes
-(epstopdf)             Command: <repstopdf --outfile=./images/cred-eps-converte
-d-to.pdf ./images/cred.eps>
-(epstopdf)             \includegraphics on input line 66.
-Package epstopdf Info: Output file is already uptodate.
-File: ./images/cred-eps-converted-to.pdf Graphic file (type pdf)
+<gt_ms_2.pdf, id=328, 586.83241pt x 72.27pt>
+File: gt_ms_2.pdf Graphic file (type pdf)
+ <use gt_ms_2.pdf>
+Package pdftex.def Info: gt_ms_2.pdf used on input line 61.
+(pdftex.def)             Requested size: 233.52304pt x 28.7586pt.
+File: gt_ms_2.pdf Graphic file (type pdf)
 
-<use ./images/cred-eps-converted-to.pdf>
-Package pdftex.def Info: ./images/cred-eps-converted-to.pdf used on input line 
-66.
-(pdftex.def)             Requested size: 116.76152pt x 66.76451pt.
-Package epstopdf Info: Source file: <./images/cyan.eps>
-(epstopdf)                    date: 2015-03-31 13:00:40
-(epstopdf)                    size: 1594936 bytes
-(epstopdf)             Output file: <./images/cyan-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-03-31 13:11:54
-(epstopdf)                    size: 138656 bytes
-(epstopdf)             Command: <repstopdf --outfile=./images/cyan-eps-converte
-d-to.pdf ./images/cyan.eps>
-(epstopdf)             \includegraphics on input line 70.
-Package epstopdf Info: Output file is already uptodate.
-File: ./images/cyan-eps-converted-to.pdf Graphic file (type pdf)
+<use gt_ms_2.pdf>
+Package pdftex.def Info: gt_ms_2.pdf used on input line 65.
+(pdftex.def)             Requested size: 233.52304pt x 28.7586pt.
+ <./images/dorange.pdf, id=329, 1040.88875pt x 596.2275pt>
+File: ./images/dorange.pdf Graphic file (type pdf)
 
-<use ./images/cyan-eps-converted-to.pdf>
-Package pdftex.def Info: ./images/cyan-eps-converted-to.pdf used on input line 
-70.
-(pdftex.def)             Requested size: 116.76152pt x 66.76451pt.
-Package epstopdf Info: Source file: <./images/corange.eps>
-(epstopdf)                    date: 2015-03-31 13:10:12
-(epstopdf)                    size: 3207961 bytes
-(epstopdf)             Output file: <./images/corange-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-03-31 13:17:57
-(epstopdf)                    size: 258280 bytes
-(epstopdf)             Command: <repstopdf --outfile=./images/corange-eps-conve
-rted-to.pdf ./images/corange.eps>
-(epstopdf)             \includegraphics on input line 74.
-Package epstopdf Info: Output file is already uptodate.
-File: ./images/corange-eps-converted-to.pdf Graphic file (type pdf)
-
-<use ./images/corange-eps-converted-to.pdf>
-Package pdftex.def Info: ./images/corange-eps-converted-to.pdf used on input li
-ne 74.
-(pdftex.def)             Requested size: 116.76152pt x 66.87709pt.
-Package epstopdf Info: Source file: <./images/cgreen.eps>
-(epstopdf)                    date: 2015-03-31 13:27:06
-(epstopdf)                    size: 3093908 bytes
-(epstopdf)             Output file: <./images/cgreen-eps-converted-to.pdf>
-(epstopdf)                    date: 2015-03-31 13:27:54
-(epstopdf)                    size: 261394 bytes
-(epstopdf)             Command: <repstopdf --outfile=./images/cgreen-eps-conver
-ted-to.pdf ./images/cgreen.eps>
-(epstopdf)             \includegraphics on input line 78.
-Package epstopdf Info: Output file is already uptodate.
-File: ./images/cgreen-eps-converted-to.pdf Graphic file (type pdf)
-
-<use ./images/cgreen-eps-converted-to.pdf>
-Package pdftex.def Info: ./images/cgreen-eps-converted-to.pdf used on input lin
-e 78.
+<use ./images/dorange.pdf>
+Package pdftex.def Info: ./images/dorange.pdf used on input line 69.
 (pdftex.def)             Requested size: 116.76152pt x 66.87709pt.
 
-Underfull \hbox (badness 1038) in paragraph at lines 78--80
-\OT1/ptm/m/n/10 first; the but-ter melt com-
+<./images/dyellow.pdf, id=330, 1040.88875pt x 597.23125pt>
+File: ./images/dyellow.pdf Graphic file (type pdf)
+
+<use ./images/dyellow.pdf>
+Package pdftex.def Info: ./images/dyellow.pdf used on input line 73.
+(pdftex.def)             Requested size: 116.76152pt x 66.98969pt.
+
+<./images/dlgreen.pdf, id=331, 1040.88875pt x 597.23125pt>
+File: ./images/dlgreen.pdf Graphic file (type pdf)
+
+<use ./images/dlgreen.pdf>
+Package pdftex.def Info: ./images/dlgreen.pdf used on input line 77.
+(pdftex.def)             Requested size: 116.76152pt x 66.98969pt.
+
+<./images/dfinal.pdf, id=332, 1040.88875pt x 597.23125pt>
+File: ./images/dfinal.pdf Graphic file (type pdf)
+
+<use ./images/dfinal.pdf>
+Package pdftex.def Info: ./images/dfinal.pdf used on input line 81.
+(pdftex.def)             Requested size: 116.76152pt x 66.98969pt.
+
+Underfull \hbox (badness 1448) in paragraph at lines 81--83
+[]\OT1/ptm/m/n/10 Pour the milk-shake into a
  []
 
 
-Overfull \hbox (3.80005pt too wide) in paragraph at lines 57--81
+Overfull \hbox (3.80005pt too wide) in paragraph at lines 60--84
 []  []
  []
 
 
-Overfull \hbox (3.80005pt too wide) in paragraph at lines 57--81
+Overfull \hbox (3.80005pt too wide) in paragraph at lines 60--84
 []  [] 
  []
 
+[7 <./images/plate.pdf>] <miou.pdf, id=381, 1445.4pt x 144.54pt>
+File: miou.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `recipe:milkshake' on page 7 undefined on input line 1
-16.
-
-<./images/miou.pdf, id=350, 1445.4pt x 144.54pt>
-File: ./images/miou.pdf Graphic file (type pdf)
- <use ./images/miou.pdf>
-Package pdftex.def Info: ./images/miou.pdf used on input line 119.
+<use miou.pdf>
+Package pdftex.def Info: miou.pdf used on input line 122.
 (pdftex.def)             Requested size: 496.85625pt x 49.68549pt.
-File: ./images/miou.pdf Graphic file (type pdf)
-
-<use ./images/miou.pdf>
-Package pdftex.def Info: ./images/miou.pdf used on input line 121.
+File: miou.pdf Graphic file (type pdf)
+ <use miou.pdf>
+Package pdftex.def Info: miou.pdf used on input line 125.
 (pdftex.def)             Requested size: 496.85625pt x 49.68549pt.
 
 
-LaTeX Warning: Citation `rabiner' on page 7 undefined on input line 129.
-
-
-LaTeX Warning: Citation `acticityFeature' on page 7 undefined on input line 132
+LaTeX Warning: Citation `acticityFeature' on page 8 undefined on input line 137
 .
 
+[8 <./act_gt_2.pdf> <./act_our_2.pdf
 
-Underfull \vbox (badness 3209) has occurred while \output is active []
+pdfTeX warning: pdflatex (file ./act_our_2.pdf): PDF inclusion: multiple pdfs w
+ith page group included in a single page
+> <./images/cred.pdf> <./images/cyan.pdf> <./images/corange.pdf> <./images/cgre
+en.pdf> <./gt_ms_2.pdf
 
- [7]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 4108) in paragraph at lines 142--144
+pdfTeX warning: pdflatex (file ./gt_ms_2.pdf): PDF inclusion: multiple pdfs wit
+h page group included in a single page
+> <./images/dorange.pdf> <./images/dyellow.pdf> <./images/dlgreen.pdf> <./image
+s/dfinal.pdf>]
+Underfull \hbox (badness 4108) in paragraph at lines 147--149
 \OT1/ptm/b/n/10 Maximum Av-er-age Pre-ci-sion ($\OML/cmm/m/it/10 AP[]$\OT1/ptm/
 b/n/10 ): \OT1/ptm/m/n/10 Since the
  []
 
 
-Underfull \hbox (badness 1484) in paragraph at lines 142--144
+Underfull \hbox (badness 1484) in paragraph at lines 147--149
 \OT1/ptm/m/n/10 Hence, we also eval-u-ate max-i-mum av-er-age pre-ci-sion.
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [8 <./images/act_gt_2.pdf> <./images/act_our_2.pdf
-
-pdfTeX warning: pdflatex (file ./images/act_our_2.pdf): PDF inclusion: multiple
- pdfs with page group included in a single page
-> <./images/cred-eps-converted-to.pdf> <./images/cyan-eps-converted-to.pdf> <./
-images/corange-eps-converted-to.pdf> <./images/cgreen-eps-converted-to.pdf> <./
-images/miou.pdf
-
-pdfTeX warning: pdflatex (file ./images/miou.pdf): PDF inclusion: multiple pdfs
- with page group included in a single page
->]) (./conclusion.tex) (./notation.tex) (./recipeUnderstanding.bbl
-(./recipeUnderstanding.brf)
+) (./conclusion.tex) (./recipeUnderstanding.bbl (./recipeUnderstanding.brf)
 \tf@brf=\write3
 \openout3 = `recipeUnderstanding.brf'.
 
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 19.
 
-Underfull \hbox (badness 4229) in paragraph at lines 33--33
+[9 <./miou.pdf>]
+Underfull \hbox (badness 4229) in paragraph at lines 37--37
 []\OT1/ptm/m/n/9 A. Farhadi, M. Hejrati, M. A. Sadeghi, P. Young,
  []
 
 
-Underfull \hbox (badness 1783) in paragraph at lines 50--50
+Underfull \hbox (badness 1783) in paragraph at lines 54--54
 []\OT1/ptm/m/n/9 F. Grabler, M. Agrawala, W. Li, M. Dontcheva, and
  []
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 127.
-[9]
 Missing character: There is no ‚ in font ptmri7t!
 Missing character: There is no Ä in font ptmri7t!
 Missing character: There is no î in font ptmri7t!
 
-Underfull \hbox (badness 2521) in paragraph at lines 172--172
+Underfull \hbox (badness 2521) in paragraph at lines 170--170
 \OT1/ptm/m/n/9 Category-specific video sum-ma-riza-tion.  In \OT1/ptm/m/it/9 Co
 m-puter
  []
 
-)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 77.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 77.
+[10])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 81.
+ [11
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 81.
  (./recipeUnderstanding.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 77.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 77.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 81.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 81.
 Package rerunfilecheck Info: File `recipeUnderstanding.brf' has not changed.
-(rerunfilecheck)             Checksum: BE362B4834B3C32D91A41EC34341F984;2404.
+(rerunfilecheck)             Checksum: A7D844ADCA9C7C01AC0D9BE8B9951D7D;2264.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 77.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 81.
  ) 
 Here is how much of TeX's memory you used:
- 8419 strings out of 494985
- 124830 string characters out of 6180356
- 223268 words of memory out of 5000000
- 11342 multiletter control sequences out of 15000+600000
- 44000 words of font info for 97 fonts, out of 8000000 for 9000
+ 8427 strings out of 494985
+ 124787 string characters out of 6180356
+ 220463 words of memory out of 5000000
+ 11353 multiletter control sequences out of 15000+600000
+ 44110 words of font info for 97 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,13n,38p,1670b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,10n,38p,1671b,509s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cmextra/cmex8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmm
-i6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/doublestroke/dsrom8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
-tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on recipeUnderstanding.pdf (10 pages, 16768952 bytes).
+ublic/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/
+dsrom10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/doublestroke/dsro
+m8.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
+w/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on recipeUnderstanding.pdf (11 pages, 17407479 bytes).
 PDF statistics:
- 803 PDF objects out of 1000 (max. 8388607)
- 460 compressed objects within 5 object streams
- 99 named destinations out of 1000 (max. 500000)
- 101 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 824 PDF objects out of 1000 (max. 8388607)
+ 470 compressed objects within 5 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 126 words of extra memory for PDF output out of 10000 (max. 10000000)
 
