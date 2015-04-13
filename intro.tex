@@ -1,15 +1,40 @@
+% !TEX root = recipeUnderstanding.tex
+
 \section{Introduction}
-Human communication is highly structured. For instance, in the description an event or a procedure, a clear beginning, end, and certain steps between these two can be usually identified. Parsing such human-generated communication into set of semantic steps is the key to understand human activities. In this paper, we propose a method for decomposing a video into semantically meaningful steps in a fully unsupervised manner.
+Human communication takes many forms---including language and vision (sign language and kinesthetic).  In the description an event or a procedure, communication is structured and usually has 
+a clear beginning, end, and certain steps between these two can be usually identified.   
+Explaining ``how-to'' perform a certain task is a typical example where  language (e.g., Do-It-Yourself books) communication as well as visual (e.g., instructional YouTube videos) ways are prevalent.
+% both used.
+%  With large amount of document collections, there is a huge body of work dedicated to understanding language \cite{xx,nap}.  
 
-Language and vision are the two main modalities employed for this structured communication by humans. Explaining ``how-to'' perform a certain task is a typical example since both verbal (e.g., Do-It-Yourself books) and visual (e.g., instructional YouTube videos\footnote{YouTube has 281.000 videos for \emph{"How to tie a bow tie"}}) ways are both used.
+[xxxx]
 
-These two modalities often provide different, but correlating and complementary information. We utilize these two modalities (video frames and imperfect automatically generated subtitles) in a unified manner in our framework; we qualitatively and quantitatively argue that a joint inference is crucial for a successful semantic parsing, particularly when no supervision is employed. Note that subtitles, generated either via Automatic Speech Recognition (ASR) or by the user, are available for most YouTube videos.
+With large amount of video collections, we now have an opportunity to ground and parse them into semantically meaningful actions.
 
-We evaluate the proposed approach on instructional videos from YouTube (\eg, ``Making panckage'', ``How to tie a bow tie'') as they typically have clear steps and provide concrete grounds for demonstrating a semantically meaningful parsing. These videos are often long and manifest a high intra-class variability yet the underlying steps remains well-defined and structured, similar to almost all human communications. In principle, the proposed parsing method is applicable to any type of videos as long as they are composed of a set of steps.
+% Parsing such human-generated communication into set of semantic steps is the key to understand human activities. In this paper, we propose a method for decomposing a video into semantically meaningful steps in a fully unsupervised manner.
 
-The output of our method can be seen as the semantic ``storyline'' of a rather long and complex video (see Fig. \ref{fig:teaser}). This storyline provides what particular steps are taking place in the video (\emph{what}), what their semantic meaning is (\emph{how}), and when they are occurring (\emph{when}). This method is also capable of putting multiple videos performing the same overall task in common ground (i.e., the semantic steps’ space) and capture their high-level similarity, and therefore, provide a \emph{categorical} storyline as well.
+% Language and vision are the two main modalities employed for this structured communication by 
 
-In a nutshell, given a video, we capture the visual properties of unsupervised object proposals from each frame as well as the frequencies of keywords from the subtitle. We then employ a generative \emph{beta process mixture model}, which identifies the semantic steps shared among the videos of to the same category based on both text and visual cues. The model also identifies the text keywords which were deemed highly related to the semantic action of each steps. We later learn a language model to provide a textual description of the semantic steps based on the identified keywords.
+
+
+The two modalities of language and vision often provide different, but correlating and complementary information. Challenge lies in that the both video frames and language (from sub-titles or speech recognition\footnote{Note that subtitles, generated either via Automatic Speech Recognition (ASR) or by the user, are available for most YouTube videos.}) are only a noisy, approximate representation of the actions being performed.  
+% Furthermore they are 
+% We utilize these two modalities (video frames and imperfect automatically generated subtitles) in a unified manner in our framework; 
+We present a unified model, learned in a fully unsupervised manner, in order to use these two modalities.
+% We qualitatively and quantitatively argue that a joint inference is crucial for a successful semantic parsing, particularly when no supervision is employed. 
+
+
+%  the proposed approach on instructional videos from YouTube (\eg, ``Making panckage'', ``How to tie a bow tie'') as they typically have clear steps and provide concrete grounds for demonstrating a semantically meaningful parsing. These videos are often long and manifest a high intra-class variability yet the underlying steps remains well-defined and structured, similar to almost all human communications. In principle, the proposed parsing method is applicable to any type of videos as long as they are composed of a set of steps.
+
+[[challenges]] The key idea in our proposed model is to capture the underlying structure in activities, while accounting for the large intra-class variability (e.g., YouTube has 281.000 videos for \emph{"How to tie a bow tie"}).
+[[yyyy, some other challenge]]
+
+The output of our method can be seen as the semantic ``storyline'' of a rather long and complex video (see Fig. \ref{fig:teaser}). This storyline provides what particular steps are taking place in the video (\emph{what}), what their semantic meaning is (\emph{how}), and when they are occurring (\emph{when}). 
+
+[[remove this line]] This method is also capable of putting multiple videos performing the same overall task in common ground (i.e., the semantic steps’ space) and capture their high-level similarity, and therefore, provide a \emph{categorical} storyline as well.
+
+[[algorithm]]
+In our approach, given a video, we capture the visual properties of unsupervised object proposals from each frame as well as the frequencies of keywords from the subtitle. We then employ a generative \emph{beta process mixture model}, which identifies the semantic steps shared among the videos of to the same category based on both text and visual cues. The model also identifies the text keywords which were deemed highly related to the semantic action of each steps. We later learn a language model to provide a textual description of the semantic steps based on the identified keywords.
 
 This work is the first to provide a semantic storyline for a complex video collection. We are also the first to approach this problem in a multimodal (joint language and vision) manner. In addition, our method is capable of providing a caption describing the steps. Our approach to captioning is fundamentally different from the majority of existing video/image-to-text work in two aspects: 1) the captions are generated in an unsupervised manner, 2) our captions are \emph{descriptions} of the semantic steps, yet they are inferred from \emph{narration} of the text. This is different from the existing captioning work as their reference data is also descriptive of the visual information, while narration text often provides complementary information to the visuals and is not necessarily descriptive.
 
