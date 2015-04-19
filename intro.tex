@@ -7,18 +7,18 @@ Human communication takes many forms, including language and vision. Regardless 
 %In this paper, we propose a method for decomposing a video into semantically meaningful steps in a fully unsupervised manner.
 
 % both used.
-%  With large amount of document collections, there is a huge body of work dedicated to understanding language \cite{xx,nap}.  
+%  With large amount of document collections, there is a huge body of work dedicated to understanding language \cite{xx,nap}.
 %
 % Language and vision are the two main modalities employed for this structured communication by
 
 The two modalities of language and vision often provide different, but correlating and complementary information. Challenge lies in that the both video frames and language (from sub-titles or speech recognition\footnote{Note that subtitles, generated either via Automatic Speech Recognition (ASR) or by the user, are available for most YouTube videos.}) are only a noisy, partial observations of the actions being performed. Moreover, complementary nature of language and vision, also requires us to model them jointly. In this paper, we present a unified model, learned in a fully unsupervised manner, in order to jointly use these two modalities.
 
-% Furthermore they are 
-% We utilize these two modalities (video frames and imperfect automatically generated subtitles) in a unified manner in our framework; 
-% We qualitatively and quantitatively argue that a joint inference is crucial for a successful semantic parsing, particularly when no supervision is employed. 
+% Furthermore they are
+% We utilize these two modalities (video frames and imperfect automatically generated subtitles) in a unified manner in our framework;
+% We qualitatively and quantitatively argue that a joint inference is crucial for a successful semantic parsing, particularly when no supervision is employed.
 
 
-%  the proposed approach on instructional videos from YouTube (\eg, ``Making panckage'', ``How to tie a bow tie'') as they typically have clear steps and provide concrete grounds for demonstrating a semantically meaningful parsing. These videos are often long and manifest a high intra-class variability yet the underlying steps remains well-defined and structured, similar to almost all human communications. 
+%  the proposed approach on instructional videos from YouTube (\eg, ``Making panckage'', ``How to tie a bow tie'') as they typically have clear steps and provide concrete grounds for demonstrating a semantically meaningful parsing. These videos are often long and manifest a high intra-class variability yet the underlying steps remains well-defined and structured, similar to almost all human communications.
 
 The key idea in our proposed model is to capture the underlying structure in activities, while accounting for the large intra-class variability (e.g., YouTube has 281.000 videos for \emph{"How to tie a bow tie"}). We account the intra-class variation by jointly learning the entire video collection instead of a single one. We choose instructional videos (\eg, ``Making panckage'', ``How to tie a bow tie'') as they typically have clear steps and provide concrete grounds for demonstrating a semantically meaningful parsing. In principle, the proposed parsing method is applicable to any type of videos as long as they are composed of a set of steps.
 
