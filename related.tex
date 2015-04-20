@@ -15,6 +15,16 @@ Learning the relationship between the visual and language data is a crucial prob
 All aforementioned methods are using supervised labels either as strong image-word pairs or weak image-caption pairs. On the other hand, our method is fully unsupervised.
 
 \paragraph{Activity Detection/Recognition:}
+The literature on human action recognition is immense~\cite{aggarwal11_acm}. Here we only review the related literature closely to our work.
+
+{\bf Space-time segment representation:} Representing actions as 2D+t tubes is a common strategy for action recognition~\cite{blank05_iccv, brendel11_iccv, ma13_iccv}. Recently, there are works that use hierarchical spatiotemporal segments to capture the multi-scale characteristics of actions \cite{brendel11_iccv, ma13_iccv}. Our representation differs in that we can discover the action-related spatiotemporal segments by joint processing the video collection from a pool of proposals. 
+
+{\bf Temporal action localization:} While most action recognition approaches focus on classifying short video clips~\cite{laptev08_cvpr, efros03_iccv, ryoo09_iccv}, there are works that attempt to localize action instances from long video sequences~\cite{duchenne09_iccv, hoai11_cvpr, laptev07_iccv, bojanowski14_eccv, pirsiavash14_cvpr}. In~\cite{pirsiavash14_cvpr}, a grammar model is developed for localizing action and (latent) sub-action instances in the video. Our work is different from those in terms of being supervised, multipmodal, and applocable to video collections.
+
+
+{\bf Hierarchical structure:} Hierarchical structured models are popular in action recognition due to its capability in capturing the multi-level granularity of human actions~\cite{tang12_cvpr, lan14_eccv, lan14_vs, raptis13_cvpr}. However, most previous works focus on classifying single-action video clips while treating the primitives as latent variables. 
+
+{\bf Data-driven action primitives:} Previous works usually model action primitives (i.e. sub-categories of the original action classes) via basic latent variable model, typically modeling aspect or appearance, such as~\cite{niebles10_eccv, yao10b_cvpr, jain13_cvpr}. Other works discover action primitives via discriminative clustering and assume that the action hierarchical structure is hand-specified~\cite{lan14_eccv, lan14_vs}. W
 
 %This setup is similar to Hughes et al.\cite{npActivity}. However, we differ in the choices of the underlying distributions since we based our model on semantic multi-modal information.
 

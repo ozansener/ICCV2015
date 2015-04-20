@@ -1,7 +1,7 @@
 % !TEX root = recipeUnderstanding.tex
 
 \section{Introduction}
-Human communication takes many forms, including language and vision. Regardless of the form, it generally has a clear beginning, end, and a set of steps in between. A typical and highly structured example is the description of an event or a procedure since the steps can be clearly identified. Specifically, explaining ``how-to'' perform a certain task can be communicated with language (e.g., Do-It-Yourself books) information as well as the visual (e.g., instructional YouTube videos) information. Moreover, parsing such human-generated communication into set of semantic steps is the key to understand human activities. With large amount of instructive video collections, we present a method to ground and parse them into semantically meaningful actions.
+Human communication takes many forms, including language and vision. For instance, explaining ``how-to'' perform a certain task can be communicated with language (e.g., Do-It-Yourself books) information as well as visual (e.g., instructional YouTube videos) information. Regardless of the form, such human-generated communication is generally structured and often has a clear beginning, end, and a set of steps in between. A typical and highly structured example is the description of an event or a procedure as the comprising steps can be clearly identified. Parsing such communication into its set of semantic steps is the key to understand human activities. With a large amount of instructional video collections, we present a method to ground and parse them into semantically meaningful actions.
 
 
 %In this paper, we propose a method for decomposing a video into semantically meaningful steps in a fully unsupervised manner.
@@ -11,7 +11,7 @@ Human communication takes many forms, including language and vision. Regardless 
 %
 % Language and vision are the two main modalities employed for this structured communication by
 
-The two modalities of language and vision often provide different, but correlating and complementary information. Challenge lies in that the both video frames and language (from sub-titles or speech recognition\footnote{Note that subtitles, generated either via Automatic Speech Recognition (ASR) or by the user, are available for most YouTube videos.}) are only a noisy, partial observations of the actions being performed. Moreover, complementary nature of language and vision, also requires us to model them jointly. In this paper, we present a unified model, learned in a fully unsupervised manner, in order to jointly use these two modalities.
+The two modalities of language and vision often provide different, but correlating and complementary information. Challenge lies in that both video frames and language (from sub-titles or speech recognition\footnote{Note that subtitles, generated either via Automatic Speech Recognition (ASR) or by the user, are available for most YouTube videos.}) are only a noisy, partial observations of the actions being performed. Moreover, complementary nature of language and vision, also requires us to model them jointly. In this paper, we present a unified model, learned in a fully unsupervised manner, in order to jointly use these two modalities.
 
 % Furthermore they are
 % We utilize these two modalities (video frames and imperfect automatically generated subtitles) in a unified manner in our framework;

@@ -17,8 +17,6 @@ For each of the recipe, we queried YouTube and crawled the top 100 videos. We al
 
 \subsection{Implementation Details}
 \label{imp_det}
-\paragraph{Parameters:}
-
 
 \paragraph{Aligning Clusters:} While comparing the results of our algorithm with the ground truth, we have an alignment problem. Our algorithm generates arbitrary IDs for clusters and the cluster IDs are not necessarily matching the ground truth IDs since the method is unsupervised. For example, we can name the activity 1 of ground truth as activity 3 although their content is same. So, we apply an alignment procedure and choose the alignment of cluster IDs which maximizes the intersection over union with the ground truth. We apply this method to all competing algorithms for fairness.
 
@@ -145,17 +143,47 @@ In order to evaluate the accuracy of the temporal segmentation of the activities
 \mbox{$IOU_{max} = \max_{m(\cdot)} \frac{1}{N}\sum_{i=1}^N \frac{\tau^\star_i \cap \tau^\prime_{m(i)}}{\tau^\star_i \cup \tau^\prime_{m(i)}}$}
 
 \noindent\textbf{Maximum Average Precision ($AP_{max}$):}
-Since the $IOU_{max}$ is computed per video, it does not capture the accuracy of the detected activities over multiple videos. Hence, we also evaluate maximum average precision. Given matching function $m(\cdot)$, the average precision is defined as $\frac{1}{N}\sum_{i =1}^N\frac{tp_i}{tp_i+fp_i}$ where $tp_i$ is the number of frames correctly labeled with activity $i$ and $fp$ is the number of frames falsely labelled as activity $i$. Note that this metric is defined over all the videos in the recipe and can only be high if the the same activities from multiple videos clustered into a single activity. Similarly, the maximum is over matching functions as \mbox{$AP_{max}=\max_{m(\cdot)} \frac{1}{N}\sum_{i =1}^N\frac{tp_i}{tp_i+fp_i}$} 
-
-%\noindent\paragraph{Semantic Correctness:}
+Since the $IOU_{max}$ is computed per video, it does not capture the accuracy of the detected activities over multiple videos. Hence, we also evaluate maximum average precision. Given matching function $m(\cdot)$, we compute the mean of average precision over recipes. Note that this metric is defined over all the videos in the recipe and can only be high if the the same activities from multiple videos clustered into a single activity. 
 
 \subsubsection{Results}
 We discuss the quantitative and qualitative results in the light of the following questions.
 \paragraph{Are the activities detected accurately?}
 In this section, we discuss the results presented in Figure~\ref{mIOU}. Maximum-IOU captures the accuracy of the temporal segmentation of the videos. Since the ground-truth segmentation is the semantic one, high $IOU_{max}$ requires both finding temporal activity boundaries and extracting correct activity definition. As shown in the Figure~\ref{mIOU}, proposed method consistently outperforms the competing algorithms. One interesting observation is the dramatic difference between the accuracy of HMM and our method. We believe this is the result of joint processing of multiple videos. HMM assumes all videos are generated from same set of activities with fixed transition probabilities and can not captures the inter-class variance. On the other hand, our algorithm is robust to inter-class variations since we are also modelling inclusion of activities for each video. Moreover, the segmentation problem is ill-posed since the granularity of the activities are subjective. Imposing the activity inclusion model brings an additional constraint to the problem and makes the problem well-posed as finding the set of small number of activities which can construct the any video within the context of the recipe. In other words, the segmentation problem becomes learning the small dictionary of activities which is complete for the space of the recipe.
 
+Here, we also include the average over the recipes
+\begin{table}
+\caption{Average of $IOU_{max}$ and $mAP_{max}$ over recipes.}
+{\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{c|cc|cc|cccc}
+ & KTS     & KTS     & HMM     & HMM    & Ours    & Ours     & Ours      & Our  \\
+ &  w/ LLF &  w/ Sem &  w/ LLF &  w/Sem &  w/ LLF &  w/o Vis &  w/o Lang &  full \\
+ \hline \\
+$IOU_{max}$  & & 26.91&     & 33.16 &      &36.58   &  57.63 \\
+$mAP_{max}$  &  n/a & n/a &       & 18.9 & &30.50 & & 43.20 \\
+\end{tabular}}}
+\normalsize
+\end{table}
+
 \paragraph{Are the same activities in different videos linked to each other?}
-Although $IOU_{max}$ successfully measures the accuracy of the detected activities, it can not measure the matching activities over different videos. Therefore, we are using $AP_{max}$ for measuring the accuracy of matching different activities over multiple videos. $AP_{max}$ is defined for each activity class and requires the algorithms to produce activity labels consistent with the ground truth. 
+Although $IOU_{max}$ successfully measures the accuracy of the detected activities, it can not measure the matching activities over different videos. Therefore, we are using $mAP_{max}$ for measuring the accuracy of matching different activities over multiple videos. $mAP_{max}$ is defined for each activity class and requires the algorithms to produce activity labels consistent with the ground truth. 
+
+In order to further evaluate the role of semantics, we performed a subjective analysis in order to remove the maximization. Since, we have an evaluation set -ground truth activity labels-, we concatenated them into a label collection. Then, we collected the outputs of our algorithm, HMM and the variations of our algorithm to non-expert users and ask them to choose a label. In other words, we replaced the maximization with subjective labelling. We designed our experiments in a way that each clip received annotations from 5 different users. Moreover, we randomized the ordering of videos and algorithms during the subjective evaluation. We compute the mean average precision and call it $mAP_{sem}$. We also only used 5 random recipes out of 25.
+
+\begin{table}
+\caption{Semantic mean-average-precision $mAP_{sem}$ computed based on subjective evaluation.}
+{\small
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{c|cc|cccc}
+      & HMM     & HMM    & Ours    & Ours     & Ours      & Our  \\
+  &   w/ LLF &  w/Sem &  w/ LLF &  w/o Vis &  w/o Lang &  full \\
+ \hline \\
+$mAP_{sem}$  & & 11.79& &    &  & 29.83    &         &  39.01 \\
+$end{tabular}}}
+\normalsize
+\end{table}
+
+
 %\paragraph{Semantics vs Syntax:} Should we do the extra experiments, do we have time?
 \paragraph{How important is each modality?}
 In order to experiment the importance of using both language and vision modalities, we compare our method with a self-baseline of using a single modality. As shown in Figure~\ref{mIOU} and \ref{mmAP}, our method significantly outperforms both of the baselines consistently in all recipes. Hence, we need to use both modalities. This result is expected because visual cues are good at separating different activities within the same video since the visual appearance is not changing much. However, language does not help much since there is too much background information other than the actual activity. On the other hand, language is good at relating activities from different videos since there is not much inter-class variation and it is easy to detect these variations caused by synonyms etc. thanks to the strong structure of the language modality.
