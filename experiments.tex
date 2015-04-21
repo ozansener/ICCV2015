@@ -26,7 +26,7 @@ In this section, we visualize some of  the results of our recipe understanding m
 To visualize the content of each cluster, we display informative frames from different videos. We also train a 3rd order Markov language model\cite{languageModel} by using the subtitles covered by the cluster. Moreover, we generate a caption for each cluster by sampling this model conditioned on the $\theta^l_k$. We explain the details of this process in supplementary material since it is orthogonal to the algorithm and only included for qualitative analysis of language information.
 
 \begin{figure*}
-  \begin{subfigure}[b]{0.47\textwidth}
+  \begin{subfigure}[b]{0.5\textwidth}
     \begin{subfigure}[b]{\textwidth}
       \includegraphics[width=\textwidth]{act_gt_2}
       \caption*{Ground Truth Activity Labels}
@@ -118,10 +118,10 @@ As shown in the Figures~\ref{recipe:ommelette}\&\ref{recipe:milkshake}, resultin
 \subsection{Quantitative Results}
 \begin{figure*}[t]
   \includegraphics[width=\textwidth]{miou}
-  \caption{$IOU_{max}$ stuff, not real numbers just a place holder}
+  \caption{$IOU_{max}$ values for all recipes, for all competing algorithms.}
   \label{mIOU}
-\includegraphics[width=\textwidth]{miou}
-\caption{$AP_{max}$ stuff, not real numbers just a place holder}
+\includegraphics[width=\textwidth]{mmap}
+\caption{$AP_{max}$ values for all recipes, for all competing algorithms.}
 \label{mmAP}
 \end{figure*}
 
@@ -134,8 +134,8 @@ In order to experiment the importance of joint processing of the videos, we comp
 \noindent\textbf{BP-HMM with low-level features:}
 In order to experiment the importance of defining objects, we also train our algorithm without using extracted object. We simply temporally over-segment the video and represent each segment by using state of the art low-level features from the activity detection literature \cite{acticityFeature}. We are using dense trajectory features for this purpose.
 
-\noindent\textbf{Category specific summary\cite{potapov2014category}:}
-An algorithm proposed by Potapov et al.\cite{potapov2014category} can detect the temporal boundaries of the events/activities in the video from a time series data without any supervision. It enforces a local similarity of each resultant segment.
+\noindent\textbf{Kernel Temporal Segmentation\cite{potapov2014category}:}
+Kernel Temporal Segmentation (KTS) proposed by Potapov et al.\cite{potapov2014category} can detect the temporal boundaries of the events/activities in the video from a time series data without any supervision. It enforces a local similarity of each resultant segment.
 
 \subsubsection{Metrics}
 \noindent\textbf{Maximum Intersection over Union ($IOU_{max}$):}
@@ -150,15 +150,16 @@ We discuss the quantitative and qualitative results in the light of the followin
 \paragraph{Are the activities detected accurately?}
 In this section, we discuss the results presented in Figure~\ref{mIOU}. Maximum-IOU captures the accuracy of the temporal segmentation of the videos. Since the ground-truth segmentation is the semantic one, high $IOU_{max}$ requires both finding temporal activity boundaries and extracting correct activity definition. As shown in the Figure~\ref{mIOU}, proposed method consistently outperforms the competing algorithms. One interesting observation is the dramatic difference between the accuracy of HMM and our method. We believe this is the result of joint processing of multiple videos. HMM assumes all videos are generated from same set of activities with fixed transition probabilities and can not captures the inter-class variance. On the other hand, our algorithm is robust to inter-class variations since we are also modelling inclusion of activities for each video. Moreover, the segmentation problem is ill-posed since the granularity of the activities are subjective. Imposing the activity inclusion model brings an additional constraint to the problem and makes the problem well-posed as finding the set of small number of activities which can construct the any video within the context of the recipe. In other words, the segmentation problem becomes learning the small dictionary of activities which is complete for the space of the recipe.
 
+
 Here, we also include the average over the recipes
 \begin{table}
 \caption{Average of $IOU_{max}$ and $mAP_{max}$ over recipes.}
 {\small
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{c|cc|cc|cccc}
- & KTS     & KTS     & HMM     & HMM    & Ours    & Ours     & Ours      & Our  \\
+ & KTS \cite{potapov2014category}    & KTS\cite{potapov2014category}     & HMM     & HMM    & Ours    & Ours     & Ours      & Our  \\
  &  w/ LLF &  w/ Sem &  w/ LLF &  w/Sem &  w/ LLF &  w/o Vis &  w/o Lang &  full \\
- \hline \\
+ \hline 
 $IOU_{max}$  & & 26.91&     & 33.16 &      &36.58   &  57.63 \\
 $mAP_{max}$  &  n/a & n/a &       & 18.9 & &30.50 & & 43.20 \\
 \end{tabular}}}
@@ -166,7 +167,7 @@ $mAP_{max}$  &  n/a & n/a &       & 18.9 & &30.50 & & 43.20 \\
 \end{table}
 
 \paragraph{Are the same activities in different videos linked to each other?}
-Although $IOU_{max}$ successfully measures the accuracy of the detected activities, it can not measure the matching activities over different videos. Therefore, we are using $mAP_{max}$ for measuring the accuracy of matching different activities over multiple videos. $mAP_{max}$ is defined for each activity class and requires the algorithms to produce activity labels consistent with the ground truth. 
+Although $IOU_{max}$ successfully measures the accuracy of the detected activities, it can not measure the matching activities over different videos. Therefore, we are using $mAP_{max}$ for measuring the accuracy of matching different activities over multiple videos. $mAP_{max}$ is defined for each activity class and requires the algorithms to produce activity labels consistent with the ground truth.
 
 In order to further evaluate the role of semantics, we performed a subjective analysis in order to remove the maximization. Since, we have an evaluation set -ground truth activity labels-, we concatenated them into a label collection. Then, we collected the outputs of our algorithm, HMM and the variations of our algorithm to non-expert users and ask them to choose a label. In other words, we replaced the maximization with subjective labelling. We designed our experiments in a way that each clip received annotations from 5 different users. Moreover, we randomized the ordering of videos and algorithms during the subjective evaluation. We compute the mean average precision and call it $mAP_{sem}$. We also only used 5 random recipes out of 25.
 
@@ -175,11 +176,10 @@ In order to further evaluate the role of semantics, we performed a subjective an
 {\small
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{c|cc|cccc}
-      & HMM     & HMM    & Ours    & Ours     & Ours      & Our  \\
-  &   w/ LLF &  w/Sem &  w/ LLF &  w/o Vis &  w/o Lang &  full \\
- \hline \\
-$mAP_{sem}$  & & 11.79& &    &  & 29.83    &         &  39.01 \\
-$end{tabular}}}
+            & HMM     & HMM    & Ours    & Ours     & Ours      & Our  \\
+            & w/ LLF  &  w/Sem &  w/ LLF &  w/o Vis &  w/o Lang &  full \\ \hline
+$mAP_{sem}$ &         & 11.79  &         &   29.83  &           &  39.01 \\
+\end{tabular}}}
 \normalsize
 \end{table}
 

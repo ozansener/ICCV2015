@@ -8,7 +8,8 @@
 \usepackage{amssymb}
 \usepackage{dsfont}
 \usepackage{xcolor}
-
+ \usepackage{setspace}
+ 
  \usepackage{caption}
  \usepackage{subcaption}
 \graphicspath{ {./images/} }
@@ -75,9 +76,13 @@ Human communication typically has an underlying structure. This is reflected in 
 \input{conclusion}
 %\input{notation}
 
-{\small
+\clearpage
+
+{\footnotesize
+\begin{spacing}{0.88}
 \bibliographystyle{ieee}
 \bibliography{recipeUnderstanding}
+\end{spacing}
 }
 
 \end{document}
