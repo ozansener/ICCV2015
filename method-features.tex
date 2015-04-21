@@ -1,9 +1,7 @@
 \subsection{Video Collection and Outlier Detection}
 %This might go to end
 \label{filter}
-Our system starts with querying the YouTube for the recipe which we want to learn its actions. Although we explain how do we choose such queries in Section~\ref{dataset:sec} in detail, any query starting with \emph{How to} can be considered as an example. We collect the top 100 videos with their (automatically generated) captions. YouTube generates these captions by using an Automatic Speech Recognition (ASR) algorithm unless the user manually uploads them. After obtaining the corpus, we link similar videos to each other by creating a kNN video graph. As a distance metric, we use the $\chi^2$-distance of bag-of-words extracted from the video descriptions. After the creating the graph, we compute the dominant video cluster by using the Single Cluster Graph Partitioning (SCGP)\cite{scgp} and discards the remaining videos as outlier.
-
-As an example, in Figure~\ref{outliers} we visualize some of the discarded videos for the query \emph{How to make a milkshake?}. As shown in the figure, they are outliers like making a toy milkshake, making a milkshake charm and a funny video about How to NOT make milkshakes.
+Our system starts with querying the YouTube for the recipe which we want to learn its actions. Although we explain how do we choose such queries in Section~\ref{dataset:sec} in detail, any query starting with \emph{How to} can be considered as an example. We collect the top 100 videos with their (automatically generated) captions. YouTube generates these captions by using an Automatic Speech Recognition (ASR) algorithm unless the user manually uploads them. After obtaining the corpus, we link similar videos to each other by creating a kNN video graph. As a distance metric, we use the $\chi^2$-distance of bag-of-words extracted from the video descriptions. After the creating the graph, we compute the dominant video cluster by using the Single Cluster Graph Partitioning (SCGP)\cite{scgp} and discards the remaining videos as outlier. As an example, in Figure~\ref{outliers} we visualize some of the discarded videos for various queries. As shown in the figure, they are outliers. However, our algorithm also have false positives \ie some related videos are filtered. This does not couse a problem since we still have enough number of videos at the end thanks to the large-scale modelling. 
 \begin{figure}[ht]
   \begin{subfigure}[b]{0.16\textwidth}
     \includegraphics[width=\textwidth]{troll_1}
@@ -13,8 +11,30 @@ As an example, in Figure~\ref{outliers} we visualize some of the discarded video
   \end{subfigure}~
   \begin{subfigure}[b]{0.16\textwidth}
     \includegraphics[width=\textwidth]{troll_3}
+    \end{subfigure}
+
+    \begin{subfigure}[b]{0.16\textwidth}
+      \includegraphics[width=\textwidth]{troll_4}
+    \end{subfigure}~
+    \begin{subfigure}[b]{0.16\textwidth}
+      \includegraphics[width=\textwidth]{troll_5}
+    \end{subfigure}~
+    \begin{subfigure}[b]{0.16\textwidth}
+      \includegraphics[width=\textwidth]{troll_6}
   \end{subfigure}
-\caption{\textbf{Sample videos which our algorithm discards as an outlier for the query \emph{How to make a milkshake?}.} These videos are about a toy milkshake, a milkshake charm and a funny video about How to NOT make milkshakes.}
+
+  \begin{subfigure}[b]{0.16\textwidth}
+    \includegraphics[width=\textwidth]{troll_7}
+  \end{subfigure}~
+  \begin{subfigure}[b]{0.16\textwidth}
+    \includegraphics[width=\textwidth]{troll_8}
+  \end{subfigure}~
+  \begin{subfigure}[b]{0.16\textwidth}
+    \includegraphics[width=\textwidth]{troll_9}
+\end{subfigure}
+
+\caption{\textbf{Sample videos which our algorithm discards as an outlier for various queries.}
+First row include a video about a toy milkshake, a milkshake charm and a funny video about How to NOT make smoothie. Second row is a frozen yogurt recipe errornously labeled as \emph{how to make a yougurt?}, an informative video about the danger of a fire while cooking and a cartoon about pancake. The final row is a neck-tie video errornously labeled as bow-tie, a song including the phrase \emph{How to tell if a gold is real?} and a lamb cooking video mislabeled as \emph{How to bake chicken?}}
 \label{outliers}
 \end{figure}
 
@@ -52,9 +72,9 @@ Given set of region proposals generated from multiple videos, combining them int
 \begin{figure}[ht]
   \includegraphics[width=0.48\textwidth]{joint_clustering}
   \scalebox{0.85}{
-  
+
   $\arg\max  \frac{x_1^TA^{(1)}x^1}{x_1^Tx^1}+\frac{x_2^TA^{(2)}x^2}{x_2^Tx^2}+\frac{x_3^TA^{(3)}x^3}{x_3^Tx^3}+\frac{x_1^TA^{(1,2)}x^2}{x_1^T\mathds{1}\mathds{1}^Tx^2}+\frac{x_2^TA^{(2,3)}x^3}{x_2^T\mathds{1}\mathds{1}^Tx^3}$}
-  
+
   %$\arg\max  \color[HTML]{BF9000}{\frac{x_1^TA^{(1)}x^1}{x_1^Tx^1}}+\color[HTML]{990000}{\frac{x_2^TA^{(2)}x^2}{x_2^Tx^2}}+\color[HTML]{38761d}{\frac{x_3^TA^{(3)}x^3}{x_3^Tx^3}}+\color[HTML]{a64d79}{\frac{x_1^TA^{(1,2)}x^2}{x_1^T\mathds{1}\mathds{1}^Tx^2}}+\color[HTML]{F1C232}{\frac{x_2^TA^{(2,3)}x^3}{x_2^T\mathds{1}\mathds{1}^Tx^3}}$}
   \caption{\textbf{Visualization of the joint proposal clustering.} Here, we show the 1NN video graph and 2NN region graph. Each region proposal is linked to its 2 nearest neighbours from the video it belongs and 2 nearest neighbours from the videos it is neighbour of. THIS NEED WORK}
   \label{hierProposal}
