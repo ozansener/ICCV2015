@@ -28,6 +28,7 @@ Following the construction of Fox et al.\cite{foxBPHMM}, this point can be sampl
 Where $\kappa$ is the persistence parameter promoting the self state transitions a.k.a. more coherent temporal boundaries, $\circ$ is the element-wise product and $\pi^i_j$ is the transition probabilities in video $i$ from activity step $j$ to all activity steps in the form of a vector. This model is also presented as a graphical model in Figure \ref{bphmmo}
 \begin{figure}[h!]
   \includegraphics[width=0.5\textwidth]{plate}
+  \vspace{-8mm}
   \caption{\textbf{Graphical model for BP-HMM:} The left plate represent the set of activity steps and the right plate represent the set of videos. Intuitively, the left plate is for activity step discovery and right plate is for video parsing. In BP-HMM model, each video chooses a subset of activities. After the features are selected, the marginal model of the each video becomes an Hidden Markov Model. \emph{See the text for the details.}}
   \label{bphmmo}
 \end{figure}

@@ -23,38 +23,12 @@ The key-idea behind the filtering algorithm is the fact that instructional video
 
 As an example, in Figure~\ref{outliers}, we visualize some of the discarded videos for various queries. As shown in the figure, they are outliers. However, our algorithm also have false positives \ie some related videos are filtered. This does not cause a problem since we still have enough number of videos (minimum 50) at the end thanks to the large-scale dataset. 
 \begin{figure}[ht]
-  \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\textwidth]{troll_1}
+  \begin{subfigure}[b]{0.5\textwidth}
+    \includegraphics[width=\textwidth]{figure_7}
   \end{subfigure}~
-  \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\textwidth]{troll_2}
-  \end{subfigure}~
-  \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\textwidth]{troll_3}
-    \end{subfigure}
-
-    \begin{subfigure}[b]{0.16\textwidth}
-      \includegraphics[width=\textwidth]{troll_4}
-    \end{subfigure}~
-    \begin{subfigure}[b]{0.16\textwidth}
-      \includegraphics[width=\textwidth]{troll_5}
-    \end{subfigure}~
-    \begin{subfigure}[b]{0.16\textwidth}
-      \includegraphics[width=\textwidth]{troll_6}
-  \end{subfigure}
-
-  \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\textwidth]{troll_7}
-  \end{subfigure}~
-  \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\textwidth]{troll_8}
-  \end{subfigure}~
-  \begin{subfigure}[b]{0.16\textwidth}
-    \includegraphics[width=\textwidth]{troll_9}
-\end{subfigure}
 
 \caption{\textbf{Sample videos which our algorithm discards as an outlier for various queries.}
-First row include a video about a toy milkshake, a milkshake charm and a funny video about How to NOT make smoothie. Second row is a frozen yogurt recipe erroneously labeled as \emph{how to make a yougurt?}, an informative video about the danger of a fire while cooking and a cartoon about pancake. The final row is a neck-tie video erroneously labeled as bow-tie, a song including the phrase \emph{How to tell if a gold is real?} and a lamb cooking video mislabeled as \emph{How to bake chicken?}}
+First row includes a video about a toy milkshake, a milkshake charm, a funny video about How to NOT make smoothie and an informative video about the danger of a fire while cooking. The second row is a cartoon about pancake, a neck-tie video erroneously labeled as bow-tie, a song including the phrase \emph{How to tell if a gold is real?} and a lamb cooking video mislabeled as \emph{How to bake chicken?}}
 \label{outliers}
 \end{figure}
 
@@ -63,89 +37,17 @@ In this section, we visualize some of  the results of our recipe understanding m
 
 To visualize the content of each cluster, we display informative frames from different videos. We also train a 3rd order Markov language model\cite{languageModel} by using the subtitles covered by the cluster. Moreover, we generate a caption for each cluster by sampling this model conditioned on the $\theta^l_k$. We explain the details of this process in supplementary material since it is orthogonal to the algorithm and only included for qualitative analysis of language information.
 
-\begin{figure*}
-  \begin{subfigure}[b]{0.5\textwidth}
-    \begin{subfigure}[b]{\textwidth}
-      \includegraphics[width=\textwidth]{act_gt_2}
-      \caption*{Ground Truth Activity Labels}
-    \end{subfigure}
-    \begin{subfigure}[b]{\textwidth}
-      \includegraphics[width=\textwidth]{act_our_2}
-      \caption*{Activity Labels extracted by Our Method}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.5\textwidth}
-      \includegraphics[width=\textwidth]{cred}
-      \color[HTML]{FF3800}{Crack the eggs one at a time into a bowl.}
-    \end{subfigure}~
-    \begin{subfigure}[b]{0.5\textwidth}
-      \includegraphics[width=\textwidth]{cyan}
-      \color[HTML]{00FFED}{Remove the omelet onto a plate.}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.5\textwidth}
-      \includegraphics[width=\textwidth]{corange}
-      \color[HTML]{FF9900}{You can either use a fork or wire whisk to beat the eggs into a bowl.}
-    \end{subfigure}~
-    \begin{subfigure}[b]{0.5\textwidth}
-      \includegraphics[width=\textwidth]{cgreen}
-      \color[HTML]{9DFF00}{Eggs cook quickly, so make sure the pan gets very hot first; the butter melt completely.}
-    \end{subfigure}
-    \caption{How to make an omelet?}
-    \label{recipe:ommelette}
-  \end{subfigure}\quad\quad\begin{subfigure}[b]{0.47\textwidth}
-  
-      \begin{subfigure}[b]{\textwidth}
-      \includegraphics[width=\textwidth]{gt_ms_2}
-      \caption*{Ground Truth Activity Labels}
-    \end{subfigure}
-    \begin{subfigure}[b]{\textwidth}
-      \includegraphics[width=\textwidth]{gt_ms_2}
-      \caption*{Activity Labels extracted by Our Method}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.5\textwidth}
-      \includegraphics[width=\textwidth]{dorange}
-      \color[HTML]{FF8400}{Fill the blender to the first line with milk.}
-    \end{subfigure}~
-    \begin{subfigure}[b]{0.5\textwidth}
-      \includegraphics[width=\textwidth]{dyellow}
-      \color[HTML]{FFDA00}{If you want a thicker milkshake, add more ice cream.}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.5\textwidth}
-      \includegraphics[width=\textwidth]{dlgreen}
-      \color[HTML]{CEFF00}{Mix the milkshake, first at high speed then low.}
-    \end{subfigure}~
-    \begin{subfigure}[b]{0.5\textwidth}
-      \includegraphics[width=\textwidth]{dfinal}
-      \color[HTML]{77FF00}{Pour the milkshake into a glass.}
-    \end{subfigure}
-    \caption{How to make a milkshake?}
+\begin{figure*}[ht]
+  \begin{subfigure}[b]{\textwidth}
+    \includegraphics[width=\textwidth]{figure_8a_flattened}
+  \end{subfigure}~
+\caption{How to make an omelet?}
+      \label{recipe:ommelette}
+       \begin{subfigure}[b]{\textwidth}
+    \includegraphics[width=\textwidth]{figure_8b_flattened}
+  \end{subfigure}~
+ \caption{How to make a milkshake?}
     \label{recipe:milkshake}
-  \end{subfigure}
-\caption{Temporal segmentation of the videos by our method and ground truth segmentation. We also color code the learned activity labels and visualize sample frames and the automatically generated captions for some of them. \emph{Best viewed in color.}}
-\iffalse
-\begin{subfigure}[b]{0.5\textwidth}
-\includegraphics[width=\textwidth]{act_gt_2}
-\caption{Ground Truth Activity Labels}
-\end{subfigure}
-\begin{subfigure}[b]{0.5\textwidth}
-\includegraphics[width=\textwidth]{act_our_2}
-\caption{Activity Labels extracted by Our Method}
-\end{subfigure}
-\begin{subfigure}[b]{0.25\textwidth}
-\includegraphics[width=\textwidth]{cred}
-\color[HTML]{FF3800}{Crack the eggs one at a time into a bowl.}
-\end{subfigure}~
-\begin{subfigure}[b]{0.25\textwidth}
-\includegraphics[width=\textwidth]{cyan}
-\color[HTML]{00FFED}{Remove the omelet onto a plate.}
-\end{subfigure}
-\begin{subfigure}[b]{0.25\textwidth}
-\includegraphics[width=\textwidth]{corange}
-\color[HTML]{FF9900}{You can either use a fork or wire whisk to beat the eggs into a bowl.}
-\end{subfigure}~
-\begin{subfigure}[b]{0.25\textwidth}
-\includegraphics[width=\textwidth]{cgreen}
-\color[HTML]{9DFF00}{Eggs cook quickly, so make sure the pan gets very hot first; the butter melt completely.}
-\end{subfigure}
 \caption{Temporal segmentation of the videos by our method and ground truth segmentation. We also color code the learned activity labels and visualize sample frames and the automatically generated captions for some of them. \emph{Best viewed in color.}}
 \label{recipe:ommelette}
 \fi
@@ -155,10 +57,10 @@ To visualize the content of each cluster, we display informative frames from dif
 As shown in the Figures~\ref{recipe:ommelette}\&\ref{recipe:milkshake}, resulting clusters are semantically meaningful and correspond to the real activities. Moreover, the language captions are also quite informative hence we can conclude that there is enough language context within the subtitles in order to detect activities. On the other hand, some of the activities in the ground truth are not detected by our algorithm and they got merged into other clusters because they generally occur only in a very few videos.
 \subsection{Quantitative Results}
 \begin{figure*}[t]
-  \includegraphics[width=\textwidth]{miou}
+  \includegraphics[width=\textwidth]{figure_9}
   \caption{$IOU_{max}$ values for all recipes, for all competing algorithms.}
   \label{mIOU}
-\includegraphics[width=\textwidth]{mmap}
+\includegraphics[width=\textwidth]{figure_10}
 \caption{$AP_{max}$ values for all recipes, for all competing algorithms.}
 \label{mmAP}
 \end{figure*}
