@@ -1,7 +1,7 @@
 % !TEX root = recipeUnderstanding.tex
 
 \section{Introduction}
-Human communication takes many forms, including language and vision. For instance, explaining ``how-to'' perform a certain task can be communicated via language (e.g., Do-It-Yourself books) as well as visual (e.g., instructional YouTube videos) information. Regardless of the form, such human-generated communication is generally structured and has a clear beginning, end, and a set of steps in between. Parsing such communication into its semantic steps is the key to understand human activities. 
+Human communication takes many forms, including language and vision. For instance, explaining ``how-to'' perform a certain task can be communicated via language (e.g., Do-It-Yourself books) as well as visual (e.g., instructional YouTube videos) information. Regardless of the form, such human-generated communication is generally structured and has a clear beginning, end, and a set of steps in between. Parsing such communication into its semantic steps is the key to understand human activities.
 
 %With a large amount of instructional video collections, we present a method to ground and parse them into semantically meaningful actions.
 
@@ -13,7 +13,7 @@ Human communication takes many forms, including language and vision. For instanc
 %
 % Language and vision are the two main modalities employed for this structured communication by
 %% AMIR: paragraph Could be removed
-Language and vision often provide different, but correlating and complementary information. Challenge lies in that both video frames and language (from subtitles\footnote{generated either via Automatic Speech Recognition (ASR) or by the user, are now available for most YouTube videos.}) are only a noisy, partial observation of the actions being performed. However, the complementary nature of language and vision gives the opportunity to robustly understand the activities only from these partial observations. In this paper, we present a unified model, considering both of the modalities, in order to parse human activities into activity steps with no form of supervision.
+Language and vision provide different, but correlating and complementary information. Challenge lies in that both video frames and language (from subtitles generated via Automatic Speech Recognition) are only a noisy, partial observation of the actions being performed. However, the complementary nature of language and vision gives the opportunity to understand the activities only from these partial observations. In this paper, we present a unified model, considering both of the modalities, in order to parse human activities into activity steps with no form of supervision.
 
 %
 
@@ -28,22 +28,23 @@ Language and vision often provide different, but correlating and complementary i
 
 \begin{figure}[h!]
   \includegraphics[width=0.48\textwidth]{Figure_1_flattened}
-  \caption{Given a large video collection, we discover semantic activity steps without any supervision by using available multi-modal information (visual frames and subtitles). We also parse each video based on the discovered steps.}
+  \caption{Given a large video collection (frames and subtitles) of a category (\eg making an ommelette), we discover activity steps (\eg crack the eggs) with no supervision. We also parse the videos based on the discovered steps.}
   \label{teaser}
+  \vspace{-5mm}
 \end{figure}
 
 
 The key idea in our approach is the observation that the largecollection of videos, pertaining to the same activity class, typically include only a few objective activity steps, and the variability is the result of exponentially many ways of generating videos from activity steps through subset selection and time ordering. We study this construction based on the large-scale information available in YouTube in the form of instructional videos  (\eg, ``Making panckage'', ``How to tie a bow tie''). Instructional videos have many desirable properties like the volume of the information (e.g., YouTube has 281.000 videos for \emph{"How to tie a bow tie"}) and a well defined notion of activity step.  However, the proposed parsing method is applicable to any type of videos as long as they are composed of a set of steps.
 
 %I think the story line idea is not that strong anymore, we are discovering and parsing
-The output of our method can be seen as the semantic ``storyline'' of a rather long and complex video collection (see Fig. \ref{fig:teaser}). This storyline provides what particular steps are taking place in the video collections, when they are occurring, and what their semantic meaning is (\emph{what-when-how}). This method also puts multiple videos performing the same overall task in common ground (i.e., the semantic steps’ space) and capture their high-level similarity.
+The output of our method can be seen as the semantic ``storyline'' of a rather long and complex video collection (see Fig. \ref{teaser}). This storyline provides what particular steps are taking place in the video collections, when they are occurring, and what their semantic meaning is (\emph{what-when-how}). This method also puts multiple videos performing the same overall task in common ground (i.e., the semantic steps’ space) and capture their high-level similarity.
 
 %, and therefore, provide a \emph{categorical} storyline as well.
 
 In the proposed approach, given a collection of videos, we first generate a set of language and visual atoms. These atoms are the result of relating object proposals from each frame as well as detecting the frequent words from subtitles. We then employ a generative \emph{beta process mixture model}, which identifies the activity steps shared among the videos of the same category based on a representation using learned atoms. In our method, we do neither use any spatial or temporal label on actions/steps nor any labels on object categories. We later learn a Markov language model to provide a textual description of the activity steps based on the language atoms it frequently uses.
 
 %Still semantic storyline is not the story anymore
-%provide a semantic storyline for a complex video collection. 
+%provide a semantic storyline for a complex video collection.
 This work is the first to discover activity steps for a complex video collection with no supervision over activions and/or objects. We are also the first to approach this problem in a multimodal (joint language and vision) manner. In addition, our method is capable of providing a caption describing the steps; our approach to captioning is fundamentally different from the majority of existing video/image-to-text work in two aspects: 1) the captions are generated without any supervised caption-clip pairs, 2) our captions are \emph{descriptions} of the semantic steps, yet they are inferred from \emph{narrations}. This is different from the existing captioning work as their reference data is also descriptive of the visual information, while the narration over videos often provides complementary information to the visuals and is not necessarily descriptive.
 
 %Leaning the instructions of a novel non-trivial task is both a challenge and a necessity for both humans and autonomous systems. This necessity resulted in many community generated instruction collections \cite{wikiHow,eHow} and expert curated recipe books\cite{recipeBook1,recipeBook2}. However, this instructions are generally based on a language modality and explains a single way of performing the task although there are variety of ways. On the other hand, online video storage services are full of unstructured instructional videos\footnote{YouTube has 281.000 videos for \emph{"How to tie a bow tie"}} covering variety of ways, environment conditions and view angles. Although there have been many successful attempts in detecting activities from videos \cite{act1,act2}, structural representation of such a large and useful video collection is not possible. In this paper, we focus on joint semantic representation of YouTube videos as a response to a single query. We specifically study the unsupervised joint-detection of the activities from a collection of YouTube videos.
