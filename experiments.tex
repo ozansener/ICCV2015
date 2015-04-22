@@ -14,9 +14,45 @@ Make a Smoothie, Poach an Egg, Cook Lobster Tails, Make Beef Jerky, Remove Gum f
 
 For each of the recipe, we queried YouTube and crawled the top 100 videos. We also downloaded the English subtitles if they exist. For evaluation set, we choose 5 videos out of 100 per query. Hence, we have total of 125 evaluation videos and 2375 unlabelled videos. We label the start and end frames of fine-grained activities (\ie steps of the recipe) as well as their labels. We also release the collected dataset at \url{http://anonymous.edu/MMRecipe}.
 
+\subsection{Video Collection and Outlier Detection}
+%This might go to end
+\label{filter}
+Our system starts with querying the YouTube for the recipe which we want to learn its actions. Although we explain how do we choose such queries in Section~\ref{dataset:sec} in detail, any query starting with \emph{How to} can be considered as an example. We collect the top 100 videos with their (automatically generated) captions. YouTube generates these captions by using an Automatic Speech Recognition (ASR) algorithm unless the user manually uploads them. After obtaining the corpus, we link similar videos to each other by creating a kNN video graph. As a distance metric, we use the $\chi^2$-distance of bag-of-words extracted from the video descriptions. After the creating the graph, we compute the dominant video cluster by using the Single Cluster Graph Partitioning (SCGP)\cite{scgp} and discards the remaining videos as outlier. As an example, in Figure~\ref{outliers} we visualize some of the discarded videos for various queries. As shown in the figure, they are outliers. However, our algorithm also have false positives \ie some related videos are filtered. This does not couse a problem since we still have enough number of videos at the end thanks to the large-scale modelling. 
+\begin{figure}[ht]
+  \begin{subfigure}[b]{0.16\textwidth}
+    \includegraphics[width=\textwidth]{troll_1}
+  \end{subfigure}~
+  \begin{subfigure}[b]{0.16\textwidth}
+    \includegraphics[width=\textwidth]{troll_2}
+  \end{subfigure}~
+  \begin{subfigure}[b]{0.16\textwidth}
+    \includegraphics[width=\textwidth]{troll_3}
+    \end{subfigure}
 
-\subsection{Implementation Details}
-\label{imp_det}
+    \begin{subfigure}[b]{0.16\textwidth}
+      \includegraphics[width=\textwidth]{troll_4}
+    \end{subfigure}~
+    \begin{subfigure}[b]{0.16\textwidth}
+      \includegraphics[width=\textwidth]{troll_5}
+    \end{subfigure}~
+    \begin{subfigure}[b]{0.16\textwidth}
+      \includegraphics[width=\textwidth]{troll_6}
+  \end{subfigure}
+
+  \begin{subfigure}[b]{0.16\textwidth}
+    \includegraphics[width=\textwidth]{troll_7}
+  \end{subfigure}~
+  \begin{subfigure}[b]{0.16\textwidth}
+    \includegraphics[width=\textwidth]{troll_8}
+  \end{subfigure}~
+  \begin{subfigure}[b]{0.16\textwidth}
+    \includegraphics[width=\textwidth]{troll_9}
+\end{subfigure}
+
+\caption{\textbf{Sample videos which our algorithm discards as an outlier for various queries.}
+First row include a video about a toy milkshake, a milkshake charm and a funny video about How to NOT make smoothie. Second row is a frozen yogurt recipe errornously labeled as \emph{how to make a yougurt?}, an informative video about the danger of a fire while cooking and a cartoon about pancake. The final row is a neck-tie video errornously labeled as bow-tie, a song including the phrase \emph{How to tell if a gold is real?} and a lamb cooking video mislabeled as \emph{How to bake chicken?}}
+\label{outliers}
+\end{figure}
 
 \paragraph{Aligning Clusters:} While comparing the results of our algorithm with the ground truth, we have an alignment problem. Our algorithm generates arbitrary IDs for clusters and the cluster IDs are not necessarily matching the ground truth IDs since the method is unsupervised. For example, we can name the activity 1 of ground truth as activity 3 although their content is same. So, we apply an alignment procedure and choose the alignment of cluster IDs which maximizes the intersection over union with the ground truth. We apply this method to all competing algorithms for fairness.
 
@@ -160,8 +196,8 @@ Here, we also include the average over the recipes
  & KTS \cite{potapov2014category}    & KTS\cite{potapov2014category}     & HMM     & HMM    & Ours    & Ours     & Ours      & Our  \\
  &  w/ LLF &  w/ Sem &  w/ LLF &  w/Sem &  w/ LLF &  w/o Vis &  w/o Lang &  full \\
  \hline 
-$IOU_{max}$  & & 26.91&     & 33.16 &      &36.58   &  57.63 \\
-$mAP_{max}$  &  n/a & n/a &       & 18.9 & &30.50 & & 43.20 \\
+$IOU_{max}$  & 16.80 & 28.01      & 30.84 &   37.69   &  33.16 &  36.50 & 29.91& 52.36 \\
+$mAP_{max}$  &  n/a  & n/a        & 9.35  &   32.30   &  11.33 &  30.50 &  19.50 & 44.09 \\
 \end{tabular}}}
 \normalsize
 \end{table}
@@ -178,7 +214,7 @@ In order to further evaluate the role of semantics, we performed a subjective an
 \begin{tabular}{c|cc|cccc}
             & HMM     & HMM    & Ours    & Ours     & Ours      & Our  \\
             & w/ LLF  &  w/Sem &  w/ LLF &  w/o Vis &  w/o Lang &  full \\ \hline
-$mAP_{sem}$ & 18.44   & 24.83  &         &   29.83  &           &  39.01 \\
+$mAP_{sem}$ & 6.44   & 24.83  &     7.28 &   28.93  &  14.83    &  39.01 \\
 \end{tabular}}}
 \normalsize
 \end{table}
