@@ -1,10 +1,11 @@
 \section{Method}
 \label{sec:overview}
-\begin{figure}[h]
-  \includegraphics[width=0.5\textwidth]{algor}
-  \caption{Components of our recipe understanding method. \textbf{Query:} We query the YouTube for top 100 \emph{How To} videos and filter the outliers; \textbf{Framewise Representation:} We automatically extract object clusters and salient word in order to find multi-modal representation of each frame. \textbf{Unsupervised Activity Detection:} We jointly cluster videos in order to learn activities/steps related to the recipe.}
-\label{fig:overview}
-\end{figure}
+
+%\begin{figure}[h]
+%  \includegraphics[width=0.5\textwidth]{algor}
+%  \caption{Components of our recipe understanding method. \textbf{Query:} We query the YouTube for top 100 \emph{How To} videos and filter the outliers; \textbf{Framewise Representation:} We automatically extract object clusters and salient word in order to find multi-modal representation of each frame. \textbf{Unsupervised Activity Detection:} We jointly cluster videos in order to learn activities/steps related to the recipe.}
+%\label{fig:overview}
+%\end{figure}
 
 Given a large video-collection, our algorithm starts with learning a set of visual and language atoms which are further used for representing multi-modal information. These atoms are designed in a way to correspond to the mid-level semantic concepts like actions, objects etc.. In order to learn visual atoms, we generate object proposals and cluster them into mid-level atoms. Whereas, for the language atoms we simply find the salient and frequent words in the subtitles. After learning the set of atoms, we represent the multi-modal information in each frame based based on the occurrence statistics of the learned atoms. Given a series of multi-modal frame representations, we discover set of clusters, defined via learned atoms and their temporal relations, occurring over multiple videos by using a non-parametric Bayesian method. We expect these clusters to correspond to the activity steps which construct the high level activities. Moreover, our empirical results suggest that the resulting clusters significantly correlates with the activity steps.
 

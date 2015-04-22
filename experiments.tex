@@ -1,9 +1,9 @@
 \section{Experiments}
-In order to experiment the proposed method, we first collected a dataset guided by the human preferences captured via the statistics of a popular online recipe collection --wikiHow \cite{wikiHow}--. After collecting the dataset, we labelled small part of the dataset with frame-wise activity labels and used the resulting set as an evaluation corpus. Neither the set of labels, nor the temporal boundaries are exposed to the competing algorithm since the set-up is completely unsupervised. We experiment our algorithm against the set of unsupervised clustering baselines and state-of-the-art algorithms from video summarization literature which are applicable. In the rest of this section, we first explain the dataset we collected and labelled in detail. Then, we explain the method which we compare our method against. After explaining the metrics we use, we give both qualitative and quantitative results. Due to the space limitation, we defer some of the results to the supplementary material.
+In order to experiment the proposed method, we first collected a dataset as explaned in Section~\ref{dataset:sec}. We labelled small part of the dataset with frame-wise activity step labels and used the resulting set as an evaluation corpus. Neither the set of labels, nor the temporal boundaries are exposed to our algorithm since the set-up is completely unsupervised. We experiment our algorithm against the set of unsupervised clustering baselines and state-of-the-art algorithms from video summarization literature which are applicable. In the rest of this section, we first explain the dataset we collected and labelled. Then, we explain the method which we compare our method against. After explaining the metrics we use, we give both qualitative and quantitative results.
 
 \subsection{Dataset}
 \label{dataset:sec}
-We guide our data collection effort with human preferences based on wikiHow \cite{wikiHow} statistics. After obtaining the top100 queries people interested in wikiHow, we chose top25 ones which are directly related to the physical world and objects. We ignore the queries like \emph{How to get over a break up‏?‎} and \emph{How to write a resignation Letter?}. Resulting 25 queries are;
+In order to minimize the expert intervention, we guide our data collection with available cloud preferences. There exist a community generated collection of instructions named as wikiHow \cite{wikiHow}. For any query, it has step by step textual instructions. We obtained the top100 queries the crowd is interested from wikiHow and we chose top25 ones which are directly related to the physical world and objects. In other words, we ignore the queries like \emph{How to get over a break up‏?‎} and \emph{How to write a resignation Letter?} since they have no objective set of steps. Resulting 25 queries are;
 
 
 \emph{\textbf{How to}}\footnotesize
@@ -12,12 +12,16 @@ Broil Steak, Make a Grilled Cheese Sandwich, Make Scrambled Eggs, Tie a Tie, Cle
 Make a Smoothie, Poach an Egg, Cook Lobster Tails, Make Beef Jerky, Remove Gum from Clothes, Cook Ribs in the Oven, Make Ice Cream, Tell if an Egg is Bad}
 \normalsize
 
-For each of the recipe, we queried YouTube and crawled the top 100 videos. We also downloaded the English subtitles if they exist. For evaluation set, we choose 5 videos out of 100 per query. Hence, we have total of 125 evaluation videos and 2375 unlabelled videos. We label the start and end frames of fine-grained activities (\ie steps of the recipe) as well as their labels. We also release the collected dataset at \url{http://anonymous.edu/MMRecipe}.
+For each of the query, we crawled YouTube and got the top 100 videos. We also downloaded the English subtitles if they exist. For evaluation set, we randomly choose 5 videos out of 100 per query. Hence, we have total of 125 evaluation videos and 2375 unlabelled videos. We label the start and end frames of activity steps (\ie based on the steps of the recipe) as well as the name of the step. We also release the collected dataset at \url{http://anonymous/MMRecipe}.
 
-\subsection{Video Collection and Outlier Detection}
-%This might go to end
+\subsubsection{Outlier Detection}
 \label{filter}
-Our system starts with querying the YouTube for the recipe which we want to learn its actions. Although we explain how do we choose such queries in Section~\ref{dataset:sec} in detail, any query starting with \emph{How to} can be considered as an example. We collect the top 100 videos with their (automatically generated) captions. YouTube generates these captions by using an Automatic Speech Recognition (ASR) algorithm unless the user manually uploads them. After obtaining the corpus, we link similar videos to each other by creating a kNN video graph. As a distance metric, we use the $\chi^2$-distance of bag-of-words extracted from the video descriptions. After the creating the graph, we compute the dominant video cluster by using the Single Cluster Graph Partitioning (SCGP)\cite{scgp} and discards the remaining videos as outlier. As an example, in Figure~\ref{outliers} we visualize some of the discarded videos for various queries. As shown in the figure, they are outliers. However, our algorithm also have false positives \ie some related videos are filtered. This does not couse a problem since we still have enough number of videos at the end thanks to the large-scale modelling. 
+Since we do not have any expert intervention in our data collection, the resulting collection might have outliers. Main reason for the outliers are  the fact that our queries are typical daily activities and there are many cartoons, funny videos about them as well as music videos accidentally include those words. Hence, we also include an automatic filtering stage.
+
+
+The key-idea behind the filtering algorithm is the fact that instructional videos have a distinguishable text descriptions when compared with outliers. After obtaining the collection, we link similar videos to each other by creating a kNN video graph. As a distance metric, we use the $\chi^2$-distance of bag-of-words extracted from the video descriptions. After the creating the graph, we compute the dominant video cluster by using the Single Cluster Graph Partitioning (SCGP)\cite{scgp} and discards the remaining videos as outlier.
+
+As an example, in Figure~\ref{outliers}, we visualize some of the discarded videos for various queries. As shown in the figure, they are outliers. However, our algorithm also have false positives \ie some related videos are filtered. This does not cause a problem since we still have enough number of videos (minimum 50) at the end thanks to the large-scale dataset. 
 \begin{figure}[ht]
   \begin{subfigure}[b]{0.16\textwidth}
     \includegraphics[width=\textwidth]{troll_1}
@@ -50,14 +54,12 @@ Our system starts with querying the YouTube for the recipe which we want to lear
 \end{subfigure}
 
 \caption{\textbf{Sample videos which our algorithm discards as an outlier for various queries.}
-First row include a video about a toy milkshake, a milkshake charm and a funny video about How to NOT make smoothie. Second row is a frozen yogurt recipe errornously labeled as \emph{how to make a yougurt?}, an informative video about the danger of a fire while cooking and a cartoon about pancake. The final row is a neck-tie video errornously labeled as bow-tie, a song including the phrase \emph{How to tell if a gold is real?} and a lamb cooking video mislabeled as \emph{How to bake chicken?}}
+First row include a video about a toy milkshake, a milkshake charm and a funny video about How to NOT make smoothie. Second row is a frozen yogurt recipe erroneously labeled as \emph{how to make a yougurt?}, an informative video about the danger of a fire while cooking and a cartoon about pancake. The final row is a neck-tie video erroneously labeled as bow-tie, a song including the phrase \emph{How to tell if a gold is real?} and a lamb cooking video mislabeled as \emph{How to bake chicken?}}
 \label{outliers}
 \end{figure}
 
-\paragraph{Aligning Clusters:} While comparing the results of our algorithm with the ground truth, we have an alignment problem. Our algorithm generates arbitrary IDs for clusters and the cluster IDs are not necessarily matching the ground truth IDs since the method is unsupervised. For example, we can name the activity 1 of ground truth as activity 3 although their content is same. So, we apply an alignment procedure and choose the alignment of cluster IDs which maximizes the intersection over union with the ground truth. We apply this method to all competing algorithms for fairness.
-
 \subsection{Qualitative Results}
-In this section, we visualize some of  the results of our recipe understanding method. After running our algorithm independently on all 25 recipes according to the details we explain in Section~\ref{imp_det}, we obtain set of clusters which correspond to the activities. These clusters have set of objects and words; moreover, we also have video clips from multiple videos corresponding to activities. We visualize some of the recipes qualitatively in Figure~\ref{recipe:ommelette} and \ref{recipe:milkshake}. We show the temporal segmentation of 5 evaluation videos as well as the segmentation we compute. Moreover, we also color code the clusters to visualize how well the semantic activities are learned.
+In this section, we visualize some of  the results of our recipe understanding method. After independently running our algorithm on all 25 recipes, we discover activity steps and parsing of videos according to these discovered steps. These activity steps have likelihood values over language and visual atoms; moreover, we also have video clips from multiple videos corresponding to activities. We visualize some of the recipes qualitatively in Figure~\ref{recipe:ommelette} and \ref{recipe:milkshake}. We show the temporal parsing of 5 evaluation videos as well as the ground truth parsing. In order to mach the colors, we choose the matching maximizing the metric we explain the following sections.
 
 To visualize the content of each cluster, we display informative frames from different videos. We also train a 3rd order Markov language model\cite{languageModel} by using the subtitles covered by the cluster. Moreover, we generate a caption for each cluster by sampling this model conditioned on the $\theta^l_k$. We explain the details of this process in supplementary material since it is orthogonal to the algorithm and only included for qualitative analysis of language information.
 
@@ -164,48 +166,49 @@ As shown in the Figures~\ref{recipe:ommelette}\&\ref{recipe:milkshake}, resultin
 \subsubsection{Baselines}
 We compare our algorithm with the following baselines in the following sections.
 
-\noindent\textbf{HMM with semantic features:}
-In order to experiment the importance of joint processing of the videos, we compare our algorithm with independent temporally coherent clustering of each video. We are using Hidden Markov Models with Baum-Welch algorithm\cite{rabiner} as a clustering method and choose the number of clusters with cross-validation.
+\noindent\textbf{Low-level features (LLF):}
+In order to experiment the effect of language and visual atom learning, we compare with low-level features of different algorithms. As a feature, we use histogram-of-gradients, histogram-of-flow and motion-boundary-histogram features and use frame-wise Fisher vector representation using the implementation of Oneata et al.\cite{fastLaptev}. As an observation model, we follow the Drichelet distribution since the Fisher vector is a histogram.
 
-\noindent\textbf{BP-HMM with low-level features:}
-In order to experiment the importance of defining objects, we also train our algorithm without using extracted object. We simply temporally over-segment the video and represent each segment by using state of the art low-level features from the activity detection literature \cite{acticityFeature}. We are using dense trajectory features for this purpose.
+\noindent\textbf{Single modality:}
+In order to experiment the importance of the effect of multi-modal approach, we also compare with single modality based approach whenever possible. We simply experiment based on a single modality.
+
+\noindent\textbf{Hidden Markov Model (HMM):}
+In order to experiment the effect of joint generaive model, we compare our algorithm with an HMM. We use the Baum-Welch algorithm\cite{rabiner} and choose the number of clusters via cross-validation.
+
 
 \noindent\textbf{Kernel Temporal Segmentation\cite{potapov2014category}:}
 Kernel Temporal Segmentation (KTS) proposed by Potapov et al.\cite{potapov2014category} can detect the temporal boundaries of the events/activities in the video from a time series data without any supervision. It enforces a local similarity of each resultant segment.
 
-\subsubsection{Metrics}
-\noindent\textbf{Maximum Intersection over Union ($IOU_{max}$):}
-In order to evaluate the accuracy of the temporal segmentation of the activities, we use intersection-over-union(IOU). For $N$ ground truth temporal activity segments ($\tau^\star_{i},\quad i\in N$), $N^\prime$ computed segments ($\tau^\prime_{i},\quad i\in N^\prime$) and matching function $m(\cdot)$ such that $i^{th}$ ground truth segment is matched to $m(i)^{th}$ computed segment, we define IOU as \mbox{$IOU=\frac{1}{N}\sum_{i=1}^N \frac{\tau^\star_i \cap \tau^\prime_{m(i)}}{\tau^\star_i \cup \tau^\prime_{m(i)}}$}. Since the matching function is unknown in the supervised setting, we use the maximum intersection-over-union while doing exhaustive search over all matchings as;
-\mbox{$IOU_{max} = \max_{m(\cdot)} \frac{1}{N}\sum_{i=1}^N \frac{\tau^\star_i \cap \tau^\prime_{m(i)}}{\tau^\star_i \cup \tau^\prime_{m(i)}}$}
-
-\noindent\textbf{Maximum Average Precision ($AP_{max}$):}
-Since the $IOU_{max}$ is computed per video, it does not capture the accuracy of the detected activities over multiple videos. Hence, we also evaluate maximum average precision. Given matching function $m(\cdot)$, we compute the mean of average precision over recipes. Note that this metric is defined over all the videos in the recipe and can only be high if the the same activities from multiple videos clustered into a single activity. 
-
 \subsubsection{Results}
-We discuss the quantitative and qualitative results in the light of the following questions.
-\paragraph{Are the activities detected accurately?}
-In this section, we discuss the results presented in Figure~\ref{mIOU}. Maximum-IOU captures the accuracy of the temporal segmentation of the videos. Since the ground-truth segmentation is the semantic one, high $IOU_{max}$ requires both finding temporal activity boundaries and extracting correct activity definition. As shown in the Figure~\ref{mIOU}, proposed method consistently outperforms the competing algorithms. One interesting observation is the dramatic difference between the accuracy of HMM and our method. We believe this is the result of joint processing of multiple videos. HMM assumes all videos are generated from same set of activities with fixed transition probabilities and can not captures the inter-class variance. On the other hand, our algorithm is robust to inter-class variations since we are also modelling inclusion of activities for each video. Moreover, the segmentation problem is ill-posed since the granularity of the activities are subjective. Imposing the activity inclusion model brings an additional constraint to the problem and makes the problem well-posed as finding the set of small number of activities which can construct the any video within the context of the recipe. In other words, the segmentation problem becomes learning the small dictionary of activities which is complete for the space of the recipe.
+Given a parsing result and a ground truth, we evaluate both quality of temporal segmentation and also the quality of the activity step discovery. 
+
+We base our evaluation on two widely used metrics intersection over union and mean average precision. Intersection over union measures the quality of temporal segmentation and it is defined as; $IOU=\frac{1}{N}\sum_{i=1}^N \frac{\tau^\star_i \cap \tau^\prime_{i}}{\tau^\star_i \cup \tau^\prime_{i}}$ where $N$ is the number of segments, $\tau^\star_i$ is ground truth temporal segment and $\tau^\prime_{i}$ is the detected segment. Moreover, mean average precision is defined per activity part class and can be computed based on a precision-recall curve following TREC\cite{trecc} definition. Both of these metrics require the consistent labelling of ground truth and detection result, however, in an unsupervised setting the labels can be misaligned for example our algorithm can call activity step 1 of ground truth as activity step 3. The solution to this problem is a widely used cluster similarity measure(csm)\cite{liao05} which simply enables us using any metric in unsupervised setting. For any metric, it simply search over all possible matching between ground truth label and predicted label and choose the matching which gives the best result. Hence, we are using $mAP_{csm}$ and $IOU_{csm}$ as evaluation metrics.
 
 
-Here, we also include the average over the recipes
+\paragraph{Accuracy of the temporal parsing.}
+In this section, we discuss the results presented in Figure~\ref{mIOU}. $IOU_{cms}$ captures the accuracy of the temporal segmentation of the videos. As shown in the Figure~\ref{mIOU}, proposed method consistently outperforms the competing algorithms and its variations. One interesting observation is the importance of both modalities as a result of dramatic difference between the accuracy of our method and its single modality version.
+
+Moreover, the difference between our method and HMM is also significant. We believe this is because of the ill-posed definition of activities in HMM since the granularity of the activity steps is subjective. On the other hand, our method starts with the well-defined definition of finding set of steps which generate the entire collection. Hence, our algorithm do not suffer from granularity problem.
+
+We also average over the metrics over recipes and include in the following table;
 \begin{table}
-\caption{Average of $IOU_{max}$ and $mAP_{max}$ over recipes.}
+\caption{Average of $IOU_{cms}$ and $mAP_{cms}$ over recipes.}
 {\small
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{c|cc|cc|cccc}
  & KTS \cite{potapov2014category}    & KTS\cite{potapov2014category}     & HMM     & HMM    & Ours    & Ours     & Ours      & Our  \\
  &  w/ LLF &  w/ Sem &  w/ LLF &  w/Sem &  w/ LLF &  w/o Vis &  w/o Lang &  full \\
  \hline 
-$IOU_{max}$  & 16.80 & 28.01      & 30.84 &   37.69   &  33.16 &  36.50 & 29.91& 52.36 \\
-$mAP_{max}$  &  n/a  & n/a        & 9.35  &   32.30   &  11.33 &  30.50 &  19.50 & 44.09 \\
+$IOU_{cms}$  & 16.80 & 28.01      & 30.84 &   37.69   &  33.16 &  36.50 & 29.91& 52.36 \\
+$mAP_{cms}$  &  n/a  & n/a        & 9.35  &   32.30   &  11.33 &  30.50 &  19.50 & 44.09 \\
 \end{tabular}}}
 \normalsize
 \end{table}
 
-\paragraph{Are the same activities in different videos linked to each other?}
-Although $IOU_{max}$ successfully measures the accuracy of the detected activities, it can not measure the matching activities over different videos. Therefore, we are using $mAP_{max}$ for measuring the accuracy of matching different activities over multiple videos. $mAP_{max}$ is defined for each activity class and requires the algorithms to produce activity labels consistent with the ground truth.
+\paragraph{Coherency and accuracy of activity step discovery.}
+Although $IOU_{cms}$ successfully measures the accuracy of the detected activities, it can not measure the matching activities over different videos since the metric is based on independent videos. Therefore, we are using $mAP_{cms}$ for measuring the accuracy of activity discovery over a video collection.
 
-In order to further evaluate the role of semantics, we performed a subjective analysis in order to remove the maximization. Since, we have an evaluation set -ground truth activity labels-, we concatenated them into a label collection. Then, we collected the outputs of our algorithm, HMM and the variations of our algorithm to non-expert users and ask them to choose a label. In other words, we replaced the maximization with subjective labelling. We designed our experiments in a way that each clip received annotations from 5 different users. Moreover, we randomized the ordering of videos and algorithms during the subjective evaluation. We compute the mean average precision and call it $mAP_{sem}$. We also only used 5 random recipes out of 25.
+In order to further evaluate the role of semantics, we also performed a subjective analysis. Since, we have an evaluation set -ground truth activity labels-, we concatenated them into a label collection. Then, we collected the outputs of our algorithm, and the computing ones. We ask non-expert users to choose a label for each discovered activity. In other words, we replaced the maximization with subjective labelling. We designed our experiments in a way that each clip received annotations from 5 different users. Moreover, we randomized the ordering of videos and algorithms during the subjective evaluation. We compute the mean average precision and call it $mAP_{sem}$. We also only used 5 random recipes out of 25.
 
 \begin{table}
 \caption{Semantic mean-average-precision $mAP_{sem}$ computed based on subjective evaluation.}
@@ -218,8 +221,8 @@ $mAP_{sem}$ & 6.44   & 24.83  &     7.28 &   28.93  &  14.83    &  39.01 \\
 \end{tabular}}}
 \normalsize
 \end{table}
+Both $mAP_{cms}$ and $mAP_{sem}$ metrics suggest that our method consistently outperforms the competing ones. There is only one recipe in which our method is outperformed by our based line of no visual information. This is mostly because of the specific nature of the recipe \emph{How to tie a tie?}. In such videos the notion of object is not useful since all videos use a single object over the entire video. This single object is a \emph{tie} and does not fit the assumption of a frame based on multiple visual atoms. 
 
 
-%\paragraph{Semantics vs Syntax:} Should we do the extra experiments, do we have time?
 \paragraph{How important is each modality?}
-In order to experiment the importance of using both language and vision modalities, we compare our method with a self-baseline of using a single modality. As shown in Figure~\ref{mIOU} and \ref{mmAP}, our method significantly outperforms both of the baselines consistently in all recipes. Hence, we need to use both modalities. This result is expected because visual cues are good at separating different activities within the same video since the visual appearance is not changing much. However, language does not help much since there is too much background information other than the actual activity. On the other hand, language is good at relating activities from different videos since there is not much inter-class variation and it is easy to detect these variations caused by synonyms etc. thanks to the strong structure of the language modality.
+In order to experiment the importance of using both language and vision modalities, we compare our method with a self-baseline of using a single modality. As shown in Figure~\ref{mIOU} and \ref{mmAP}, our method significantly outperforms both of the baselines consistently in all recipes. Hence, we need to use both modalities. This result is expected because visual cues are good at separating different activities within the same video since the visual appearance is not changing much. However, language does not help much since there is too much background information other than the actual activity. On the other hand, language is good at relating activities from different videos since there is not much inter-class variation and it is easy to detect these variations caused by synonyms etc. thanks to the strong structure of the language modality. We believe this behaviour is the rationale behind the fact the language-only is slightly better.
