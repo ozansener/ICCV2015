@@ -35,17 +35,15 @@ To visualize the content of each activity step, we display key-frames from diffe
 \begin{figure*}[ht]
   \begin{subfigure}[b]{\textwidth}
     \includegraphics[width=\textwidth]{figure_8a_flattened}
+    \caption{How to make an omelet?}
+    \label{recipe:ommelette}
   \end{subfigure}~
-\caption{How to make an omelet?}
-      \label{recipe:ommelette}
-       \begin{subfigure}[b]{\textwidth}
+  \begin{subfigure}[b]{\textwidth}
     \includegraphics[width=\textwidth]{figure_8b_flattened}
-  \end{subfigure}~
- \caption{How to make a milkshake?}
+    \caption{How to make a milkshake?}
     \label{recipe:milkshake}
-\caption{Temporal segmentation of the videos by our method and ground truth segmentation. We also color code the learned activity labels and visualize sample frames and the automatically generated captions for some of them. \emph{Best viewed in color.}}
-\label{recipe:ommelette}
-\fi
+  \end{subfigure}~
+\caption{Temporal segmentation of the videos by our method and ground truth segmentation. We also color code the discovered activity steps and visualize  the key-frames and the automatically generated captions for some of them. \emph{Best viewed in color.}}
 %\normalsize}
 \end{figure*}
 
@@ -75,17 +73,15 @@ To experiment the effect of joint generaive model, we compare our algorithm with
 Kernel Temporal Segmentation (KTS) proposed by Potapov et al.\cite{potapov2014category} can detect the temporal boundaries of the events/activities in the video from a time series data without any supervision. It enforces a local similarity of each resultant segment.
 
 \subsubsection{Results}
-Given a parsing result and a ground truth, we evaluate both quality of temporal segmentation and also the quality of the activity step discovery. 
+Given parsing results and ground truth, we evaluate quality of both of the temporal segmentation and the activity step discovery. 
 
-We base our evaluation on two widely used metrics intersection over union and mean average precision. Intersection over union measures the quality of temporal segmentation and it is defined as; $IOU=\frac{1}{N}\sum_{i=1}^N \frac{\tau^\star_i \cap \tau^\prime_{i}}{\tau^\star_i \cup \tau^\prime_{i}}$ where $N$ is the number of segments, $\tau^\star_i$ is ground truth temporal segment and $\tau^\prime_{i}$ is the detected segment. Moreover, mean average precision is defined per activity part class and can be computed based on a precision-recall curve following TREC\cite{trecc} definition. Both of these metrics require the consistent labelling of ground truth and detection result, however, in an unsupervised setting the labels can be misaligned for example our algorithm can call activity step 1 of ground truth as activity step 3. The solution to this problem is a widely used cluster similarity measure(csm)\cite{liao05} which simply enables us using any metric in unsupervised setting. For any metric, it simply search over all possible matching between ground truth label and predicted label and choose the matching which gives the best result. Hence, we are using $mAP_{csm}$ and $IOU_{csm}$ as evaluation metrics.
+We base our evaluation on two widely used metrics; intersection over union and mean average precision. Intersection over union measures the quality of temporal segmentation and it is defined as; $IOU=\frac{1}{N}\sum_{i=1}^N \frac{\tau^\star_i \cap \tau^\prime_{i}}{\tau^\star_i \cup \tau^\prime_{i}}$ where $N$ is the number of segments, $\tau^\star_i$ is ground truth temporal segment and $\tau^\prime_{i}$ is the detected segment. Mean average precision is defined per activity part class and can be computed based on a precision-recall curve following TREC\cite{trecc} definition. In order to adopt this metric into unsupervised setting, we used cluster similarity measure(csm)\cite{liao05} which simply enables us using any metric in unsupervised setting. For any metric, it searches over all possible matching between ground truth label and predicted label and choose the matching which gives the best result. Hence, we are using $mAP_{csm}$ and $IOU_{csm}$ as evaluation metrics.
 
 
 \paragraph{Accuracy of the temporal parsing.}
-In this section, we discuss the results presented in Figure~\ref{mIOU}. $IOU_{cms}$ captures the accuracy of the temporal segmentation of the videos. As shown in the Figure~\ref{mIOU}, proposed method consistently outperforms the competing algorithms and its variations. One interesting observation is the importance of both modalities as a result of dramatic difference between the accuracy of our method and its single modality version.
+$IOU_{cms}$ captures the accuracy of the temporal segmentation and we plot the $IOU_{cms}$ values for all competing algorithms for all categories. We also average over the categories and summarize the results in the Table \ref{averM}. As the Figure~\ref{mIOU} and Table~\ref{averM} suggests, proposed method consistently outperforms the competing algorithms and its variations. One interesting observation is the importance of both modalities as a result of dramatic difference between the accuracy of our method and its single modal versions.
 
-Moreover, the difference between our method and HMM is also significant. We believe this is because of the ill-posed definition of activities in HMM since the granularity of the activity steps is subjective. On the other hand, our method starts with the well-defined definition of finding set of steps which generate the entire collection. Hence, our algorithm do not suffer from granularity problem.
-
-We also average over the metrics over recipes and include in the following table;
+Moreover, the difference between our method and HMM is also significant. We believe this is due to the ill-posed definition of activities in HMM since the granularity of the activity steps is subjective. On the other hand, our method starts with the well-defined definition of finding set of steps which generate the entire collection. Hence, our algorithm do not suffer from granularity problem.
 \begin{table}
 \caption{Average of $IOU_{cms}$ and $mAP_{cms}$ over recipes.}
 {\small
@@ -98,15 +94,17 @@ $IOU_{cms}$  & 16.80 & 28.01      & 30.84 &   37.69   &  33.16 &  36.50 & 29.91&
 $mAP_{cms}$  &  n/a  & n/a        & 9.35  &   32.30   &  11.33 &  30.50 &  19.50 & 44.09 \\
 \end{tabular}}}
 \normalsize
+\label{averM}
 \end{table}
 
-\paragraph{Coherency and accuracy of activity step discovery.}
-Although $IOU_{cms}$ successfully measures the accuracy of the detected activities, it can not measure the matching activities over different videos since the metric is based on independent videos. Therefore, we are using $mAP_{cms}$ for measuring the accuracy of activity discovery over a video collection.
+\noindent\paragraph{Coherency and accuracy of activity step discovery.}
+Although $IOU_{cms}$ successfully measures the accuracy of the temporal segmentation, it can not measure the quality of discovered activities. In other words, we also need to evaluate the consistency of the activity steps detected over multiple videos. For this, we use unsupervised version of mean average precision $mAP_{cms}$. We plot the $mAP_{cms}$ values per category in Figure~\ref{mmAP} and their average over categories in Table~\ref{averM}. As the Figure~\ref{mmAP} and the Table~\ref{averM} suggests, our proposed method outperforms all competing algorithms. One interesting observation is the significant difference between semantic and low-level features. Hence, the mid-level features are key for linking multiple videos.
 
-In order to further evaluate the role of semantics, we also performed a subjective analysis. Since, we have an evaluation set -ground truth activity labels-, we concatenated them into a label collection. Then, we collected the outputs of our algorithm, and the computing ones. We ask non-expert users to choose a label for each discovered activity. In other words, we replaced the maximization with subjective labelling. We designed our experiments in a way that each clip received annotations from 5 different users. Moreover, we randomized the ordering of videos and algorithms during the subjective evaluation. We compute the mean average precision and call it $mAP_{sem}$. We also only used 5 random recipes out of 25.
+\noindent\paragraph{Semantics of activity steps.}
+In order to further evaluate the role of semantics, we performed a subjective analysis. We concatenated the activity step labels in the grount-truth into a label collection. Then, we ask non-expert users to choose a label for each discovered activity for each algorithm. In other words, we replaced the maximization step with subjective labels. We designed our experiments in a way that each clip received annotations from 5 different users. We randomized the ordering of videos and algorithms during the subjective evaluation. By using the activity labels provided by subjects, we compute the mean average precision wrt ground truth call it $mAP_{sem}$. 
 
 \begin{table}
-\caption{Semantic mean-average-precision $mAP_{sem}$ computed based on subjective evaluation.}
+\caption{Semantic mean-average-precision $mAP_{sem}$.}
 {\small
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{c|cc|cccc}
@@ -116,8 +114,9 @@ $mAP_{sem}$ & 6.44   & 24.83  &     7.28 &   28.93  &  14.83    &  39.01 \\
 \end{tabular}}}
 \normalsize
 \end{table}
+
 Both $mAP_{cms}$ and $mAP_{sem}$ metrics suggest that our method consistently outperforms the competing ones. There is only one recipe in which our method is outperformed by our based line of no visual information. This is mostly because of the specific nature of the recipe \emph{How to tie a tie?}. In such videos the notion of object is not useful since all videos use a single object over the entire video. This single object is a \emph{tie} and does not fit the assumption of a frame based on multiple visual atoms. 
 
 
-\paragraph{How important is each modality?}
-In order to experiment the importance of using both language and vision modalities, we compare our method with a self-baseline of using a single modality. As shown in Figure~\ref{mIOU} and \ref{mmAP}, our method significantly outperforms both of the baselines consistently in all recipes. Hence, we need to use both modalities. This result is expected because visual cues are good at separating different activities within the same video since the visual appearance is not changing much. However, language does not help much since there is too much background information other than the actual activity. On the other hand, language is good at relating activities from different videos since there is not much inter-class variation and it is easy to detect these variations caused by synonyms etc. thanks to the strong structure of the language modality. We believe this behaviour is the rationale behind the fact the language-only is slightly better.
+\paragraph{The importance of each modality.}
+In order to experiment the importance of joint usage of language and vision modalities, we compare our method with a self-baseline of using a single modality. As shown in Figure~\ref{mIOU} and \ref{mmAP}, our method significantly outperforms both of the baselines consistently in all recipes. Hence, the joint usage is necessary. One interesting observation is the fact that using only language information performed slightly better than using only visual information. We believe this is due to the less intra-class variance in the language modality (\ie people use same words for same activities). However, it lacks many details(less complete) and more noisy than visual information. Hence these results validate the complementary nature of language and vision.
