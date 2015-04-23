@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.14)  22 APR 2015 15:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.14)  22 APR 2015 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -437,9 +437,6 @@ Overfull \hbox (1.35292pt too wide) in paragraph at lines 30--31
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Missing character: There is no â in font ptmr7t!
-Missing character: There is no € in font ptmr7t!
-Missing character: There is no ™ in font ptmr7t!
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 45.
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 45.
@@ -633,13 +630,13 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 88.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 88.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 88.
 Package rerunfilecheck Info: File `recipeUnderstanding.brf' has not changed.
-(rerunfilecheck)             Checksum: 4FB5A5F2ACCFD544F131936809884A5A;2841.
+(rerunfilecheck)             Checksum: 166B16672487F868C2695411F06FA050;2841.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 88.
  ) 
 Here is how much of TeX's memory you used:
  8484 strings out of 494985
  125906 string characters out of 6180356
- 229233 words of memory out of 5000000
+ 229237 words of memory out of 5000000
  11425 multiletter control sequences out of 15000+600000
  39134 words of font info for 91 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
@@ -672,10 +669,10 @@ rw/ncntrsbk/uncr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
 b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on recipeUnderstanding.pdf (9 pages, 21740978 bytes).
+Output written on recipeUnderstanding.pdf (9 pages, 21741174 bytes).
 PDF statistics:
- 1065 PDF objects out of 1200 (max. 8388607)
- 583 compressed objects within 6 object streams
+ 1066 PDF objects out of 1200 (max. 8388607)
+ 584 compressed objects within 6 object streams
  101 named destinations out of 1000 (max. 500000)
  71 words of extra memory for PDF output out of 10000 (max. 10000000)
 

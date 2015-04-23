@@ -30,7 +30,7 @@ We sort words with their "tf-idf" values and choose the top $K$ words as languag
 After learning the visual and language atoms, we represent each frame via the occurrence of atoms (binary histogram). Formally, the representation of the $t^{th}$ frame of the $i^{th}$ video is denoted as $\mathbf{y^{(i)}_t}$ and computed as $\mathbf{y^{(i)}_t}=[\mathbf{y^{(i),l}_t},\mathbf{y^{(i),v}_t}]$ such that $k^{th}$ entry of the $\mathbf{y^{(i),l}_t}$ is $1$ if the subtitle of the frame has the $k^{th}$ language atom and $0$ otherwise. $\mathbf{y^{(i),v}_t}$ is also a binary vector similarly defined over visual atoms. We visualize the representation of a sample frame in the Figure~\ref{visFrame}.
 \begin{figure}[h!]
   \includegraphics[width=0.48\textwidth]{frame}
-  \caption{\textbf{Representation for a sample frame.} Three of the object proposals of the frame are in the visual atoms and three of the words are in the language atoms.}
+  \caption{\textbf{Representation for a sample frame.} Three of the object proposals of sample frame are in the visual atoms and three of the words are in the language atoms.}
   \label{visFrame}
   \vspace{-3mm}
 \end{figure}
