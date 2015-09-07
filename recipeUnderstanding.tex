@@ -23,7 +23,7 @@
 % run, let it finish, and you should be clear).
 \usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
 
- \iccvfinalcopy % *** Uncomment this line for the final submission
+% \iccvfinalcopy % *** Uncomment this line for the final submission
 
 \def\iccvPaperID{623} % *** Enter the ICCV Paper ID here
 \def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
@@ -58,12 +58,13 @@ $^2$Department of Computer Science, Cornell University\\
 %\thispagestyle{empty}
 
 
+%%%%%%%%% BODY TEXT
+\begin{spacing}{0.98}
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-Human communication typically has an underlying structure. This is reflected in the fact that in many user generated videos, a starting point, ending, and certain objective steps between these two can be identified. In this paper, we propose a method for parsing a video into such semantic steps in an unsupervised way. The proposed method is capable of providing a semantic ``storyline'' of the video composed of its objective steps. We accomplish this using both visual and language cues in a joint generative model. The proposed method can also provide a textual description for each of the identified semantic steps and video segments. We evaluate this method on a large number of complex YouTube videos and show results of unprecedented quality for this intricate and impactful problem.
+    Human communication \cite{ivannew}typically has an underlying structure. This is reflected in the fact that in many user generated videos, a starting point, ending, and certain objective steps between these two can be identified. In this paper, we propose a method for parsing a video into such semantic steps in an unsupervised way. The proposed method is capable of providing a semantic ``storyline'' of the video composed of its objective steps. We accomplish this using both visual and language cues in a joint generative model. The proposed method can also provide a textual description for each of the identified semantic steps and video segments. We evaluate this method on a large number of complex YouTube videos and show results of unprecedented quality for this intricate and impactful problem.
 \end{abstract}
 \vspace{-5mm}
-%%%%%%%%% BODY TEXT
 \input{intro}
 \input{related}
 \input{overview}
@@ -72,14 +73,15 @@ Human communication typically has an underlying structure. This is reflected in 
 \input{experiments}
 \input{conclusion}
 %\input{notation}
-
-%{\footnotesize
+\end{spacing}
+{\footnotesize
 %\begin{spacing}{0.88}
-%\bibliographystyle{ieee}
-%\bibliography{recipeUnderstanding}
-%\end{spacing}
-%}
+\bibliographystyle{ieee}
+\bibliography{recipeUnderstanding}
+%end{spacing}
+}
 
+\iffalse
 \begin{thebibliography}{10}\itemsep=-1pt
 
 \bibitem{wikiHow}
@@ -408,5 +410,5 @@ C.~L. Zitnick, D.~Parikh, and L.~Vanderwende.
 \newblock In {\em CVPR}, 2013.
 
 \end{thebibliography}
-
+\fi
 \end{document}

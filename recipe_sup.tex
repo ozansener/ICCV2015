@@ -1,0 +1,104 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{iccv}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{xcolor}
+ \usepackage{setspace}
+
+ \usepackage{caption}
+ \usepackage{subcaption}
+\graphicspath{ {./images/} }
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+% \iccvfinalcopy % *** Uncomment this line for the final submission
+
+\def\iccvPaperID{623} % *** Enter the ICCV Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+% Pages are numbered in submission mode, and unnumbered in camera-ready
+\ificcvfinal\pagestyle{empty}\fi
+\begin{document}
+
+%%%%%%%%% TITLE
+%\title{Youtube2Storyline: Unsupervised Semantic Parsing of Video Collections}
+% \title{From YouTube to Semantic Storylines}
+%\title{YouTube to Semantic Storylines}
+\title{Unsupervised Semantic Parsing of Video Collections \\ Supplementary Materials}
+%\title{Unsupervised Grounding of Video Collections to Semantic Actions}
+
+
+
+\author{First Author\\
+Institution1\\
+Institution1 address\\z
+{\tt\small firstauthor@i1.org}
+% For a paper whose authors are all at the same institution,
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'',
+% just like the second author.
+% To save space, use either the email address or home page, not both
+\and
+Second Author\\
+Institution2\\
+First line of institution2 address\\
+{\tt\small secondauthor@i2.org}
+}
+
+\maketitle
+%\thispagestyle{empty}
+
+\section{Introduction}
+In this supplementary material, we explain the Markov Chain Monte Carlo (MCMC) sampling algorithm we use in order to learn our non-parameteric model, and we also explain the details of the natural language description generation algorithm. Moreover, we include an additional video of discovered activities and the parsing results in addition to this manuscript.
+
+\section{Learning via MCMC}
+In this section, we explain how we learn the non-parametric model we defined in Section 5.1 of the main paper. We follow the exact sampler proposed by Fox et al.\cite{foxBPHMM}. It marginalize over activity likelihoods $w$ and activity assignments $\mathbf{z}$ and samples the rest. MCMC procedure iteratively samples the conditional likelihood of activity matrix $\mathbf{F}$, activity parameters $\theta$ and transition weights $\eta$. We divide the explanation of this samplers into two sections, sampling the activities through activity matrix ($\mathbf{F}$) and activity parameters ($\theta$), and sampling the HMM parameters $\mathbf{\eta}$. Marginalization over activity assignments follows the efficient dynamic programming approach.
+
+\subsection{Sampling the Activities}
+Consider the binary activity inclusion matrix $\mathbf{F}$ such that $F_{i,j}$ is $1$ if the $i^{th}$ video has the $j^{th}$ activity. Following the sampler of Fox et al.\cite{foxBPHMM}, we divide the sampling $\mathbf{F}$ into two parts, namely, sampling the shared activities and sampling the novel activities. Sampling shared activities correspond the re-sampling of existing entries of $\mathbf{F}$. We simply iterate over each entry and propose a flip (\ie if the $i^{th}$ video has the $j^{th}$ activity, we propose to flip it and not to include $j^{th}$ activity in the $i^{th}$ video). We accept or reject this proposals following the Metropolis-Hasting rule.
+
+In order to sample the novel activities, we follow the data-driven sampler \cite{npActivity}. Consider the case in which we want to propose a novel activity by setting the $F_{i,j+1}$ to $0$. In other words, we introduce a new activity ($j+1^{th}$ activity) such that $i^{th}$ video includes it. In order to sample the parameters $\theta_{j+1}$ of it, we first sample a temporal window $W$ over the $i^{th}$ video. This window is sampled by sampling the starting frame and the length of the window from a uniform distribution. Then, we sample the novel activity from \emph{Beta distribution} as;
+\begin{equation}
+  \theta_{k,n}|W \sim \text{Beta}(\alpha_n,\beta_n)
+\end{equation}
+where $\theta_{k,n}$ is the $n^{th}$ entry of $\theta_k$, $\alpha_n$ is the number of frames in the window $W$ which have the atom $n$, and $\beta_n$ is the number of frames which do not have the atom $n$. We use \emph{Beta distribution} because it is the conjugate prior of the \emph{Bernoulli distribution} that we use to model activities.
+
+\subsection{Sampling the HMM Parameters}
+When the activities are defined via $\Theta$ and each video selects a subset of them via ($\mathbf{F}$), we can compute the likelihood of each state assignment by using the dynamic programming given the transition probabilities $\mathbf{\eta}$. By using the likelihoods, we sample the state assignments $\mathbf{z}$.
+
+When the states are sampled, we can use the closed-form sampler derived in \cite{foxBPHMM}. Fox et al.\cite{foxBPHMM} shows that the transition probabilities can be sampled through a \emph{Dirichlet} random variable and scaling it with a \emph{Gamma} random variable as;
+\begin{equation}
+  \mathbf{\pi^{(i)}} \sim Dir(\ldots,N^{(i)}_{j,k}+\alpha+\delta_{j,k}\kappa,\ldots)
+\end{equation}
+
+followed by \mbox{$\mathbf{\eta^{(i)}}=\mathbf{\pi^{(i)}} \times C^{(i)}$} such that \mbox{$C^{(i)} \sim Gamma( K^{(i)}_+\lambda +\kappa,1)$}. Here, $N^{(i)}_{j,k}$ represents the number of transitions between state $j$ and state $k$ in the video $i$, $\alpha$, $\lambda$ and $\kappa$ are hyperparameters which we learn with cross-validation, $\delta_{j,k}$ is $1$ if $j=k$ and $0$ o.w., and $K^{(i)}_+$ is the number of activities the $i^{th}$ video has chosen.
+
+\section{Generation of Language Description}
+In this section, we explain how we generated the text description for the activity steps we discovered. We included these descriptions in Figure 8 of the main paper as well as in the supplementary videos.
+
+In order to generate the descriptions, we simply used a Markov text generator. We collected all subtitles of all videos we included in our dataset. After combining them, we trained a $3^{rd}$ order Markov model by using the subtitles we downloaded. Main purpose of this training is learning the context dependent language model. Although this step can be accomplished by various of methods in the NLP literature, we choose Markov language model because of its simplicity. Indeed, this model is learned purely for visualization purposes and neither the activity step discovery nor the parsing algorithm uses this model.
+
+After the model is learned, we need to generate a text description for each discovered activity. Since each discovered activity is represented as Bernoulli random variable, we have likelihood for each language atom. Our description generation strategy is sampling a large collection of descriptions and ranking them for their closeness to the discovered activities. We compute this closeness with the parameters of the Bernoulli random variable. Formally, given large-set of sampled descriptions $\{S_i\}_{i \in [1,K]}$, we rank them using the weights of the Bernoulli random variable as;
+\[
+r_i = \frac{\sum_{j} \left[S_i^j = w^j\right]\theta^j}{\sum_{j} \left[S_i^j = w^j\right]1}
+\]
+Here, $\left[\cdot\right]$ is an indicator function, $S_i^j$ is the $j^{th}$ word of $i^{th}$ description, $w^j$ is the $j^{th}$ word and $\theta^j$ is the $j^{th}$ entry of the activity description. We simply choose the description having largest rank.
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{recipeUnderstanding}
+}
+
+\end{document}
