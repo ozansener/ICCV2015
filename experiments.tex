@@ -91,7 +91,7 @@ Given parsing results and the ground truth, we evaluate both the quality of temp
 \begin{figure*}[t]
   \includegraphics[width=\textwidth]{figure_8c}
   \vspace{-6mm}
-  \caption{\textcolor{red}{Qualitative results for parsing `Travel San Francisco' category.}}
+  \caption{Qualitative results for parsing `Travel San Francisco' category.}
   \vspace{-2mm}
   \label{sf}
 \end{figure*}
@@ -124,7 +124,7 @@ Although $IOU_{cms}$ successfully measures the accuracy of the temporal segmenta
 
 \vspace{1mm}
 \noindent\textbf{Semantics of activity steps.}
-In order to further evaluate the role of semantics, we performed a subjective analysis. We concatenated the activity step labels in the grount-truth into a label collection. Then, we ask non-expert users to choose a label for each discovered activity for each algorithm. In other words, we replaced the maximization step with subjective labels. We designed our experiments in a way that each clip received annotations from 5 different users. We randomized the ordering of videos and algorithms during the subjective evaluation. By using the activity labels provided by subjects, we compute the mean average precision wrt ground truth call it $mAP_{sem}$.
+In order to evaluate the role of semantics, we performed a subjective analysis. We concatenated the activity step labels in the grount-truth into a label collection. Then, we ask non-expert users to choose a label for each discovered activity for each algorithm. In other words, we replaced the maximization step with subjective labels. We designed our experiments in a way that each clip received annotations from 5 different users. We randomized the ordering of videos and algorithms during the subjective evaluation. Using the labels provided by subjects, we compute the mean average precision $(mAP_{sem})$.
 
 \begin{table}
 \caption{Semantic mean-average-precision $mAP_{sem}$.}
@@ -148,6 +148,6 @@ Both $mAP_{cms}$ and $mAP_{sem}$ metrics suggest that our method consistently ou
 As shown in Figure~\ref{mIOU} and \ref{mmAP}, performance significantly drops when any of the modalities is ignored consistently in all categories. Hence, the joint usage is necessary. One interesting observation is the fact that using only language information performed slightly better than using only visual information. We believe this is due to the less intra-class variance in the language modality (\ie people use same words for same activities). However, it lacks many details(less complete) and more noisy than visual information. Hence these results validate the complementary nature of language and vision.
 
 \vspace{1mm}
-\noindent\textbf{\textcolor{red}{Generalization to generic structured videos}}
-\textcolor{red}{In order to experiment the applicability of our method beyond How-To videos, we evaluated it on a set of non-How-To categories. In Figure \ref{sf}, we visualize the results for the videos retrieved using the query ``Travel San Francisco". The resulting clusters follow semantically meaningful activities and landmarks and show the applicability of our method beyond only How-To queries. It is also interesting to note that Chinatown and Clement St. ended up in the same cluster. Considering the fact that Clement St. is known for its Chinese food, this suggests that the discovered clusters indeed carry semantic information.}
+\noindent\textbf{Generalization to generic structured videos}
+We experiment the applicability of our method beyond How-To videos by evaluating it on non-How-To categories. In Figure \ref{sf}, we visualize the results for the videos retrieved using the query ``Travel San Francisco". The resulting clusters follow semantically meaningful activities and landmarks and show the applicability of our method beyond How-To queries. It is interesting to note that Chinatown and Clement St ended up in the same cluster. Considering the fact that Clement St is known for its Chinese food, this suggests that the discovered clusters are semantically meaningful.
 \vspace{-2mm}
