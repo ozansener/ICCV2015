@@ -1,0 +1,93 @@
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage{iccv}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{dsfont}
+\usepackage{xcolor}
+ \usepackage{setspace}
+
+ \usepackage{caption}
+ \usepackage{subcaption}
+\graphicspath{ {./images/} }
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+% Include other packages here, before hyperref.
+
+% If you comment hyperref and then uncomment it, you should delete
+% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+% run, let it finish, and you should be clear).
+\usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
+
+% \iccvfinalcopy % *** Uncomment this line for the final submission
+
+\def\iccvPaperID{623} % *** Enter the ICCV Paper ID here
+\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
+
+% Pages are numbered in submission mode, and unnumbered in camera-ready
+\ificcvfinal\pagestyle{empty}\fi
+\begin{document}
+
+%%%%%%%%% TITLE
+%\title{Youtube2Storyline: Unsupervised Semantic Parsing of Video Collections}
+% \title{From YouTube to Semantic Storylines}
+%\title{YouTube to Semantic Storylines}
+\title{Unsupervised Semantic Parsing of Video Collections \\ Supplementary Materials}
+%\title{Unsupervised Grounding of Video Collections to Semantic Actions}
+
+
+
+\author{First Author\\
+Institution1\\
+Institution1 address\\z
+{\tt\small firstauthor@i1.org}
+% For a paper whose authors are all at the same institution,
+% omit the following lines up until the closing ``}''.
+% Additional authors and addresses can be added with ``\and'',
+% just like the second author.
+% To save space, use either the email address or home page, not both
+\and
+Second Author\\
+Institution2\\
+First line of institution2 address\\
+{\tt\small secondauthor@i2.org}
+}
+
+\maketitle
+%\thispagestyle{empty}
+
+\section{Introduction}
+In this supplementary material, we explain the Markov Chain Monte Carlo (MCMC) sampling algorithm we use in order to learn our non-parameteric model and we also give additional qualitative results. Moreover, we include an additional video of discovered activities and the parsing results.
+
+\section{Learning via MCMC}
+In this section, we explain how we learn the non-parametric model we defined in Section 5.1 of the main paper. We follow the exact sampler proposed by Fox et al.\cite{foxBPHMM}. It marginilize over activity likelihoods $w$ and activity assignments $\mathbf{z}$. MCMC procedure iteratively samples the conditional likelihood of activity matrix $\mathbf{F}$, activity parameters $\theta$ and transition weights $\eta$. We divide the explanation of this samplers into two sections, sampling the activities through activity matrix ($\mathbf{F}$ ) and activity parameters ($\theta$), and sampling the HMM parameters $\mathbf{\eta}$.
+
+\subsection{Sampling the Activities}
+Consider the binary activity inclusion matrix $\mathbf{F}$ such that $F_{i,j}$ is $1$ if $i^{th}$ video has the $j^{th}$ activity. Following the sampler of Fox et al.\cite{foxBPHMM}, we divide the sampling $\mathbf{F}$ into two parts sampling shared activites and sampling new activities. Sampling shared activities correspond the re-sampling the existing entries of the binary matrix. We simply iterate over each entry and propose a flip (\ie For $F_{i,j}$, if $i^{th}$ video has the $j^{th}$ activity, we propose to flip it and to not include $j^{th}$ activity in $i^{th}$ video. We accept or reject this proposals following the Metropolis-Hasting rule.
+
+In order to sample the novel activities, we follow the data-driven sampler \cite{npActivity}. Let's say we want to propose a new activity by setting $F_{i,j+1}$ to $0$. In other words, we introduce a new activity $j+1^{th}$ activity such that $i^{th}$ video includes it. In order to sample the parameters of the activity $\theta_{j+1}$, we first sample a temporal window $W$ over $i^{th}$ video. This window is sampled by sampling the starting frame and the length from a uniform distribution. Then, we propose the new activity while sampling it from \emph{Beta distribution} as;
+\begin{equation}
+  \theta_{k,n}|W \sim \text{Beta}(\alpha_n,\beta_n)
+\end{equation}
+where $\theta_{k,n}$ is the $n^{th}$ entry of $\theta_k$ and $\alpha_n$ is the number of frames in window $W$ which have the atom $n$ and $\beta_n$ is the number of frames which do not have. We use \emph{Beta distribution} because it is the conjugate prior of the \emph{Bernoulli distribution} which we use to model $\Theta$
+
+\subsection{Sampling the HMM Parameters}
+When the activities are defined $\Theta$ and selected by videos ($\mathbf{F}$), we can compute the likelihood of each state assignment by using dynamic programming given the transition proabilities $\mathbf{\eta}$. Hence, we sample the state assignments by using the current transition probabilities.
+
+When the states are sampled, we can use the closed-form sampler derived in \cite{npActivity}. Fox et al.\cite{foxBPHMM} shows that the transition probabilities can be sampled through a \emph{Dirichelet} random variable and scaling it with a Gamma random variable as;
+\begin{equation}
+  \mathbf{\pi^{(i)}} \sim Dir(\ldots,N^{(i)}_{j,k}+\alpha+\delta_{j,k}\kappa,\ldots)
+\end{equation}
+
+and \mbox{$\mathbf{\eta^{(i)}}=\mathbf{\pi^{(i)}} \times C^{(i)}$} such that \mbox{$C^{(i)} \sim Gamma( K^{(i)}_+\lambda +\kappa,1)$}. Here, $N^{(i)}_{j,k}$ represents the number of transitions between state $j$ and state $k$, $\alpha$, $\lambda$ and $\kappa$ are hyperparameters which we learn with cross-validation, $\delta_{j,k}$ is $1$ if $j=k$ and $0$ o.w., and $K^{(i)}_+$ is the number of activities the $i^{th}$ video has chosen.
+
+{\small
+\bibliographystyle{ieee}
+\bibliography{recipeUnderstanding}
+}
+
+\end{document}
