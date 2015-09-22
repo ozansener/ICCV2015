@@ -1,8 +1,11 @@
+% !TEX root = recipeUnderstanding.tex
+
+
 \section{Experiments}
 In order to experiment the proposed method, we first collected a dataset (details in Section~\ref{dataset:sec}). We labelled small part of the dataset with frame-wise activity step labels and used the resulting set as an evaluation corpus. Neither the set of labels, nor the temporal boundaries are exposed to our algorithm since the set-up is completely unsupervised. We evaluate our algorithm against the several unsupervised clustering baselines and state-of-the-art algorithms from video summarization literature which are applicable.
 \subsection{Dataset}
 \label{dataset:sec}
-We use WikiHow\cite{wikiHow} in order to obtain the top100 queries the internet users are interested in and choose the ones which are
+We use WikiHow~\cite{wikiHow} in order to obtain the top100 queries the internet users are interested in and choose the ones which are
 directly related to the physical world. Resulting queries are;
 
 \emph{\textbf{How to}}\footnotesize
@@ -33,7 +36,7 @@ A toy milkshake, a milkshake charm, a funny video about How to NOT make smoothie
 \vspace{-1mm}
 After independently running our algorithm on all categories, we discover activity steps and parse the videos according to discovered steps. We visualize some of these categories qualitatively in Figure~\ref{recipe:overall} with the temporal parsing of evaluation videos as well as the ground truth parsing.
 
-To visualize the content of each activity step, we display key-frames from different videos. We also train a 3rd order Markov language model\cite{languageModel} by using the subtitles. Moreover, we generate a caption for each activity step by sampling this model conditioned on the $\theta^l_k$. We explain the details of this process in supplementary material.
+To visualize the content of each activity step, we display key-frames from different videos. We also train a 3rd order Markov language model~\cite{languageModel} by using the subtitles. Moreover, we generate a caption for each activity step by sampling this model conditioned on the $\theta^l_k$. We explain the details of this process in supplementary material.
 
 \begin{figure*}[ht]
   \begin{subfigure}[b]{\textwidth}
@@ -56,7 +59,7 @@ To visualize the content of each activity step, we display key-frames from diffe
 %\normalsize}
 \end{figure*}
 
-As shown in the Figures~\ref{recipe:ommelette}\&\ref{recipe:milkshake}, resulting steps are semantically meaningful. Moreover, the language captions are also quite informative hence we can conclude that there is enough language context within the subtitles in order to detect activities. On the other hand, some of the activity steps always occur together and our algorithm merges them into a single step while promoting sparsity.
+As shown in the Figures~\ref{recipe:ommelette} and~\ref{recipe:milkshake}, resulting steps are semantically meaningful. Moreover, the language captions are also quite informative hence we can conclude that there is enough language context within the subtitles in order to detect activities. On the other hand, some of the activity steps always occur together and our algorithm merges them into a single step while promoting sparsity.
 
 \subsection{Quantitative Results}
 We compare our algorithm with the following baselines.
@@ -68,11 +71,11 @@ In order to experiment the effect of learned atoms, we compare with low-level fe
 To experiment the effect of multi-modal approach, we compare with single modality approach by only using the atoms of a single modality.
 
 \noindent\textbf{Hidden Markov Model (HMM):}
-To experiment the effect of joint generaive model, we compare our algorithm with an HMM. We use the Baum-Welch \cite{rabiner} via cross-validation.
+To experiment the effect of joint generative model, we compare our algorithm with an HMM (using the Baum-Welch \cite{rabiner} via cross-validation).
 
 
-\noindent\textbf{Kernel Temporal Segmentation\cite{potapov2014category}:}
-Kernel Temporal Segmentation (KTS) proposed by Potapov et al.\cite{potapov2014category} can detect the temporal boundaries of the events/activities in the video from a time series data without any supervision. It enforces a local similarity of each resultant segment.
+\noindent\textbf{Kernel Temporal Segmentation \cite{potapov2014category}:}
+Kernel Temporal Segmentation (KTS) proposed by Potapov et al.~\cite{potapov2014category} can detect the temporal boundaries of the events/activities in the video from a time series data without any supervision. It enforces a local similarity of each resultant segment.
 
 \begin{figure*}[t]
   \includegraphics[width=\textwidth]{figure_9}
@@ -128,6 +131,7 @@ In order to evaluate the role of semantics, we performed a subjective analysis. 
 
 \begin{table}
 \caption{Semantic mean-average-precision $mAP_{sem}$.}
+\vspace{-3mm}
 {\small
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{c|cc|cccc}
@@ -136,7 +140,7 @@ In order to evaluate the role of semantics, we performed a subjective analysis. 
 $mAP_{sem}$ & 6.44   & 24.83  &     7.28 &   28.93  &  14.83    &  39.01 \\
 \end{tabular}}}
 \normalsize
-\vspace{-8mm}
+\vspace{-5mm}
 \end{table}
 
 Both $mAP_{cms}$ and $mAP_{sem}$ metrics suggest that our method consistently outperforms the competing ones. There is only one recipe in which our method is outperformed by our based line of no visual information. This is mostly because of the specific nature of the recipe \emph{How to tie a tie?}. In such videos the notion of object is not useful since all videos use a single object -tie-.
@@ -145,7 +149,7 @@ Both $mAP_{cms}$ and $mAP_{sem}$ metrics suggest that our method consistently ou
 
 \vspace{1mm}
 \noindent\textbf{The importance of each modality.}
-As shown in Figure~\ref{mIOU} and \ref{mmAP}, performance significantly drops when any of the modalities is ignored consistently in all categories. Hence, the joint usage is necessary. One interesting observation is the fact that using only language information performed slightly better than using only visual information. We believe this is due to the less intra-class variance in the language modality (\ie people use same words for same activities). However, it lacks many details(less complete) and more noisy than visual information. Hence these results validate the complementary nature of language and vision.
+As shown in Figure~\ref{mIOU} and \ref{mmAP}, performance significantly drops when any of the modalities is ignored consistently in all categories. Hence, the joint usage is necessary. One interesting observation is the fact that using only language information performed slightly better than using only visual information. We believe this is due to the less intra-class variance in the language modality (\ie, people use same words for same activities). However, it lacks many details(less complete) and more noisy than visual information. Hence these results validate the complementary nature of language and vision.
 
 \vspace{1mm}
 \noindent\textbf{Generalization to generic structured videos}

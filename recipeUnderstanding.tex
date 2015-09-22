@@ -10,7 +10,7 @@
 \usepackage{xcolor}
  \usepackage{setspace}
 
- \usepackage{caption}
+ \usepackage[small,it]{caption}
  \usepackage{subcaption}
 \graphicspath{ {./images/} }
 
@@ -41,16 +41,17 @@
 
 
 
-\author{ Ozan Sener$^{1,2}$ \;\; Amir Zamir$^{1}$ \;\; Silvio Savarese$^{1}$ \;\; Ashutosh Saxena$^{1,2}$  \\ \\
+\author{ Ozan Sener$^{1,2}$ \;\; Amir Zamir$^{1}$ \;\; Silvio Savarese$^{1}$ \;\; Ashutosh Saxena$^{1,2,3}$  \\ \\
 %{\tt\small firstauthor@i1.org}
 % For a paper whose authors are all at the same institution,
 % omit the following lines up until the closing ``}''.
 % Additional authors and addresses can be added with ``\and'',
 % just like the second author.
 % To save space, use either the email address or home page, not both
-$^1$Department of Computer Science, Stanford University\\
-$^2$Department of Computer Science, Cornell University\\
-{\tt\small \{osener,zamir,ssilvio\}@stanford.edu, \{asaxena\}@cs.stanford.edu}
+$^1$ Department of Computer Science, Stanford University\\
+$^2$ Department of Computer Science, Cornell University\\
+$^3$ Brain of Things Inc.\\
+{\tt\small \{osener,zamir,ssilvio\}@stanford.edu, asaxena@cs.stanford.edu}
 %Institution1\\
 %Institution1 address\\
 }
@@ -62,6 +63,7 @@ $^2$Department of Computer Science, Cornell University\\
 \begin{spacing}{0.98}
 %%%%%%%%% ABSTRACT
 \begin{abstract}
+\vspace{-2mm}
 Human communication typically has an underlying structure. This is reflected in the fact that in many user generated videos, a starting point, ending, and certain objective steps between these two can be identified. In this paper, we propose a method for parsing a video into such semantic steps in an unsupervised way. The proposed method is capable of providing a semantic ``storyline'' of the video composed of its objective steps. We accomplish this using both visual and language cues in a joint generative model. The proposed method can also provide a textual description for each of the identified semantic steps and video segments. We evaluate this method on a large number of complex YouTube videos and show results of unprecedented quality for this intricate and impactful problem.
 \end{abstract}
 \vspace{-5mm}

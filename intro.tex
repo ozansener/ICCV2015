@@ -1,10 +1,11 @@
 % !TEX root = recipeUnderstanding.tex
 
 \section{Introduction}
-Human communication takes many forms, including language and vision. For instance, explaining ``how-to'' perform a certain task can be communicated via language (e.g., Do-It-Yourself books) as well as visual (e.g., instructional YouTube videos) information. Regardless of the form, such human-generated communication is generally structured and has a clear beginning, end, and a set of steps in between. Parsing such communication into its semantic steps is the key to understand human activities.
+\vskip -.05in
+Human communication takes many forms, including language and vision. For instance, explaining ``how-to'' perform a certain task can be communicated via language (\eg, Do-It-Yourself books) as well as visual (\eg, instructional YouTube videos) information. Regardless of the form, such human-generated communication is generally structured and has a clear beginning, end, and a set of steps in between. Parsing such communication into its semantic steps is the key to understand human activities.
 
 %% AMIR: paragraph Could be removed
-Language and vision provide different, but correlating and complementary information. Challenge lies in that both video frames and language (from subtitles generated via Automatic Speech Recognition) are only a noisy, partial observation of the actions being performed. However, the complementary nature of language and vision gives the opportunity to understand the activities only from these partial observations. In this paper, we present a unified model, considering both of the modalities, in order to parse human activities into activity steps with no form of supervision other than requiring videos to be the same category (\eg all cooking eggs, changing tires etc.).
+Language and vision provide different, but correlating and complementary information. Challenge lies in that both video frames and language (from subtitles generated via Automatic Speech Recognition) are only a noisy, partial observation of the actions being performed. However, the complementary nature of language and vision gives the opportunity to understand the activities only from these partial observations. In this paper, we present a unified model, considering both of the modalities, in order to parse human activities into activity steps with no form of supervision other than requiring videos to be the same category (\eg, all cooking eggs, changing tires, etc.).
 
 %
 
@@ -19,16 +20,17 @@ Language and vision provide different, but correlating and complementary informa
 
 \begin{figure}[h!]
   \includegraphics[width=0.48\textwidth]{Figure_1_flattened}
-  \caption{Given a large video collection (frames and subtitles) of an instructional category (\eg How to cook an ommelette?), we discover activity steps (\eg crack the eggs). We also parse the videos based on the discovered steps.}
+  \vskip -.1in
+  \caption{Given a large video collection (frames and subtitles) of an instructional category (\eg, How to cook an omelette?), we discover activity steps (\eg, crack the eggs). We also parse the videos based on the discovered steps.}
   \label{teaser}
-  \vspace{-5mm}
+  \vspace{-4mm}
 \end{figure}
 
 
-The key idea in our approach is the observation that the large collection of videos, pertaining to the same activity class, typically include only a few objective activity steps, and the variability is the result of exponentially many ways of generating videos from activity steps through subset selection and time ordering. We study this construction based on the large-scale information available in YouTube in the form of instructional videos  (\eg, ``Making panckage'', ``How to tie a bow tie''). Instructional videos have many desirable properties like the volume of the information (e.g., YouTube has 281.000 videos for \emph{"How to tie a bow tie"}) and a well defined notion of activity step.  However, the proposed parsing method is applicable to any type of videos as long as they are composed of a set of steps.
+The key idea in our approach is the observation that the large collection of videos, pertaining to the same activity class, typically include only a few objective activity steps, and the variability is the result of exponentially many ways of generating videos from activity steps through subset selection and time ordering. We study this construction based on the large-scale information available in YouTube in the form of instructional videos  (\eg, ``Making pancake'', ``How to tie a bow tie''). Instructional videos have many desirable properties like the volume of the information (\eg, YouTube has 281.000 videos for \emph{"How to tie a bow tie"}) and a well defined notion of activity step.  However, the proposed parsing method is applicable to any type of videos as long as they are composed of a set of steps.
 
 %I think the story line idea is not that strong anymore, we are discovering and parsing
-The output of our method can be seen as the semantic ``storyline'' of a rather long and complex video collection (see Fig. \ref{teaser}). This storyline provides what particular steps are taking place in the video collection, when they are occurring, and what their meaning is (\emph{what-when-how}). This method also puts videos performing the same overall task in common ground and capture their high-level relations.
+The output of our method can be seen as the semantic ``storyline'' of a rather long and complex video collection (see Fig.~\ref{teaser}). This storyline provides what particular steps are taking place in the video collection, when they are occurring, and what their meaning is (\emph{what-when-how}). This method also puts videos performing the same overall task in common ground and capture their high-level relations.
 
 %, and therefore, provide a \emph{categorical} storyline as well.
 

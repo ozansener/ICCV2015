@@ -1,0 +1,52 @@
+\backcite {vidAbstraction}{{2}{2}{section.2}}
+\backcite {lee2012discovering, lu2013story,rui2000automatically}{{2}{2}{section.2}}
+\backcite {storyGraph}{{2}{2}{section.2}}
+\backcite {gupta2009understanding}{{2}{2}{section.2}}
+\backcite {khosla2013large}{{2}{2}{section.2}}
+\backcite {kim2014joint,potapov2014category}{{2}{2}{section.2}}
+\backcite {matching}{{2}{2}{section.2}}
+\backcite {connecting}{{2}{2}{section.2}}
+\backcite {zitnick2013learning,zitnick2013bringing}{{2}{2}{section.2}}
+\backcite {kong2014you}{{2}{2}{section.2}}
+\backcite {fidler2013sentence}{{2}{2}{section.2}}
+\backcite {yu2013grounded}{{2}{2}{section.2}}
+\backcite {motwani2012improving}{{2}{2}{section.2}}
+\backcite {ordonez2011im2text}{{2}{2}{section.2}}
+\backcite {kiros2014multimodal,socher2014grounded,farhadi2010every}{{2}{2}{section.2}}
+\backcite {farhadi2010every}{{2}{2}{section.2}}
+\backcite {socher2014grounded,kiros2014multimodal,deepAlignment}{{2}{2}{section.2}}
+\backcite {kuehne2011hmdb, UCF101, niebles10_eccv, laptev08_cvpr, efros03_iccv, ryoo09_iccv}{{2}{2}{section.2}}
+\backcite {THUMOS14, oneata2014lear, jainuniversity}{{2}{2}{section.2}}
+\backcite {duchenne09_iccv, hoai11_cvpr, laptev07_iccv, bojanowski14_eccv, pirsiavash14_cvpr}{{2}{2}{section.2}}
+\backcite {niebles10_eccv, yao10b_cvpr, jain13_cvpr,lan14_eccv, lan14_vs}{{2}{2}{section.2}}
+\backcite {sun2014discover,das2013thousand,barbu2012video}{{2}{2}{section.2}}
+\backcite {cookingSemantics,logicRecipe}{{2}{2}{section.2}}
+\backcite {logicRecipe}{{2}{2}{section.2}}
+\backcite {beetz,cookie}{{2}{2}{section.2}}
+\backcite {alignment}{{2}{2}{section.2}}
+\backcite {photoshop}{{3}{2}{section.2}}
+\backcite {cpmc}{{3}{4}{figure.caption.2}}
+\backcite {keysegments}{{3}{4}{figure.caption.2}}
+\backcite {scgp}{{4}{5}{figure.caption.4}}
+\backcite {scgp,scgp_eigen}{{4}{5}{equation.5.1}}
+\backcite {alexnet}{{4}{5}{equation.5.1}}
+\backcite {scgp,scgp_eigen}{{4}{5}{equation.5.2}}
+\backcite {foxBPHMM}{{5}{5.1.1}{subsubsection.5.1.1}}
+\backcite {foxBPHMM}{{5}{5.1.1}{subsubsection.5.1.1}}
+\backcite {foxBPHMM}{{5}{5.1.1}{subsubsection.5.1.1}}
+\backcite {ibp}{{5}{5.1.1}{equation.5.4}}
+\backcite {ibp}{{5}{5.1.1}{equation.5.4}}
+\backcite {foxBPHMM}{{5}{5.1.1}{equation.5.4}}
+\backcite {foxBPHMM}{{6}{5.1.2}{subsubsection.5.1.2}}
+\backcite {wikiHow}{{6}{6.1}{subsection.6.1}}
+\backcite {scgp}{{6}{6.1.1}{subsubsection.6.1.1}}
+\backcite {languageModel}{{6}{6.2}{subsection.6.2}}
+\backcite {THUMOS14}{{6}{6.3}{subsection.6.3}}
+\backcite {rabiner}{{6}{6.3}{subsection.6.3}}
+\backcite {potapov2014category}{{6}{6.3}{subsection.6.3}}
+\backcite {potapov2014category}{{6}{6.3}{subsection.6.3}}
+\backcite {THUMOS14}{{7}{6.3}{figure.caption.9}}
+\backcite {liao05}{{7}{6.3}{figure.caption.9}}
+\backcite {potapov2014category}{{8}{1}{table.caption.11}}
+\backcite {potapov2014category}{{8}{1}{table.caption.11}}
+\backcite {robobrain}{{8}{7}{section.7}}

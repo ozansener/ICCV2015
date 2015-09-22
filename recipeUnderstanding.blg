@@ -1,0 +1,60 @@
+This is BibTeX, Version 0.99d (TeX Live 2010)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: recipeUnderstanding.aux
+The style file: ieee.bst
+Database file #1: recipeUnderstanding.bib
+I was expecting a `,' or a `}'---line 499 of file recipeUnderstanding.bib
+ :   
+ :   booktitle = {ECCV International Workshop and Competition on Action Recognition with a Large Number of Classes},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in wikiHow
+Warning--empty publisher in farhadi2010every
+Warning--empty journal in ibp
+Warning--empty journal in jainuniversity
+Warning--empty year in jainuniversity
+Warning--empty journal in oneata2014lear
+Warning--empty publisher in scgp_eigen
+Warning--empty publisher in potapov2014category
+You've used 61 entries,
+            2120 wiz_defined-function locations,
+            752 strings with 12634 characters,
+and the built_in function-call counts, 19833 in all, are:
+= -- 1706
+> -- 1243
+< -- 2
++ -- 494
+- -- 426
+* -- 1303
+:= -- 3381
+add.period$ -- 185
+call.type$ -- 61
+change.case$ -- 395
+chr.to.int$ -- 0
+cite$ -- 69
+duplicate$ -- 808
+empty$ -- 1619
+format.name$ -- 426
+if$ -- 4093
+int.to.chr$ -- 0
+int.to.str$ -- 61
+missing$ -- 59
+newline$ -- 306
+num.names$ -- 120
+pop$ -- 575
+preamble$ -- 1
+purify$ -- 334
+quote$ -- 0
+skip$ -- 461
+stack$ -- 0
+substring$ -- 519
+swap$ -- 117
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 244
+warning$ -- 8
+while$ -- 138
+width$ -- 63
+write$ -- 614
+(There was 1 error message)
