@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  22 SEP 2015 01:19
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  25 SEP 2015 17:29
 entering extended mode
- \write18 enabled.
- file:line:error style messages enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **recipeUnderstanding.tex
 (./recipeUnderstanding.tex
@@ -587,17 +586,13 @@ Underfull \hbox (badness 2486) in paragraph at lines 146--149
 \openout3 = `recipeUnderstanding.brf'.
 
 
-Underfull \vbox (badness 3396) has occurred while \output is active []
-
- [8 <./images/figure_8c.pdf>]
+[8 <./images/figure_8c.pdf>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
- [9])
+)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 416.
- [10
-
-]
+ [9]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 416.
  (./recipeUnderstanding.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 416.
@@ -606,8 +601,8 @@ Package rerunfilecheck Info: File `recipeUnderstanding.brf' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  7916 strings out of 493747
- 118136 string characters out of 3143546
- 225241 words of memory out of 3000000
+ 118138 string characters out of 3143546
+ 230241 words of memory out of 3000000
  10886 multiletter control sequences out of 15000+200000
  38558 words of font info for 93 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
@@ -642,10 +637,10 @@ cr8a.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/local/texlive/2010/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/loca
 l/texlive/2010/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/
 2010/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on recipeUnderstanding.pdf (10 pages, 22181417 bytes).
+Output written on recipeUnderstanding.pdf (9 pages, 22181093 bytes).
 PDF statistics:
- 1081 PDF objects out of 1200 (max. 8388607)
- 596 compressed objects within 6 object streams
+ 1078 PDF objects out of 1200 (max. 8388607)
+ 594 compressed objects within 6 object streams
  104 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 

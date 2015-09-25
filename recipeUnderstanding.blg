@@ -3,7 +3,11 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: recipeUnderstanding.aux
 The style file: ieee.bst
 Database file #1: recipeUnderstanding.bib
-I was expecting a `,' or a `}'---line 499 of file recipeUnderstanding.bib
+Repeated entry---line 45 of file recipeUnderstanding.bib
+ : @article{robobrain
+ :                   ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 516 of file recipeUnderstanding.bib
  :   
  :   booktitle = {ECCV International Workshop and Competition on Action Recognition with a Large Number of Classes},
 (Error may have been on previous line)
@@ -57,4 +61,4 @@ warning$ -- 8
 while$ -- 138
 width$ -- 63
 write$ -- 614
-(There was 1 error message)
+(There were 2 error messages)
