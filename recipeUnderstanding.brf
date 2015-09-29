@@ -38,10 +38,12 @@
 \backcite {ibp}{{5}{5.1.1}{equation.5.4}}
 \backcite {foxBPHMM}{{5}{5.1.1}{equation.5.4}}
 \backcite {foxBPHMM}{{6}{5.1.2}{subsubsection.5.1.2}}
+\backcite {supp}{{6}{5.1.2}{subsubsection.5.1.2}}
 \backcite {wikiHow}{{6}{6.1}{subsection.6.1}}
 \backcite {scgp}{{6}{6.1.1}{subsubsection.6.1.1}}
 \backcite {languageModel}{{6}{6.2}{subsection.6.2}}
-\backcite {THUMOS14}{{6}{6.3}{subsection.6.3}}
+\backcite {supp}{{6}{6.2}{subsection.6.2}}
+\backcite {kantorov2014}{{6}{6.3}{subsection.6.3}}
 \backcite {rabiner}{{6}{6.3}{subsection.6.3}}
 \backcite {potapov2014category}{{6}{6.3}{subsection.6.3}}
 \backcite {potapov2014category}{{6}{6.3}{subsection.6.3}}

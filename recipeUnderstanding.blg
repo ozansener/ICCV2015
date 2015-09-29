@@ -7,12 +7,19 @@ Repeated entry---line 45 of file recipeUnderstanding.bib
  : @article{robobrain
  :                   ,
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 516 of file recipeUnderstanding.bib
+I was expecting an "="---line 165 of file recipeUnderstanding.bib
+ :   
+ :   year={2003}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 528 of file recipeUnderstanding.bib
  :   
  :   booktitle = {ECCV International Workshop and Competition on Action Recognition with a Large Number of Classes},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in supp
 Warning--to sort, need author or key in wikiHow
+Warning--empty year in matching
 Warning--empty publisher in farhadi2010every
 Warning--empty journal in ibp
 Warning--empty journal in jainuniversity
@@ -20,45 +27,45 @@ Warning--empty year in jainuniversity
 Warning--empty journal in oneata2014lear
 Warning--empty publisher in scgp_eigen
 Warning--empty publisher in potapov2014category
-You've used 61 entries,
+You've used 63 entries,
             2120 wiz_defined-function locations,
-            752 strings with 12634 characters,
-and the built_in function-call counts, 19833 in all, are:
-= -- 1706
-> -- 1243
+            758 strings with 12873 characters,
+and the built_in function-call counts, 20165 in all, are:
+= -- 1730
+> -- 1257
 < -- 2
-+ -- 494
-- -- 426
-* -- 1303
-:= -- 3381
-add.period$ -- 185
-call.type$ -- 61
-change.case$ -- 395
++ -- 501
+- -- 430
+* -- 1311
+:= -- 3431
+add.period$ -- 190
+call.type$ -- 63
+change.case$ -- 403
 chr.to.int$ -- 0
-cite$ -- 69
-duplicate$ -- 808
-empty$ -- 1619
-format.name$ -- 426
-if$ -- 4093
+cite$ -- 73
+duplicate$ -- 828
+empty$ -- 1659
+format.name$ -- 430
+if$ -- 4169
 int.to.chr$ -- 0
-int.to.str$ -- 61
-missing$ -- 59
-newline$ -- 306
-num.names$ -- 120
-pop$ -- 575
+int.to.str$ -- 63
+missing$ -- 60
+newline$ -- 315
+num.names$ -- 122
+pop$ -- 594
 preamble$ -- 1
-purify$ -- 334
+purify$ -- 340
 quote$ -- 0
-skip$ -- 461
+skip$ -- 477
 stack$ -- 0
-substring$ -- 519
-swap$ -- 117
+substring$ -- 499
+swap$ -- 120
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 244
-warning$ -- 8
+type$ -- 252
+warning$ -- 10
 while$ -- 138
-width$ -- 63
-write$ -- 614
-(There were 2 error messages)
+width$ -- 65
+write$ -- 630
+(There were 3 error messages)

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  25 SEP 2015 17:34
+This is pdfTeX, Version 3.1415926-1.40.11 (TeX Live 2010) (format=pdflatex 2010.7.21)  27 SEP 2015 20:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -425,33 +425,33 @@ LaTeX Info: Redefining \ref on input line 33.
 LaTeX Info: Redefining \pageref on input line 33.
 LaTeX Info: Redefining \nameref on input line 33.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 60.
-LaTeX Font Info:    Try loading font information for U+msa on input line 60.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 61.
+LaTeX Font Info:    Try loading font information for U+msa on input line 61.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 60.
+LaTeX Font Info:    Try loading font information for U+msb on input line 61.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 60.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 61.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 60.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 61.
 
 (/usr/local/texlive/2010/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 60.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 65.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
  (./intro.tex
-Underfull \hbox (badness 1859) in paragraph at lines 67--2
+Underfull \hbox (badness 1859) in paragraph at lines 68--2
 []\OT1/ptm/m/it/10 Human com-mu-ni-ca-tion typ-i-cally has an un-der-ly-ing
  []
 
@@ -488,7 +488,7 @@ File: ./images/frame.pdf Graphic file (type pdf)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
  [3 <./images/repr.pdf> <./images/frame.pdf>]
-<./images/joint_clustering.pdf, id=242, 698.61pt x 357.335pt>
+<./images/joint_clustering.pdf, id=240, 698.61pt x 357.335pt>
 File: ./images/joint_clustering.pdf Graphic file (type pdf)
 
 <use ./images/joint_clustering.pdf>
@@ -514,21 +514,21 @@ Overfull \hbox (2.97296pt too wide) detected at line 88
 []\OMS/cmsy/m/n/10 r[] \OT1/cmr/m/n/10 = [] + [] []\OML/cmm/m/it/10 ;
  []
 
-<./images/im0.png, id=252, 3000.20876pt x 963.6pt>
+<./images/im0.png, id=250, 3000.20876pt x 963.6pt>
 File: ./images/im0.png Graphic file (type png)
  <use ./images/im0.png>
-<./images/im4.png, id=253, 3000.20876pt x 963.6pt>
+<./images/im4.png, id=251, 3000.20876pt x 963.6pt>
 File: ./images/im4.png Graphic file (type png)
  <use ./images/im4.png>
-<./images/im8.png, id=254, 3000.20876pt x 963.6pt>
+<./images/im8.png, id=252, 3000.20876pt x 963.6pt>
 File: ./images/im8.png Graphic file (type png)
  <use ./images/im8.png>
-<./images/im10.png, id=255, 3000.20876pt x 963.6pt>
+<./images/im10.png, id=253, 3000.20876pt x 963.6pt>
 File: ./images/im10.png Graphic file (type png)
  <use ./images/im10.png>)
 (./method-learning.tex [4 <./images/joint_clustering.pdf> <./images/im0.png (PN
 G copy)> <./images/im4.png (PNG copy)> <./images/im8.png (PNG copy)> <./images/
-im10.png (PNG copy)>] <plate.pdf, id=353, 415.41025pt x 244.6937pt>
+im10.png (PNG copy)>] <plate.pdf, id=350, 415.41025pt x 244.6937pt>
 File: plate.pdf Graphic file (type pdf)
 
 <use plate.pdf>
@@ -540,7 +540,7 @@ Overfull \hbox (11.29218pt too wide) in paragraph at lines 41--43
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 11.
 
-<./images/figure_7_flt.pdf, id=410, 218.9781pt x 62.634pt>
+<./images/figure_7_flt.pdf, id=408, 218.9781pt x 62.634pt>
 File: ./images/figure_7_flt.pdf Graphic file (type pdf)
 
 <use ./images/figure_7_flt.pdf>
@@ -548,11 +548,11 @@ Overfull \hbox (11.29218pt too wide) in paragraph at lines 26--29
 [][] 
  []
 
-<figure_8a_flattened.pdf, id=413, 512.1534pt x 166.94371pt>
+<figure_8a_flattened.pdf, id=412, 512.1534pt x 166.94371pt>
 File: figure_8a_flattened.pdf Graphic file (type pdf)
 
 <use figure_8a_flattened.pdf>
-<./images/figure_8b_flattened.pdf, id=414, 512.1534pt x 169.3527pt>
+<./images/figure_8b_flattened.pdf, id=413, 512.1534pt x 169.3527pt>
 File: ./images/figure_8b_flattened.pdf Graphic file (type pdf)
 
 <use ./images/figure_8b_flattened.pdf>
@@ -560,18 +560,18 @@ Overfull \hbox (1.90002pt too wide) in paragraph at lines 50--56
 [][]  
  []
 
-<./images/figure_9.pdf, id=421, 460.93506pt x 56.9055pt>
+<./images/figure_9.pdf, id=420, 460.93506pt x 56.9055pt>
 File: ./images/figure_9.pdf Graphic file (type pdf)
 
 <use ./images/figure_9.pdf>
-<./images/figure_10.pdf, id=422, 460.93506pt x 56.9055pt>
+<./images/figure_10.pdf, id=421, 460.93506pt x 56.9055pt>
 File: ./images/figure_10.pdf Graphic file (type pdf)
 
 <use ./images/figure_10.pdf> [6 <./images/figure_7_flt.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<./images/figure_8c.pdf, id=444, 1750.54pt x 307.1475pt>
+<./images/figure_8c.pdf, id=445, 1750.54pt x 307.1475pt>
 File: ./images/figure_8c.pdf Graphic file (type pdf)
 
 <use ./images/figure_8c.pdf> [7 <./figure_8a_flattened.pdf> <./images/figure_8b
@@ -587,26 +587,31 @@ Underfull \hbox (badness 2486) in paragraph at lines 146--149
 
 
 [8 <./images/figure_8c.pdf>]
+Underfull \hbox (badness 8000) in paragraph at lines 6--6
+[]\OT1/ptm/m/n/8 Suuplementary ma-te-rial for the pa-per.  [][]$\OT1/pcr/m/n/8 
+http : / / cvgl .
+ []
+
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ” in font ptmr7t!
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 416.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 417.
  [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 416.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 417.
  (./recipeUnderstanding.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 416.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 417.
 Package rerunfilecheck Info: File `recipeUnderstanding.brf' has not changed.
-(rerunfilecheck)             Checksum: 5F0BDB0EBF1CD9EC6645F2BE44721518;2882.
+(rerunfilecheck)             Checksum: B312C08882AFBD90AF7DBDEE83FC362F;2979.
  ) 
 Here is how much of TeX's memory you used:
- 7916 strings out of 493747
- 118138 string characters out of 3143546
- 230241 words of memory out of 3000000
- 10886 multiletter control sequences out of 15000+200000
+ 7926 strings out of 493747
+ 118256 string characters out of 3143546
+ 231288 words of memory out of 3000000
+ 10894 multiletter control sequences out of 15000+200000
  38558 words of font info for 93 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 42i,12n,38p,1427b,526s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,12n,38p,1411b,526s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2010/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
 xlive/2010/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx5.pfb></usr/local/texl
@@ -624,23 +629,22 @@ st/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2010/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2010/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2010/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2010/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/d
-oublestroke/dsrom10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/public/
-doublestroke/dsrom8.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/urw/cou
-rier/ucrr8a.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/urw/ncntrsbk/un
-cr8a.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
-/usr/local/texlive/2010/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/loca
-l/texlive/2010/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/
-2010/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on recipeUnderstanding.pdf (9 pages, 22181093 bytes).
+pe1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2010/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publi
+c/doublestroke/dsrom10.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/publ
+ic/doublestroke/dsrom8.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/urw/
+courier/ucrr8a.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/urw/ncntrsbk
+/uncr8a.pfb></usr/local/texlive/2010/texmf-dist/fonts/type1/urw/times/utmb8a.pf
+b></usr/local/texlive/2010/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/l
+ocal/texlive/2010/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texli
+ve/2010/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on recipeUnderstanding.pdf (9 pages, 22171489 bytes).
 PDF statistics:
- 1078 PDF objects out of 1200 (max. 8388607)
- 594 compressed objects within 6 object streams
- 104 named destinations out of 1000 (max. 500000)
+ 1080 PDF objects out of 1200 (max. 8388607)
+ 597 compressed objects within 6 object streams
+ 106 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
