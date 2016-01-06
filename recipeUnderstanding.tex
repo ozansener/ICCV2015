@@ -9,7 +9,7 @@
 \usepackage{dsfont}
 \usepackage{xcolor}
  \usepackage{setspace}
- 
+
  \usepackage{caption}
  \usepackage{subcaption}
 \graphicspath{ {./images/} }
@@ -23,7 +23,7 @@
 % run, let it finish, and you should be clear).
 \usepackage[pagebackref=true,breaklinks=true,letterpaper=true,colorlinks,bookmarks=false]{hyperref}
 
-% \iccvfinalcopy % *** Uncomment this line for the final submission
+\iccvfinalcopy % *** Uncomment this line for the final submission
 
 \def\iccvPaperID{623} % *** Enter the ICCV Paper ID here
 \def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
@@ -41,32 +41,30 @@
 
 
 
-\author{First Author\\
-Institution1\\
-Institution1 address\\z
-{\tt\small firstauthor@i1.org}
+\author{ Ozan Sener$^{1,2}$ \;\; Amir Zamir$^{1}$ \;\; Silvio Savarese$^{1}$ \;\; Ashutosh Saxena$^{1,2}$  \\ \\
+%{\tt\small firstauthor@i1.org}
 % For a paper whose authors are all at the same institution,
 % omit the following lines up until the closing ``}''.
 % Additional authors and addresses can be added with ``\and'',
 % just like the second author.
 % To save space, use either the email address or home page, not both
-\and
-Second Author\\
-Institution2\\
-First line of institution2 address\\
-{\tt\small secondauthor@i2.org}
+$^1$Department of Computer Science, Stanford University\\
+$^2$Department of Computer Science, Cornell University\\
+{\tt\small \{osener,zamir,ssilvio\}@stanford.edu, \{asaxena\}@cs.stanford.edu}
+%Institution1\\
+%Institution1 address\\
 }
-
 \maketitle
 %\thispagestyle{empty}
 
 
+%%%%%%%%% BODY TEXT
+\begin{spacing}{0.98}
 %%%%%%%%% ABSTRACT
 \begin{abstract}
 Human communication typically has an underlying structure. This is reflected in the fact that in many user generated videos, a starting point, ending, and certain objective steps between these two can be identified. In this paper, we propose a method for parsing a video into such semantic steps in an unsupervised way. The proposed method is capable of providing a semantic ``storyline'' of the video composed of its objective steps. We accomplish this using both visual and language cues in a joint generative model. The proposed method can also provide a textual description for each of the identified semantic steps and video segments. We evaluate this method on a large number of complex YouTube videos and show results of unprecedented quality for this intricate and impactful problem.
 \end{abstract}
-
-%%%%%%%%% BODY TEXT
+\vspace{-5mm}
 \input{intro}
 \input{related}
 \input{overview}
@@ -75,14 +73,342 @@ Human communication typically has an underlying structure. This is reflected in 
 \input{experiments}
 \input{conclusion}
 %\input{notation}
-
-\clearpage
-
+\end{spacing}
 {\footnotesize
-\begin{spacing}{0.88}
+%\begin{spacing}{0.88}
 \bibliographystyle{ieee}
 \bibliography{recipeUnderstanding}
-\end{spacing}
+%end{spacing}
 }
 
+\iffalse
+\begin{thebibliography}{10}\itemsep=-1pt
+
+\bibitem{wikiHow}
+Wikihow-how to do anything.
+\newblock \url{http://www.wikihow.com}.
+
+\bibitem{barbu2012video}
+A.~Barbu, A.~Bridge, Z.~Burchill, D.~Coroian, S.~Dickinson, S.~Fidler,
+  A.~Michaux, S.~Mussman, S.~Narayanaswamy, D.~Salvi, et~al.
+\newblock Video in sentences out.
+\newblock {\em arXiv preprint arXiv:1204.2742}, 2012.
+
+\bibitem{matching}
+K.~Barnard, P.~Duygulu, D.~Forsyth, N.~De~Freitas, D.~M. Blei, and M.~I.
+  Jordan.
+\newblock Matching words and pictures.
+\newblock {\em JMLR}, 3:1107--1135, 2003.
+
+\bibitem{beetz}
+M.~Beetz, U.~Klank, I.~Kresse, A.~Maldonado, L.~Mosenlechner, D.~Pangercic,
+  T.~Ruhr, and M.~Tenorth.
+\newblock Robotic roommates making pancakes.
+\newblock In {\em Humanoids}, 2011.
+
+\bibitem{bojanowski14_eccv}
+P.~Bojanowski, R.~Lajugie, F.~Bach, I.~Laptev, J.~Ponce, C.~Schmid, and
+  J.~Sivic.
+\newblock Weakly supervised action labeling in videos under ordering
+  constraints.
+\newblock In {\em ECCV}, 2014.
+
+\bibitem{cookie}
+M.~Bollini, J.~Barry, and D.~Rus.
+\newblock Bakebot: Baking cookies with the pr2.
+\newblock In {\em The PR2 Workshop, IROS}, 2011.
+
+\bibitem{cpmc}
+J.~Carreira and C.~Sminchisescu.
+\newblock Constrained parametric min-cuts for automatic object segmentation.
+\newblock In {\em CVPR}, 2010.
+
+\bibitem{das2013thousand}
+P.~Das, C.~Xu, R.~F. Doell, and J.~J. Corso.
+\newblock A thousand frames in just a few words: Lingual description of videos
+  through latent topics and sparse object stitching.
+\newblock In {\em CVPR}, 2013.
+
+\bibitem{duchenne09_iccv}
+O.~Duchenne, I.~Laptev, J.~Sivic, F.~Bash, and J.~Ponce.
+\newblock Automatic annotation of human actions in video.
+\newblock In {\em ICCV}, 2009.
+
+\bibitem{efros03_iccv}
+A.~A. Efros, A.~C. Berg, G.~Mori, and J.~Malik.
+\newblock Recognizing action at a distance.
+\newblock In {\em ICCV}, 2003.
+
+\bibitem{farhadi2010every}
+A.~Farhadi, M.~Hejrati, M.~A. Sadeghi, P.~Young, C.~Rashtchian, J.~Hockenmaier,
+  and D.~Forsyth.
+\newblock Every picture tells a story: Generating sentences from images.
+\newblock In {\em ECCV 2010}. 2010.
+
+\bibitem{fidler2013sentence}
+S.~Fidler, A.~Sharma, and R.~Urtasun.
+\newblock A sentence is worth a thousand pixels.
+\newblock In {\em CVPR}. IEEE, 2013.
+
+\bibitem{foxBPHMM}
+E.~Fox, M.~Hughes, E.~Sudderth, and M.~Jordan.
+\newblock Joint modeling of multiple related time series via the beta process
+  with application to motion capture segmentation.
+\newblock {\em Annals of Applied Statistics}, 8(3):1281--1313, 2014.
+
+\bibitem{photoshop}
+F.~Grabler, M.~Agrawala, W.~Li, M.~Dontcheva, and T.~Igarashi.
+\newblock Generating photo manipulation tutorials by demonstration.
+\newblock {\em TOG}, 28(3):66, 2009.
+
+\bibitem{ibp}
+T.~Griffiths and Z.~Ghahramani.
+\newblock Infinite latent feature models and the indian buffet process.
+\newblock 2005.
+
+\bibitem{gupta2009understanding}
+A.~Gupta, P.~Srinivasan, J.~Shi, and L.~S. Davis.
+\newblock Understanding videos, constructing plots learning a visually grounded
+  storyline model from annotated videos.
+\newblock In {\em CVPR}, 2009.
+
+\bibitem{hoai11_cvpr}
+M.~Hoai, Z.-Z. Lan, and F.~{De la Torre}.
+\newblock Joint segmentation and classification of human actions in video.
+\newblock In {\em CVPR}, 2011.
+
+\bibitem{jain13_cvpr}
+M.~Jain, H.~Jegou, and P.~Bouthemy.
+\newblock Better exploiting motion for better action recognition.
+\newblock In {\em CVPR}, 2013.
+
+\bibitem{jainuniversity}
+M.~Jain, J.~van Gemert, and C.~G. Snoek.
+\newblock University of amsterdam at thumos challenge 2014.
+
+\bibitem{THUMOS14}
+Y.-G. Jiang, J.~Liu, A.~Roshan~Zamir, G.~Toderici, I.~Laptev, M.~Shah, and
+  R.~Sukthankar.
+\newblock {THUMOS} challenge: Action recognition with a large number of
+  classes.
+\newblock \url{http://crcv.ucf.edu/THUMOS14/}, 2014.
+
+\bibitem{deepAlignment}
+A.~{Karpathy} and L.~{Fei-Fei}.
+\newblock {Deep Visual-Semantic Alignments for Generating Image Descriptions}.
+\newblock {\em ArXiv e-prints}, Dec. 2014.
+
+\bibitem{khosla2013large}
+A.~Khosla, R.~Hamid, C.-J. Lin, and N.~Sundaresan.
+\newblock Large-scale video summarization using web-image priors.
+\newblock In {\em CVPR}, 2013.
+
+\bibitem{kim2014joint}
+G.~Kim, L.~Sigal, and E.~P. Xing.
+\newblock Joint summarization of large-scale collections of web images and
+  videos for storyline reconstruction.
+\newblock In {\em CVPR}, 2014.
+
+\bibitem{storyGraph}
+G.~Kim and E.~P. Xing.
+\newblock Reconstructing storyline graphs for image recommendation from web
+  community photos.
+\newblock In {\em CVPR}, 2014.
+
+\bibitem{kiros2014multimodal}
+R.~Kiros, R.~Salakhutdinov, and R.~Zemel.
+\newblock Multimodal neural language models.
+\newblock In {\em ICML}, 2014.
+
+\bibitem{kong2014you}
+C.~Kong, D.~Lin, M.~Bansal, R.~Urtasun, and S.~Fidler.
+\newblock What are you talking about? text-to-image coreference.
+\newblock In {\em CVPR}, 2014.
+
+\bibitem{alexnet}
+A.~Krizhevsky, I.~Sutskever, and G.~E. Hinton.
+\newblock Imagenet classification with deep convolutional neural networks.
+\newblock In {\em NIPS}, 2012.
+
+\bibitem{kuehne2011hmdb}
+H.~Kuehne, H.~Jhuang, E.~Garrote, T.~Poggio, and T.~Serre.
+\newblock Hmdb: a large video database for human motion recognition.
+\newblock In {\em ICCV}, 2011.
+
+\bibitem{lan14_vs}
+T.~Lan, L.~Chen, Z.~Deng, G.-T. Zhou, and G.~Mori.
+\newblock Learning action primitives for multi-level video event understanding.
+\newblock In {\em Workshop on Visual Surveillance and Re-Identification}, 2014.
+
+\bibitem{lan14_eccv}
+T.~Lan, T.-C. Chen, and S.~Savarese.
+\newblock A hierarchical representation for future action prediction.
+\newblock In {\em ECCV}, 2014.
+
+\bibitem{laptev08_cvpr}
+I.~Laptev, M.~Marszalek, C.~Schmid, and B.~Rozenfeld.
+\newblock Learning realistic human actions from movies.
+\newblock In {\em CVPR}, 2008.
+
+\bibitem{laptev07_iccv}
+I.~Laptev and P.~P\'{e}rez.
+\newblock Retrieving actions in movies.
+\newblock In {\em ICCV}, 2007.
+
+\bibitem{lee2012discovering}
+Y.~J. Lee, J.~Ghosh, and K.~Grauman.
+\newblock Discovering important people and objects for egocentric video
+  summarization.
+\newblock In {\em CVPR}, 2012.
+
+\bibitem{keysegments}
+Y.~J. Lee, J.~Kim, and K.~Grauman.
+\newblock Key-segments for video object segmentation.
+\newblock In {\em ICCV}, 2011.
+
+\bibitem{liao05}
+T.~W. Liao.
+\newblock Clustering of time series data\u2014a survey.
+\newblock {\em Pattern recognition}, 38(11):1857--1874, 2005.
+
+\bibitem{lu2013story}
+Z.~Lu and K.~Grauman.
+\newblock Story-driven summarization for egocentric video.
+\newblock In {\em CVPR}, 2013.
+
+\bibitem{alignment}
+J.~{Malmaud}, J.~{Huang}, V.~{Rathod}, N.~{Johnston}, A.~{Rabinovich}, and
+  K.~{Murphy}.
+\newblock {What's Cookin'? Interpreting Cooking Videos using Text, Speech and
+  Vision}.
+\newblock {\em ArXiv e-prints}, Mar. 2015.
+
+\bibitem{cookingSemantics}
+J.~Malmaud, E.~J. Wagner, N.~Chang, and K.~Murphy.
+\newblock Cooking with semantics.
+\newblock {\em ACL}, 2014.
+
+\bibitem{motwani2012improving}
+T.~S. Motwani and R.~J. Mooney.
+\newblock Improving video activity recognition using object recognition and
+  text mining.
+\newblock In {\em ECAI}, 2012.
+
+\bibitem{niebles10_eccv}
+J.~C. Niebles, C.-W. Chen, and L.~Fei-Fei.
+\newblock Modeling temporal structure of decomposable motion segments for
+  activity classification.
+\newblock In {\em ECCV}, 2010.
+
+\bibitem{scgp}
+E.~Olson, M.~Walter, S.~J. Teller, and J.~J. Leonard.
+\newblock Single-cluster spectral graph partitioning for robotics applications.
+\newblock In {\em RSS}, 2005.
+
+\bibitem{oneata2014lear}
+D.~Oneata, J.~Verbeek, and C.~Schmid.
+\newblock The lear submission at thumos 2014.
+\newblock 2014.
+
+\bibitem{ordonez2011im2text}
+V.~Ordonez, G.~Kulkarni, and T.~L. Berg.
+\newblock Im2text: Describing images using 1 million captioned photographs.
+\newblock In {\em NIPS}, 2011.
+
+\bibitem{scgp_eigen}
+P.~Perona and W.~Freeman.
+\newblock A factorization approach to grouping.
+\newblock In {\em ECCV}. 1998.
+
+\bibitem{pirsiavash14_cvpr}
+H.~Pirsiavash and D.~Ramanan.
+\newblock Parsing videos of actions with segmental grammars.
+\newblock In {\em CVPR}, 2014.
+
+\bibitem{potapov2014category}
+D.~Potapov, M.~Douze, Z.~Harchaoui, and C.~Schmid.
+\newblock Category-specific video summarization.
+\newblock In {\em ECCV}. 2014.
+
+\bibitem{rabiner}
+L.~R. Rabiner.
+\newblock A tutorial on hidden markov models and selected applications in
+  speech recognition.
+\newblock In {\em PROCEEDINGS OF THE IEEE}, pages 257--286, 1989.
+
+\bibitem{rui2000automatically}
+Y.~Rui, A.~Gupta, and A.~Acero.
+\newblock Automatically extracting highlights for tv baseball programs.
+\newblock In {\em ACM MM}, 2000.
+
+\bibitem{ryoo09_iccv}
+M.~Ryoo and J.~Aggarwal.
+\newblock Spatio-temporal relationship match: Video structure comparison for
+  recognition of complex human activities.
+\newblock In {\em ICCV}, 2009.
+
+\bibitem{languageModel}
+C.~E. Shannon.
+\newblock A mathematical theory of communication.
+\newblock {\em ACM SIGMOBILE Mobile Computing and Communications Review},
+  5(1):3--55, 2001.
+
+\bibitem{connecting}
+R.~Socher and L.~Fei-Fei.
+\newblock Connecting modalities: Semi-supervised segmentation and annotation of
+  images using unaligned text corpora.
+\newblock In {\em CVPR}, pages 966--973, 2010.
+
+\bibitem{socher2014grounded}
+R.~Socher, A.~Karpathy, Q.~V. Le, C.~D. Manning, and A.~Y. Ng.
+\newblock Grounded compositional semantics for finding and describing images
+  with sentences.
+\newblock {\em TACL}, 2:207--218, 2014.
+
+\bibitem{UCF101}
+K.~Soomro, A.~Roshan~Zamir, and M.~Shah.
+\newblock {UCF101}: A dataset of 101 human actions classes from videos in the
+  wild.
+\newblock In {\em CRCV-TR-12-01}, 2012.
+
+\bibitem{sun2014discover}
+C.~Sun and R.~Nevatia.
+\newblock Discover: Discovering important segments for classification of video
+  events and recounting.
+\newblock In {\em CVPR}, 2014.
+
+\bibitem{logicRecipe}
+M.~Tenorth, D.~Nyga, and M.~Beetz.
+\newblock Understanding and executing instructions for everyday manipulation
+  tasks from the world wide web.
+\newblock In {\em ICRA}, 2010.
+
+\bibitem{vidAbstraction}
+B.~T. Truong and S.~Venkatesh.
+\newblock Video abstraction: A systematic review and classification.
+\newblock {\em ACM TOMM}, 3(1):3, 2007.
+
+\bibitem{yao10b_cvpr}
+B.~Yao and L.~Fei-Fei.
+\newblock Modeling mutual context of object and human pose in human-object
+  interaction activities.
+\newblock In {\em CVPR}, 2010.
+
+\bibitem{yu2013grounded}
+H.~Yu and J.~M. Siskind.
+\newblock Grounded language learning from video described with sentences.
+\newblock In {\em ACL}, 2013.
+
+\bibitem{zitnick2013bringing}
+C.~L. Zitnick and D.~Parikh.
+\newblock Bringing semantics into focus using visual abstraction.
+\newblock In {\em CVPR}, 2013.
+
+\bibitem{zitnick2013learning}
+C.~L. Zitnick, D.~Parikh, and L.~Vanderwende.
+\newblock Learning the visual interpretation of sentences.
+\newblock In {\em CVPR}, 2013.
+
+\end{thebibliography}
+\fi
 \end{document}

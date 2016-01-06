@@ -98,20 +98,22 @@
 \@writefile{brf}{\backcite{niebles10_eccv, yao10b_cvpr, jain13_cvpr,lan14_eccv, lan14_vs}{{2}{2}{section.2}}}
 \@writefile{brf}{\backcite{sun2014discover,das2013thousand,barbu2012video}{{2}{2}{section.2}}}
 \@writefile{brf}{\backcite{cookingSemantics,logicRecipe}{{2}{2}{section.2}}}
+\@writefile{brf}{\backcite{logicRecipe}{{2}{2}{section.2}}}
+\@writefile{brf}{\backcite{beetz,cookie}{{2}{2}{section.2}}}
+\@writefile{brf}{\backcite{alignment}{{2}{2}{section.2}}}
 \citation{cpmc}
 \citation{keysegments}
-\@writefile{brf}{\backcite{logicRecipe}{{3}{2}{section.2}}}
-\@writefile{brf}{\backcite{beetz,cookie}{{3}{2}{section.2}}}
-\@writefile{brf}{\backcite{alignment}{{3}{2}{section.2}}}
 \@writefile{brf}{\backcite{photoshop}{{3}{2}{section.2}}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}\hskip -1em.\nobreakspace  {}Overview}{3}{section.3}}
 \newlabel{sec:overview}{{3}{3}{\hskip -1em.~Overview}{section.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}\hskip -1em.\nobreakspace  {}Forming the Multi-Modal Representation}{3}{section.4}}
 \newlabel{atoms}{{4}{3}{\hskip -1em.~Forming the Multi-Modal Representation}{section.4}{}}
-\@writefile{brf}{\backcite{cpmc}{{3}{4}{figure.caption.2}}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces We learn language and visual atoms to represent multi-modal information. Language atoms are frequent words and visual atoms are the clusters of object proposals.\relax }}{3}{figure.caption.2}}
 \newlabel{fig:overview}{{2}{3}{We learn language and visual atoms to represent multi-modal information. Language atoms are frequent words and visual atoms are the clusters of object proposals.\relax }{figure.caption.2}{}}
+\@writefile{brf}{\backcite{cpmc}{{3}{4}{figure.caption.2}}}
 \@writefile{brf}{\backcite{keysegments}{{3}{4}{figure.caption.2}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Representation for a sample frame.} Three of the object proposals of sample frame are in the visual atoms and three of the words are in the language atoms.\relax }}{3}{figure.caption.3}}
+\newlabel{visFrame}{{3}{3}{\textbf {Representation for a sample frame.} Three of the object proposals of sample frame are in the visual atoms and three of the words are in the language atoms.\relax }{figure.caption.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {5}\hskip -1em.\nobreakspace  {}Joint Proposal Clustering over Videos}{3}{section.5}}
 \newlabel{jointProp}{{5}{3}{\hskip -1em.~Joint Proposal Clustering over Videos}{section.5}{}}
 \citation{scgp}
@@ -120,8 +122,6 @@
 \citation{alexnet}
 \citation{scgp}
 \citation{scgp_eigen}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces \textbf  {Representation for a sample frame.} Three of the object proposals of sample frame are in the visual atoms and three of the words are in the language atoms.\relax }}{4}{figure.caption.3}}
-\newlabel{visFrame}{{3}{4}{\textbf {Representation for a sample frame.} Three of the object proposals of sample frame are in the visual atoms and three of the words are in the language atoms.\relax }{figure.caption.3}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces \textbf  {Joint proposal clustering.} Here, we show the $1^{st}NN$ video graph and $2^{nd}NN$ region graph. Each object proposal is linked to its two NNs from the video it belongs and two NNs from the videos it is neighbour of. Black nodes are the proposals selected as part of the cluster and the gray ones are not selected. Moreover, dashed lines are intra-video edges and solid ones are inter-video edges.\relax }}{4}{figure.caption.4}}
 \newlabel{hierProposal}{{4}{4}{\textbf {Joint proposal clustering.} Here, we show the $1^{st}NN$ video graph and $2^{nd}NN$ region graph. Each object proposal is linked to its two NNs from the video it belongs and two NNs from the videos it is neighbour of. Black nodes are the proposals selected as part of the cluster and the gray ones are not selected. Moreover, dashed lines are intra-video edges and solid ones are inter-video edges.\relax }{figure.caption.4}{}}
 \@writefile{brf}{\backcite{scgp}{{4}{5}{figure.caption.4}}}
@@ -129,6 +129,11 @@
 \@writefile{brf}{\backcite{scgp,scgp_eigen}{{4}{5}{equation.5.1}}}
 \@writefile{brf}{\backcite{alexnet}{{4}{5}{equation.5.1}}}
 \@writefile{brf}{\backcite{scgp,scgp_eigen}{{4}{5}{equation.5.2}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Randomly selected images of four randomly selected clusters learned for \emph  {How to hard boil an egg?}\relax }}{4}{figure.caption.5}}
+\newlabel{cvis}{{5}{4}{Randomly selected images of four randomly selected clusters learned for \emph {How to hard boil an egg?}\relax }{figure.caption.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}\hskip -1em.\nobreakspace  {}Unsupervised Activity Representation}{4}{subsection.5.1}}
+\newlabel{basics}{{5.1}{4}{\hskip -1em.~Unsupervised Activity Representation}{subsection.5.1}{}}
+\newlabel{learning}{{5.1}{4}{\hskip -1em.~Unsupervised Activity Representation}{subsection.5.1}{}}
 \citation{foxBPHMM}
 \citation{foxBPHMM}
 \citation{foxBPHMM}
@@ -136,11 +141,6 @@
 \citation{ibp}
 \citation{foxBPHMM}
 \citation{foxBPHMM}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Randomly selected images of four randomly selected clusters learned for \emph  {How to hard boil an egg?}\relax }}{5}{figure.caption.5}}
-\newlabel{cvis}{{5}{5}{Randomly selected images of four randomly selected clusters learned for \emph {How to hard boil an egg?}\relax }{figure.caption.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}\hskip -1em.\nobreakspace  {}Unsupervised Activity Representation}{5}{subsection.5.1}}
-\newlabel{basics}{{5.1}{5}{\hskip -1em.~Unsupervised Activity Representation}{subsection.5.1}{}}
-\newlabel{learning}{{5.1}{5}{\hskip -1em.~Unsupervised Activity Representation}{subsection.5.1}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.1}Beta Process Hidden Markov Model}{5}{subsubsection.5.1.1}}
 \newlabel{bphmm}{{5.1.1}{5}{Beta Process Hidden Markov Model}{subsubsection.5.1.1}{}}
 \@writefile{brf}{\backcite{foxBPHMM}{{5}{5.1.1}{subsubsection.5.1.1}}}
@@ -149,12 +149,16 @@
 \@writefile{brf}{\backcite{ibp}{{5}{5.1.1}{equation.5.4}}}
 \@writefile{brf}{\backcite{ibp}{{5}{5.1.1}{equation.5.4}}}
 \@writefile{brf}{\backcite{foxBPHMM}{{5}{5.1.1}{equation.5.4}}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Gibbs sampling for BP-HMM}{5}{subsubsection.5.1.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Graphical model for BP-HMM:} The left plate represent the activity steps and the right plate represent the videos. \emph  {i.e}\onedot  the left plate is for the activity step discovery and right plate is for parsing. \emph  {See Section\nobreakspace  {}\ref  {bphmm} for details.}\relax }}{5}{figure.caption.6}}
+\newlabel{bphmmo}{{6}{5}{\textbf {Graphical model for BP-HMM:} The left plate represent the activity steps and the right plate represent the videos. \ie the left plate is for the activity step discovery and right plate is for parsing. \emph {See Section~\ref {bphmm} for details.}\relax }{figure.caption.6}{}}
 \citation{wikiHow}
 \citation{scgp}
 \citation{languageModel}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces \textbf  {Graphical model for BP-HMM:} The left plate represent the activity steps and the right plate represent the videos. \emph  {i.e}\onedot  the left plate is for the activity step discovery and right plate is for parsing. \emph  {See Section\nobreakspace  {}\ref  {bphmm} for details.}\relax }}{6}{figure.caption.6}}
-\newlabel{bphmmo}{{6}{6}{\textbf {Graphical model for BP-HMM:} The left plate represent the activity steps and the right plate represent the videos. \ie the left plate is for the activity step discovery and right plate is for parsing. \emph {See Section~\ref {bphmm} for details.}\relax }{figure.caption.6}{}}
+\citation{THUMOS14}
+\citation{rabiner}
+\citation{potapov2014category}
+\citation{potapov2014category}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.1.2}Gibbs sampling for BP-HMM}{6}{subsubsection.5.1.2}}
 \@writefile{brf}{\backcite{foxBPHMM}{{6}{5.1.2}{subsubsection.5.1.2}}}
 \@writefile{toc}{\contentsline {section}{\numberline {6}\hskip -1em.\nobreakspace  {}Experiments}{6}{section.6}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.1}\hskip -1em.\nobreakspace  {}Dataset}{6}{subsection.6.1}}
@@ -167,96 +171,34 @@
 \newlabel{outliers}{{7}{6}{\textbf {Sample videos which our algorithm discards as an outlier for various queries.} A toy milkshake, a milkshake charm, a funny video about How to NOT make smoothie, a video about the danger of a fire, a cartoon video, a neck-tie video erroneously labeled as bow-tie, a song, and a lamb cooking mislabeled as chicken.\relax }{figure.caption.7}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {6.2}\hskip -1em.\nobreakspace  {}Qualitative Results}{6}{subsection.6.2}}
 \@writefile{brf}{\backcite{languageModel}{{6}{6.2}{subsection.6.2}}}
-\citation{THUMOS14}
-\citation{rabiner}
-\citation{potapov2014category}
-\citation{potapov2014category}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}\hskip -1em.\nobreakspace  {}Quantitative Results}{6}{subsection.6.3}}
+\@writefile{brf}{\backcite{THUMOS14}{{6}{6.3}{subsection.6.3}}}
+\@writefile{brf}{\backcite{rabiner}{{6}{6.3}{subsection.6.3}}}
+\@writefile{brf}{\backcite{potapov2014category}{{6}{6.3}{subsection.6.3}}}
+\@writefile{brf}{\backcite{potapov2014category}{{6}{6.3}{subsection.6.3}}}
 \citation{THUMOS14}
 \citation{liao05}
+\citation{potapov2014category}
+\citation{potapov2014category}
 \newlabel{recipe:ommelette}{{8a}{7}{How to make an omelet?\relax }{figure.caption.8}{}}
 \newlabel{sub@recipe:ommelette}{{a}{7}{How to make an omelet?\relax }{figure.caption.8}{}}
 \newlabel{recipe:milkshake}{{8b}{7}{How to make a milkshake?\relax }{figure.caption.8}{}}
 \newlabel{sub@recipe:milkshake}{{b}{7}{How to make a milkshake?\relax }{figure.caption.8}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces Temporal segmentation of the videos and ground truth segmentation. We also color code the activity steps we discovered and visualize their key-frames and the automatically generated captions. \emph  {Best viewed in color.}\relax }}{7}{figure.caption.8}}
 \newlabel{recipe:overall}{{8}{7}{Temporal segmentation of the videos and ground truth segmentation. We also color code the activity steps we discovered and visualize their key-frames and the automatically generated captions. \emph {Best viewed in color.}\relax }{figure.caption.8}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.3}\hskip -1em.\nobreakspace  {}Quantitative Results}{7}{subsection.6.3}}
-\@writefile{brf}{\backcite{THUMOS14}{{7}{6.3}{subsection.6.3}}}
-\@writefile{brf}{\backcite{rabiner}{{7}{6.3}{subsection.6.3}}}
-\@writefile{brf}{\backcite{potapov2014category}{{7}{6.3}{subsection.6.3}}}
-\@writefile{brf}{\backcite{potapov2014category}{{7}{6.3}{subsection.6.3}}}
 \@writefile{brf}{\backcite{THUMOS14}{{7}{6.3}{figure.caption.9}}}
 \@writefile{brf}{\backcite{liao05}{{7}{6.3}{figure.caption.9}}}
-\citation{potapov2014category}
-\citation{potapov2014category}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Average of $IOU_{cms}$ and $mAP_{cms}$ over recipes.\relax }}{7}{table.caption.11}}
+\@writefile{brf}{\backcite{potapov2014category}{{7}{1}{table.caption.11}}}
+\@writefile{brf}{\backcite{potapov2014category}{{7}{1}{table.caption.11}}}
+\newlabel{averM}{{1}{7}{Average of $IOU_{cms}$ and $mAP_{cms}$ over recipes.\relax }{table.caption.11}{}}
+\bibstyle{ieee}
+\bibdata{recipeUnderstanding}
 \@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces $IOU_{max}$ values for all categories, for all competing algorithms.\relax }}{8}{figure.caption.9}}
 \newlabel{mIOU}{{9}{8}{$IOU_{max}$ values for all categories, for all competing algorithms.\relax }{figure.caption.9}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces $AP_{max}$ values for all categories, for all competing algorithms.\relax }}{8}{figure.caption.9}}
 \newlabel{mmAP}{{10}{8}{$AP_{max}$ values for all categories, for all competing algorithms.\relax }{figure.caption.9}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Average of $IOU_{cms}$ and $mAP_{cms}$ over recipes.\relax }}{8}{table.caption.10}}
-\@writefile{brf}{\backcite{potapov2014category}{{8}{1}{table.caption.10}}}
-\@writefile{brf}{\backcite{potapov2014category}{{8}{1}{table.caption.10}}}
-\newlabel{averM}{{1}{8}{Average of $IOU_{cms}$ and $mAP_{cms}$ over recipes.\relax }{table.caption.10}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Semantic mean-average-precision $mAP_{sem}$.\relax }}{8}{table.caption.11}}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces Qualitative results for parsing `Travel San Francisco' category.\relax }}{8}{figure.caption.10}}
+\newlabel{sf}{{11}{8}{Qualitative results for parsing `Travel San Francisco' category.\relax }{figure.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Semantic mean-average-precision $mAP_{sem}$.\relax }}{8}{table.caption.12}}
 \@writefile{toc}{\contentsline {section}{\numberline {7}\hskip -1em.\nobreakspace  {}Conclusions}{8}{section.7}}
-\bibstyle{ieee}
-\bibdata{recipeUnderstanding}
-\bibcite{wikiHow}{1}
-\bibcite{barbu2012video}{2}
-\bibcite{matching}{3}
-\bibcite{beetz}{4}
-\bibcite{bojanowski14_eccv}{5}
-\bibcite{cookie}{6}
-\bibcite{cpmc}{7}
-\bibcite{das2013thousand}{8}
-\bibcite{duchenne09_iccv}{9}
-\bibcite{efros03_iccv}{10}
-\bibcite{farhadi2010every}{11}
-\bibcite{fidler2013sentence}{12}
-\bibcite{foxBPHMM}{13}
-\bibcite{photoshop}{14}
-\bibcite{ibp}{15}
-\bibcite{gupta2009understanding}{16}
-\bibcite{hoai11_cvpr}{17}
-\bibcite{jain13_cvpr}{18}
-\bibcite{jainuniversity}{19}
-\bibcite{THUMOS14}{20}
-\bibcite{deepAlignment}{21}
-\bibcite{khosla2013large}{22}
-\bibcite{kim2014joint}{23}
-\bibcite{storyGraph}{24}
-\bibcite{kiros2014multimodal}{25}
-\bibcite{kong2014you}{26}
-\bibcite{alexnet}{27}
-\bibcite{kuehne2011hmdb}{28}
-\bibcite{lan14_vs}{29}
-\bibcite{lan14_eccv}{30}
-\bibcite{laptev08_cvpr}{31}
-\bibcite{laptev07_iccv}{32}
-\bibcite{lee2012discovering}{33}
-\bibcite{keysegments}{34}
-\bibcite{liao05}{35}
-\bibcite{lu2013story}{36}
-\bibcite{alignment}{37}
-\bibcite{cookingSemantics}{38}
-\bibcite{motwani2012improving}{39}
-\bibcite{niebles10_eccv}{40}
-\bibcite{scgp}{41}
-\bibcite{oneata2014lear}{42}
-\bibcite{ordonez2011im2text}{43}
-\bibcite{scgp_eigen}{44}
-\bibcite{pirsiavash14_cvpr}{45}
-\bibcite{potapov2014category}{46}
-\bibcite{rabiner}{47}
-\bibcite{rui2000automatically}{48}
-\bibcite{ryoo09_iccv}{49}
-\bibcite{languageModel}{50}
-\bibcite{connecting}{51}
-\bibcite{socher2014grounded}{52}
-\bibcite{UCF101}{53}
-\bibcite{sun2014discover}{54}
-\bibcite{logicRecipe}{55}
-\bibcite{vidAbstraction}{56}
-\bibcite{yao10b_cvpr}{57}
-\bibcite{yu2013grounded}{58}
-\bibcite{zitnick2013bringing}{59}
-\bibcite{zitnick2013learning}{60}

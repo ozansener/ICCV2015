@@ -2,17 +2,20 @@
 In order to experiment the proposed method, we first collected a dataset (details in Section~\ref{dataset:sec}). We labelled small part of the dataset with frame-wise activity step labels and used the resulting set as an evaluation corpus. Neither the set of labels, nor the temporal boundaries are exposed to our algorithm since the set-up is completely unsupervised. We evaluate our algorithm against the several unsupervised clustering baselines and state-of-the-art algorithms from video summarization literature which are applicable.
 \subsection{Dataset}
 \label{dataset:sec}
-We use WikiHow\cite{wikiHow} in order to obtain the top100 queries the internet users are interested in and choose the ones which are directly related to the physical world. In other words, we ignore queries like \emph{How to get over a break up‏?‎} as they have no objective set of steps. Resulting queries are;
-
+We use WikiHow\cite{wikiHow} in order to obtain the top100 queries the internet users are interested in and choose the ones which are
+directly related to the physical world. Resulting queries are;
 
 \emph{\textbf{How to}}\footnotesize
 \emph{Bake Boneless Skinless Chicken, Make Jello Shots, Cook Steak, Bake Chicken Breast, Hard Boil an Egg, Make Yogurt, Make a Milkshake, Make Beef Jerky, Tie a Tie, Clean a Coffee Maker, Make Scrambled Eggs, Broil Steak, Cook an Omelet, Make Ice Cream, Make Pancakes, Remove Gum from Clothes, Unclog a Bathtub Drain}
 \normalsize
 
-For each of the queries, we crawled YouTube and got the top 100 videos. We also downloaded the English subtitles if they exist. For evaluation set, we randomly choose 5 videos out of 100 per query. Hence, we have total of 125 evaluation videos and 2375 unlabelled videos. We label the start and end frames of activity steps as well as the name of the step. We will release the code and collected dataset.
+For each of the queries, we crawled YouTube and got the top 100 videos. We also downloaded the English subtitles if they exist. For evaluation set, we randomly choose 5 videos out of 100 per query.
+%Hence, we have total of 125 evaluation videos and 2375 unlabelled videos. We label the start and end frames of activity steps as well as the name of the step. We will release the code and collected dataset.
 
+\vspace{-1mm}
 \subsubsection{Outlier Detection}
 \label{filter}
+\vspace{-1mm}
 Since we do not have any expert intervention in our data collection, the resulting collection might have outliers. Main reason for the outliers are  the fact that our queries are typical daily activities and there are many cartoons, funny videos, and music videos about them. Hence, we have an automatic filtering stage. The key-idea behind the filtering algorithm is the fact that instructional videos have a distinguishable text descriptions when compared with outliers. Hence, we use a clustering algorithm to find the large cluster of instructional videos. Given a large video collection, we use the graph we explain in Section~\ref{jointProp} and compute the dominant video cluster by using the Single Cluster Graph Partitioning \cite{scgp} and discards the remaining videos as outlier. In Figure~\ref{outliers}, we visualize some of the discarded videos. Although our algorithm have false positives while detecting outliers, we always have enough number of videos (minimum 50) after the outlier detection thanks to the large-scale dataset.
 
 \begin{figure}[ht]
@@ -25,7 +28,9 @@ A toy milkshake, a milkshake charm, a funny video about How to NOT make smoothie
 \vspace{-3mm}
 \end{figure}
 
+\vspace{-1mm}
 \subsection{Qualitative Results}
+\vspace{-1mm}
 After independently running our algorithm on all categories, we discover activity steps and parse the videos according to discovered steps. We visualize some of these categories qualitatively in Figure~\ref{recipe:overall} with the temporal parsing of evaluation videos as well as the ground truth parsing.
 
 To visualize the content of each activity step, we display key-frames from different videos. We also train a 3rd order Markov language model\cite{languageModel} by using the subtitles. Moreover, we generate a caption for each activity step by sampling this model conditioned on the $\theta^l_k$. We explain the details of this process in supplementary material.
@@ -63,7 +68,7 @@ In order to experiment the effect of learned atoms, we compare with low-level fe
 To experiment the effect of multi-modal approach, we compare with single modality approach by only using the atoms of a single modality.
 
 \noindent\textbf{Hidden Markov Model (HMM):}
-To experiment the effect of joint generaive model, we compare our algorithm with an HMM. We use the Baum-Welch algorithm\cite{rabiner} and choose the number of clusters via cross-validation.
+To experiment the effect of joint generaive model, we compare our algorithm with an HMM. We use the Baum-Welch \cite{rabiner} via cross-validation.
 
 
 \noindent\textbf{Kernel Temporal Segmentation\cite{potapov2014category}:}
@@ -82,6 +87,15 @@ Kernel Temporal Segmentation (KTS) proposed by Potapov et al.\cite{potapov2014ca
 \end{figure*}
 
 Given parsing results and the ground truth, we evaluate both the quality of temporal segmentation and the activity step discovery. We base our evaluation on two widely used metrics; intersection over union ($IOU$) and mean average precision($mAP$). $\mathbf{IOU}$ measures the quality of temporal segmentation and it is defined as; $\frac{1}{N}\sum_{i=1}^N \frac{\tau^\star_i \cap \tau^\prime_{i}}{\tau^\star_i \cup \tau^\prime_{i}}$ where $N$ is the number of segments, $\tau^\star_i$ is ground truth  segment and $\tau^\prime_{i}$ is the detected segment. $\mathbf{mAP}$ is defined per activity step and can be computed based on a precision-recall curve \cite{THUMOS14}. In order to adopt these metrics into unsupervised setting, we use cluster similarity measure(csm)\cite{liao05} which enables us to use any metric in unsupervised setting. It chooses a matching of ground truth labels with predicted labels by searching over all matching and choosing the ones giving highest score. We use $mAP_{csm}$ and $IOU_{csm}$ as evaluation metrics.
+
+\begin{figure*}[t]
+  \includegraphics[width=\textwidth]{figure_8c}
+  \vspace{-6mm}
+  \caption{Qualitative results for parsing `Travel San Francisco' category.}
+  \vspace{-2mm}
+  \label{sf}
+\end{figure*}
+
 
 \vspace{1mm}
 \noindent\textbf{Accuracy of the temporal parsing.}
@@ -110,7 +124,7 @@ Although $IOU_{cms}$ successfully measures the accuracy of the temporal segmenta
 
 \vspace{1mm}
 \noindent\textbf{Semantics of activity steps.}
-In order to further evaluate the role of semantics, we performed a subjective analysis. We concatenated the activity step labels in the grount-truth into a label collection. Then, we ask non-expert users to choose a label for each discovered activity for each algorithm. In other words, we replaced the maximization step with subjective labels. We designed our experiments in a way that each clip received annotations from 5 different users. We randomized the ordering of videos and algorithms during the subjective evaluation. By using the activity labels provided by subjects, we compute the mean average precision wrt ground truth call it $mAP_{sem}$.
+In order to evaluate the role of semantics, we performed a subjective analysis. We concatenated the activity step labels in the grount-truth into a label collection. Then, we ask non-expert users to choose a label for each discovered activity for each algorithm. In other words, we replaced the maximization step with subjective labels. We designed our experiments in a way that each clip received annotations from 5 different users. We randomized the ordering of videos and algorithms during the subjective evaluation. Using the labels provided by subjects, we compute the mean average precision $(mAP_{sem})$.
 
 \begin{table}
 \caption{Semantic mean-average-precision $mAP_{sem}$.}
@@ -125,8 +139,15 @@ $mAP_{sem}$ & 6.44   & 24.83  &     7.28 &   28.93  &  14.83    &  39.01 \\
 \vspace{-8mm}
 \end{table}
 
-Both $mAP_{cms}$ and $mAP_{sem}$ metrics suggest that our method consistently outperforms the competing ones. There is only one recipe in which our method is outperformed by our based line of no visual information. This is mostly because of the specific nature of the recipe \emph{How to tie a tie?}. In such videos the notion of object is not useful since all videos use a single object over the entire video. This single object is a \emph{tie} and does not fit the assumption of a frame based on multiple visual atoms.
+Both $mAP_{cms}$ and $mAP_{sem}$ metrics suggest that our method consistently outperforms the competing ones. There is only one recipe in which our method is outperformed by our based line of no visual information. This is mostly because of the specific nature of the recipe \emph{How to tie a tie?}. In such videos the notion of object is not useful since all videos use a single object -tie-.
+%over the entire video.
+%This single object is a \emph{tie} and does not fit the assumption of a frame based on multiple visual atoms.
 
 \vspace{1mm}
 \noindent\textbf{The importance of each modality.}
 As shown in Figure~\ref{mIOU} and \ref{mmAP}, performance significantly drops when any of the modalities is ignored consistently in all categories. Hence, the joint usage is necessary. One interesting observation is the fact that using only language information performed slightly better than using only visual information. We believe this is due to the less intra-class variance in the language modality (\ie people use same words for same activities). However, it lacks many details(less complete) and more noisy than visual information. Hence these results validate the complementary nature of language and vision.
+
+\vspace{1mm}
+\noindent\textbf{Generalization to generic structured videos}
+We experiment the applicability of our method beyond How-To videos by evaluating it on non-How-To categories. In Figure \ref{sf}, we visualize the results for the videos retrieved using the query ``Travel San Francisco". The resulting clusters follow semantically meaningful activities and landmarks and show the applicability of our method beyond How-To queries. It is interesting to note that Chinatown and Clement St ended up in the same cluster. Considering the fact that Clement St is known for its Chinese food, this suggests that the discovered clusters are semantically meaningful.
+\vspace{-2mm}
